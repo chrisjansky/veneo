@@ -1,0 +1,25 @@
+{
+  "toMove": [
+    "app/assets/favicon.ico",
+    "!app/assets/**/*.html",
+    "app/**/*.html",
+    "app/assets/fonts/*"
+  ],
+  "injectDev": {
+    "site": [
+      "bower_components/normalize-css/normalize.css",
+      "bower_components/Swiper/dist/css/swiper.css",
+      "app/assets/css/style.css",
+      "app/assets/css/MyFontsWebfontsKit.css",
+
+      "bower_components/Swiper/dist/js/swiper.jquery.js",
+      "app/assets/js/app.js"
+    ]
+  },
+  "injectDist": {
+    "site": [
+      "dist/assets/css/style-min.css",
+      "dist/assets/js/site-min.js"
+    ]
+  }
+}

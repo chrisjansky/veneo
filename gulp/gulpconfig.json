@@ -1,0 +1,37 @@
+{
+  "dev": {
+    "root": "app/",
+    "proxy": "localhost/veneo/app/",
+
+    "resources": "gulp/resources.json",
+
+    "pagesFormat": ".html",
+    "pagesGlob": "app/**/*.html",
+    "pagesIgnore": "!app/{assets,guide}/**/*.html",
+
+    "jadeRoot": "app/assets/jade/",
+    "jadeGlob": "app/assets/jade/**/*.jade",
+    "jadeIgnore": "!app/assets/jade/**/_*.jade",
+
+    "scssRoot": "app/assets/scss/",
+    "scssBase": "app/assets/scss/*.scss",
+    "scssGlob": "app/assets/scss/**/*.scss",
+
+    "cssRoot": "app/assets/css/",
+
+    "jsGlob": "app/assets/js/**/*.js",
+
+    "imagesGlob": "app/assets/images/**/*",
+    "imagesIgnore": "!app/assets/images/_ignore{,/**}",
+
+    "dataRoot": "app/assets/data/",
+    "dataGlob": "app/assets/data/*.json",
+
+    "svgSourceGlob": "app/assets/svg/_source/*.svg",
+    "svgBuildGlob": "app/assets/svg/*.svg",
+    "svgBuild": "app/assets/svg/"
+  },
+  "dist": {
+    "root": "dist/"
+  }
+}
