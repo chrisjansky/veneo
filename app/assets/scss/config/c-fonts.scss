@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "christel";
+    src: url('../fonts/christel_display_medium-webfont.woff2') format('woff2'),
+         url('../fonts/christel_display_medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "christel";
+    src: url('../fonts/christel_display_regular-webfont.woff2') format('woff2'),
+         url('../fonts/christel_display_regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "christel";
+    src: url('../fonts/christel_display_light-webfont.woff2') format('woff2'),
+         url('../fonts/christel_display_light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "christel";
+    src: url('../fonts/christel_display_light_italic-webfont.woff2') format('woff2'),
+         url('../fonts/christel_display_light_italic-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+// Fonts.
+$font__serif:            "christel", serif;
+$font__serif--medium:    500;
+$font__serif--regular:   400;
+$font__serif--light:     300;
+
+$font__sans--black:      "GoldenSans-Black", sans-serif;
+$font__sans--bold:       "GoldenSans-Bold", sans-serif;
+$font__sans--medium:     "GoldenSans-Medium", sans-serif;
+$font__sans--regular:    "GoldenSans-Regular", sans-serif;
+$font__sans--light:      "GoldenSans-Light", sans-serif;
+$font__sans--ultralight: "GoldenSans-UltraLight", sans-serif;
+$font__sans--thin:       "GoldenSans-Thin", sans-serif;
+
+// Defaults.
+$default__size: 16;
+$default__family: $font__sans--regular;
+$default__weight: normal;
+$default__leading: $leading--b;

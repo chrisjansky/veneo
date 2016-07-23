@@ -1,0 +1,37 @@
+$color1--300: hsb(235, 040, 080);
+$color1--400: hsb(235, 060, 080);
+$color1--500: hsb(235, 070, 085);
+$color1--600: hsb(235, 050, 090);
+
+$color2--200: hsb(034, 024, 054);
+$color2--300: hsb(034, 027, 065);
+$color2--400: hsb(034, 020, 070);
+$color2--500: hsb(034, 027, 080);
+$color2--600: hsb(034, 020, 090);
+$color2--700: hsb(034, 030, 095);
+
+$grey--000:   hsb(000, 000, 000);
+$grey--100:   hsb(000, 000, 014);
+$grey--200:   hsb(000, 000, 020);
+$grey--300:   hsb(000, 000, 032);
+$grey--400:   hsb(000, 000, 042);
+$grey--500:   hsb(000, 000, 050);
+$grey--600:   hsb(000, 000, 060);
+$grey--700:   hsb(000, 000, 075);
+$grey--800:   hsb(000, 000, 087);
+$grey--900:   hsb(000, 000, 096);
+
+$color--silver:   $grey--600;
+$color--gold:     $color2--500;
+$color--platinum: $grey--700;
+$color--rose:     hsb(017, 036, 096);
+
+// Interactive
+$c-link:         $color1--500;
+$c-visited:      $c-link;
+
+$c-hover:        $color1--600;
+$c-active:       $c-hover;
+
+$c-select__bg:   black;
+$c-select__text: white;
