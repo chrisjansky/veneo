@@ -1,0 +1,82 @@
+.t-head--one {
+  font-family: $font__serif;
+  font-weight: $font__serif--regular;
+  font-size: em(24);
+
+  @include margin(1em null);
+}
+.t-head--two {
+  font-family: $font__serif;
+  font-weight: $font__serif--medium;
+  font-size: em(20);
+}
+.t-head--three {
+  font-weight: normal;
+  font-size: em(18);
+
+  @include margin(.5em null);
+}
+.t-head--four {
+  font-weight: normal;
+  font-size: em(16);
+
+  @include margin(.5em null);
+}
+
+.t-big {
+  font-size: em(20);
+}
+
+.t-price {
+  font-family: $font__serif;
+  font-weight: $font__serif--light;
+  font-size: em(20);
+}
+.t-term {
+  font-family: $font__sans--light;
+  font-weight: normal;
+  font-size: em(24);
+}
+.t-figure {
+  font-family: $font__sans--ultralight;
+  font-weight: normal;
+  font-size: em(64);
+}
+
+.t-small {
+  font-size: em(16);
+
+  color: $grey--700;
+}
+
+[class^="t-paragraph"],
+[class*=" t-paragraph"] {
+  font-size: em(18);
+}
+.t-paragraph--light {
+  color: $grey--500;
+}
+.t-paragraph--white {
+  color: white;
+}
+
+.t-caps {
+  font-family: $font__sans--medium;
+  font-weight: normal;
+
+  text-transform: uppercase;
+  letter-spacing: $tracking--b;
+}
+
+// .t-link--light {
+//   @include link--light;
+// }
+.t-link--white {
+  &:link, &:visited {
+    color: white;
+    border-bottom: $stroke--s solid rgba(white, .25);
+  }
+  &:hover, &:active {
+    color: $grey--800;
+  }
+}

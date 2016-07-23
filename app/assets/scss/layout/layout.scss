@@ -1,0 +1,27 @@
+.l-wrap {
+  max-width: em(900);
+
+  @include margin(null auto);
+  // @include padding(5em null);
+
+  padding: 2.25em 1.625em; // 36 26
+
+  @include collapse-children;
+}
+
+.l-inline {
+  display: table;
+
+  width: 100%;
+}
+[class^="l-inline__cell"],
+[class*=" l-inline__cell"] {
+  display: table-cell;
+
+  vertical-align: middle;
+
+  @include collapse-children;
+}
+.l-inline__cell--right {
+  text-align: right;
+}
