@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  cursor: default;
+
+  background-color: white; // Otherwise grey, god knows why
+
+  font: $default__weight em($default__size, 16) $default__family;
+  line-height: $default__leading;
+}
+
+img {
+  display: block;
+}
+
+canvas,
+iframe {
+  display: block;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+
+  &:link {
+    color: $c-link;
+  }
+  &:visited {
+    color: $c-visited;
+  }
+}
+
+nav a {
+  text-decoration: none;
+}
+
+::selection {
+  background-color: $c-select__bg;
+  color: $c-select__text;
+  text-shadow: none;
+}
+
+a[href^="tel"] {
+  text-decoration: none;
+}
