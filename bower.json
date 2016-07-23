@@ -1,0 +1,22 @@
+{
+  "name": "veneo",
+  "version": "0.1.0",
+  "authors": [
+    ""
+  ],
+  "description": "Project.",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~3.1.0",
+    "normalize-css": "~4.2.0",
+    "Swiper": "swiper#~3.3.1"
+  }
+}

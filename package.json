@@ -1,0 +1,36 @@
+{
+  "name": "veneo",
+  "version": "0.1.0",
+  "description": "Project.",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "beepbeep": "^1.2.0",
+    "browser-sync": "2.11.0",
+    "del": "^2.2.0",
+    "glob": "^4.3.5",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "2.0.0",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-inject": "^1.1.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-minify-css": "0.3.11",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sass-bulk-import": "^0.3.2",
+    "gulp-uglify": "^1.0.2",
+    "gulp-usemin": "0.3.8",
+    "hygienist-middleware": "^0.1.0",
+    "node-bourbon": "^1.2.3",
+    "node-neat": "^1.7.2"
+  }
+}
