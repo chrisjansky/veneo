@@ -1,0 +1,46 @@
+.o-shortcuts {
+  display: none;
+
+  position: fixed;
+  bottom: em(26);
+  left: em(32);
+  right: em(32);
+  z-index: 1000;
+
+  list-style-type: none;
+  padding-left: 0;
+  @include margin(0 null);
+
+  line-height: 2.5;
+  text-align: center;
+
+  @include clearfix;
+
+  .pages--is-active & {
+    display: block;
+  }
+}
+
+[class^="o-shortcuts__item"],
+[class*=" o-shortcuts__item"] {
+  border-top: $stroke--b solid $grey--200;
+}
+.o-shortcuts__item--half {
+  float: left;
+
+  width: 50%;
+
+  &:last-child {
+    border-left: $stroke--b solid $grey--200;
+  }
+}
+
+.o-shortcuts__link {
+  display: block;
+
+  font-size: em(18);
+
+  &:link, &:visited {
+    color: $color2--500;
+  }
+}

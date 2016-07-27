@@ -52,4 +52,6 @@ nav a {
 
 a[href^="tel"] {
   text-decoration: none;
+
+  color: inherit;
 }

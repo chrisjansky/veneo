@@ -2,7 +2,7 @@
   color: white;
 }
 .o-header__logo {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 2em;
 
@@ -29,11 +29,51 @@
   }
 }
 
-.o-nav {
-  position: absolute;
+.o-hud {
+  position: fixed;
   left: 0;
+
+  z-index: 900;
   
   padding: 1.75em;
+}
+
+.o-pages {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+  line-height: 2;
+
+  background-color: $grey--000;
+
+  .pages--is-active & {
+    display: block;
+  }
+}
+.o-pages__list {
+  list-style-type: none;
+  padding-left: 0;
+
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+
+  transform: translateY(-50%);
+}
+.o-pages__item {
+  font-size: em(24);
+}
+.o-pages__link {
+  @include link--light;
 }
 
 .o-hero {
@@ -48,21 +88,47 @@
   overflow: hidden;
 }
 .o-hero__content {
-  padding-top: 4em;
+  position: relative;
+  z-index: 500;
+
+  max-width: 25em;
+  @include margin(null auto);
+  padding-top: 5em;
+
+  @include collapse-children;
 
   color: $grey--600;
 }
 
 .o-toggle {
+  border: none;
+  padding: .5em;
+
+  background-color: transparent;
+
+  line-height: 1;
+
+  &:focus {
+    outline: 0;
+  }
 }
 .o-toggle__text {
   display: none;
 }
-
-.o-search {
+.o-toggle__iconset {
+  stroke: $color2--300;
 }
-.o-search__text {
+.o-toggle__icon--active {
   display: none;
+
+  .toggle--is-active & {
+    display: inline-block;
+  }
+}
+.o-toggle__icon--passive {
+  .toggle--is-active & {
+    display: none;
+  }
 }
 
 .o-cats {
@@ -70,31 +136,38 @@
 
   width: 100%;
   padding-bottom: 1.5em;
-  // margin-bottom: .25em;
 
-  border-bottom: $stroke--b solid $grey--800;
-
-  overflow: hidden;
-
-  &:after {
+  &:before, &:after {
     content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 500;
 
+    position: absolute;
+    top: 0;
+    bottom: em(26);
+    z-index: 500;
+    
     width: 25%;
 
-    background-image: linear-gradient(to left, white, rgba(white, 0));
-
     pointer-events: none;
+  }
+  &:before {
+    left: 0;
+
+    background-image: linear-gradient(to right, white, rgba(white, 0));
+  }
+  &:after {
+    right: 0;
+
+    background-image: linear-gradient(to left, white, rgba(white, 0));
   }
 }
 .o-cats__wrapper {
   white-space: nowrap;
+}
+.o-cats__rule {
+  display: block;
+  margin-top: 1.5em;
 
-  padding-left: em(10);
+  border-bottom: $stroke--b solid $grey--800;
 }
 .o-cats__item {
   display: inline-block;
@@ -102,13 +175,48 @@
 
   text-align: center;
 
-  margin-right: 1.5em;
-  @include padding(null em(16));
+  @include padding(null em(26));
 
   @include link--light;
+  transition: color $duration--b;
 
-  &:last-child {
-    margin-right: 0;
+  &:before, &:after {
+    content: "";
+    display: block;
+    
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+    transition: border-width $duration--b;
+
+    width: 0;
+    height: 0;
+    
+    border: 0 solid transparent;
+    border-bottom-width: 0;
+  }
+  &:before {
+    top: 7.5em;
+
+    border-top-color: $grey--800;
+  }
+  &:after {
+    top: 7.3125em;
+
+    border-top-color: white;
+  }
+
+  &.swiper-slide-active {
+    color: $grey--000;
+
+    &:before, &:after {
+      border-width: 1em;
+    }
+
+    svg {
+      stroke: url(#gradientActive);
+    }
   }
 }
 .o-cats__icon {
@@ -118,13 +226,9 @@
 
   svg {
     vertical-align: middle;
+
+    stroke: url(#gradientPassive);
   }
-
-  stroke: url(#gradientPassive);
-
-  // .o-cats__item:hover & svg {
-  //   stroke: url(#gradientActive);
-  // }
 
   // Pseudo-centering
   &:before {
@@ -138,20 +242,12 @@
     vertical-align: middle;
   }
 }
-.o-cats__item--active {
-  svg {
-    stroke: url(#gradientActive);
-  }
-
-  &:link, &:visited {
-    color: $grey--000;
-  }
-  &:hover, &:active {
-    color: $grey--000;
-  }
-}
 .o-cats__title {
   margin-top: .5em;
+}
+
+.o-featured {
+  margin-top: em(-26);
 }
 
 .o-item {
@@ -228,10 +324,10 @@
   line-height: 1;
 }
 
-[class^="o-section__head"],
-[class*=" o-section__head"] {
+// [class^="o-section__head"],
+// [class*=" o-section__head"] {
   // margin-top: 0;
-}
+// }
 .o-section__head--center {
   text-align: center;
 }
@@ -316,6 +412,7 @@
 .o-input {
   width: 100%;
   border: none;
+  border-radius: 0;
   padding: 0 1em;
 
   font-size: em(18);
@@ -328,6 +425,7 @@
 
   padding: 0;
   border: none;
+  border-radius: 0;
 
   font-size: em(16);
   line-height: 3.375em;
@@ -346,6 +444,9 @@
   margin-bottom: 1.5em;
 }
 
+.o-capsbutton {
+  font-weight: $font__sans--medium;
+}
 .o-capsbutton__icon {
   display: inline-block;
 

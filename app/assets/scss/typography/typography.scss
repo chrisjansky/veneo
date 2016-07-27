@@ -33,13 +33,11 @@
   font-size: em(20);
 }
 .t-term {
-  font-family: $font__sans--light;
-  font-weight: normal;
+  font-weight: $font__sans--light;
   font-size: em(24);
 }
 .t-figure {
-  font-family: $font__sans--ultralight;
-  font-weight: normal;
+  font-weight: $font__sans--ultralight;
   font-size: em(64);
 }
 
@@ -61,16 +59,17 @@
 }
 
 .t-caps {
-  font-family: $font__sans--medium;
-  font-weight: normal;
+  font-size: 1em;
 
   text-transform: uppercase;
   letter-spacing: $tracking--b;
 }
 
-// .t-link--light {
-//   @include link--light;
-// }
+.t-link--light {
+  @include link--light;
+  
+  border-bottom: $stroke--s solid rgba(white, .25);
+}
 .t-link--white {
   &:link, &:visited {
     color: white;

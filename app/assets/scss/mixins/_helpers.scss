@@ -21,10 +21,10 @@
 
 @mixin link--light {
   &:link, &:visited {
-    color: $grey--700;
+    color: $grey--600;
   }
   &:hover, &:active {
-    color: $grey--500;
+    color: $grey--400;
   }
 }
 @mixin link--neutral {

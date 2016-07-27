@@ -9,11 +9,12 @@
     "site": [
       "bower_components/normalize-css/normalize.css",
       "bower_components/Swiper/dist/css/swiper.css",
-      "app/assets/css/style.css",
       "app/assets/css/MyFontsWebfontsKit.css",
+      "app/assets/css/style.css",
 
       "bower_components/Swiper/dist/js/swiper.jquery.js",
-      "app/assets/js/app.js"
+      "app/assets/js/app.js",
+      "app/assets/js/v-toggle.js"
     ]
   },
   "injectDist": {

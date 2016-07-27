@@ -6,21 +6,41 @@ block template-content
       .o-header__logo
         a.o-logo(href="#"): include ../svg/logo_veneo.svg
         small.o-header__badge.t-smallcaps Lubomír Krčmář od r. 1991
-    nav.o-nav.l-inline
-      .o-nav__cell.l-inline__cell
-        button.o-toggle.r-button
-          span.o-toggle__icon.r-button__icon: include ../svg/icon_menu.svg
-          span.o-toggle__text Menu
-      .o-nav__cell.l-inline__cell--right
-        button.o-search.r-button
-          span.o-search__icon.r-button__icon: include ../svg/icon_search.svg
-          span.o-search__text Search
+
+      ul.o-shortcuts
+        li.o-shortcuts__item
+          a.o-shortcuts__link(href="#") Můj účet
+        li.o-shortcuts__item
+          a.o-shortcuts__link(href="#") 2 ks v košíku
+        li.o-shortcuts__item--half
+          a.o-shortcuts__link.t-caps(href="#") EN
+        li.o-shortcuts__item--half
+          a.o-shortcuts__link.t-caps(href="#") CZK
+
+      .o-hud.l-inline
+        .o-hud__cell.l-inline__cell
+          button.o-toggle(data-toggle="pages--is-active")
+            span.o-toggle__iconset
+              span.o-toggle__icon--passive: include ../svg/icon_menu.svg
+              span.o-toggle__icon--active: include ../svg/icon_close.svg
+            span.o-toggle__text Menu
+          nav.o-pages
+            ul.o-pages__list
+              each instance in ["Naše šperky", "Ruční výroba", "Šperky na zakázku", "Časté otázky", "Kontakty"]
+                li.o-pages__item
+                  a.o-pages__link(href="#")= instance
+        .o-hud__cell.l-inline__cell--right
+          button.o-toggle(data-toggle="search--is-active")
+            span.o-toggle__iconset
+              span.o-toggle__icon--passive: include ../svg/icon_search.svg
+              span.o-toggle__icon--active: include ../svg/icon_close.svg
+            span.o-toggle__text Search
 
   section.m-landing.o-hero
     .o-hero__content
       p.o-hero__text.t-big
         | Originální šperky vyrobeny tradičními zlatnickými postupy a&nbsp;pod dohledem zlatnického mistra 
-        a.t-link--white(href="#") Lubomíra Krčmáře
+        a.t-link--light(href="#") Lubomíra Krčmáře
         | .
 
   section.m-selector.o-section
@@ -28,36 +48,37 @@ block template-content
       h1.o-section__head--center.t-head--one 25 let vyrábíme zlaté a&nbsp;stříbrné šperky
     .o-cats.swiper-container(data-slider)
       .o-cats__wrapper.swiper-wrapper
-        a(href="#").o-cats__item.o-cats__item--active.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.o-cats__item--active.swiper-slide
           .o-cats__icon: include ../svg/cat_ring.svg
           .o-cats__title Prsteny
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_earring.svg
           .o-cats__title Náušnice
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_pendant.svg
           .o-cats__title Přívěsky
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_set.svg
           .o-cats__title Soupravy
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_bracelet.svg
           .o-cats__title Náramky
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_necklace.svg
           .o-cats__title Náhrdelníky
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_chainlet.svg
           .o-cats__title Řetízky
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_wedding.svg
           .o-cats__title Snubní a zásnubní
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_male.svg
           .o-cats__title Pánské šperky
-        a(href="#").o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item.swiper-slide
           .o-cats__icon: include ../svg/cat_box.svg
           .o-cats__title Krabičky
+      span.o-cats__rule
     .o-featured
       .l-wrap
         each instance in [1, 2, 3]
