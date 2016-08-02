@@ -4,7 +4,7 @@ $("[data-toggle]").on("click", function(event) {
   var
     $thisEl = $(this);
 
-  $body
+  $html
     .toggleClass($thisEl.attr("data-toggle"));
 
   $thisEl

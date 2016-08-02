@@ -3,31 +3,51 @@ var
   viewHeight = document.documentElement.clientHeight;
 
 var
-  $body = $("body");
+  $html = $("html"),
+  $body = $("body"),
+  $toggle = $("[data-toggle]"),
+  $pagesToggle = $("[data-pages]"),
+  $searchToggle = $("[data-search]");
 
-// WebFontConfig = {
-//   custom: {
-//     families: ["christel", "GoldenSans-Regular"]
-//   }
-// }
+var
+  toggleActiveClass = "toggle--is-active";
 
-// setTimeout(function() {
-  $("[data-slider]").each(function(index, instance) {
-    var sliderSwiper = new Swiper(instance, {
-      // Shared settings
-      slidesPerView: "auto",
-      centeredSlides: true,
-      watchSlidesProgress: true,
-      keyboardControl: true,
-      grabCursor: true
-    });
-  })
-// }, 500);
+$("[data-header]").headroom({
+  offset: 20,
+  tolerance: {
+    down: 5,
+    up: 50
+  }
+});
+
+var $catSlider = $("[data-slider]").flickity({
+  contain: true,
+  draggable: true,
+  prevNextButtons: false,
+  pageDots: false
+});
+
+$catSlider.on("staticClick.flickity", function(event, pointer, cellElement, cellIndex) {
+  if (typeof cellIndex == "number") {
+    $catSlider.flickity("selectCell", cellIndex)
+  }
+})
 
 $("[data-cat-item]").on("click", function(event) {
   event.preventDefault();
 })
 
-// $("[data-pages]").on("click", function(event) {
-//   $body.toggleClass("pages--is-active");
-// })
+$("[data-close]").on("click", function(event) {
+  $html.removeClass("search--is-active");
+  $toggle.removeClass(toggleActiveClass);
+})
+
+$pagesToggle.on("click", function(event) {
+  $html.removeClass("search--is-active");
+  $searchToggle.removeClass(toggleActiveClass);
+})
+
+$searchToggle.on("click", function(event) {
+  $html.removeClass("pages--is-active");
+  $pagesToggle.removeClass(toggleActiveClass);
+})
