@@ -8,11 +8,13 @@
   "injectDev": {
     "site": [
       "bower_components/normalize-css/normalize.css",
-      "bower_components/Swiper/dist/css/swiper.css",
+      "bower_components/flickity/dist/flickity.css",
       "app/assets/css/MyFontsWebfontsKit.css",
       "app/assets/css/style.css",
 
-      "bower_components/Swiper/dist/js/swiper.jquery.js",
+      "bower_components/flickity/dist/flickity.pkgd.js",
+      "bower_components/headroom.js/dist/headroom.js",
+      "bower_components/headroom.js/dist/jQuery.headroom.js",
       "app/assets/js/app.js",
       "app/assets/js/v-toggle.js"
     ]
