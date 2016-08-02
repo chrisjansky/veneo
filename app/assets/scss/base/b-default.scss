@@ -38,6 +38,12 @@ a {
   &:visited {
     color: $c-visited;
   }
+  &:hover {
+    color: $c-hover;
+  }
+  &:active {
+    color: $c-hover;
+  }
 }
 
 nav a {
