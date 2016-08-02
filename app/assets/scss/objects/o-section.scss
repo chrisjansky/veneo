@@ -1,0 +1,21 @@
+// [class^="o-section__head"],
+// [class*=" o-section__head"] {
+  // margin-top: 0;
+// }
+
+.o-section__head--center {
+  text-align: center;
+}
+
+.o-section--light {
+  background-color: $grey--900;
+}
+
+// .o-section--medium {
+//   background-color: $grey--800;
+// }
+
+.o-section--dark {
+  background-color: $grey--100;
+  color: white;
+}

@@ -1,0 +1,75 @@
+.o-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 2000;
+
+  transition: transform $duration--m;
+
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+  }
+
+  // Make header persistent if search bar is active
+  .search--is-active & {
+    transform: translateY(0);
+  }
+}
+
+.o-header__content {
+  color: white;
+  border-bottom: $stroke--b solid rgba(white, .125);
+
+  padding: 1.5em 1.625em .75em;
+
+  @include media($tablet) {
+    @include padding(null 2.25em);
+  }
+  @include media($laptop-up) {
+    padding: 2em 3em .75em;
+  }
+  @include media($large) {
+    @include padding(null 4em);
+  }
+
+  transition: background-color $duration--b $duration--m;
+
+  .search--is-active & {
+    background-color: $grey--000;
+
+    transition-duration: 0s;
+    transition-delay: 0s;
+  }
+
+  .headroom--not-top & {
+    background-color: $grey--000;
+  }
+}
+
+.o-header__logo {
+  display: inline-block;
+  vertical-align: middle;
+
+  @include media($mobile) {
+    position: absolute;
+    left: 50%;
+    top: 1.75em;
+
+    transform: translateX(-50%);
+  }
+}
+
+.o-header__badge {
+  color: $grey--500;
+
+  display: inline-block;
+  vertical-align: middle;
+
+  margin-left: 1.5em;
+
+  @include media($mobile) {
+    display: none;
+  }
+}

@@ -1,44 +1,67 @@
 .t-head--one {
+  font-size: em(24);
   font-family: $font__serif;
   font-weight: $font__serif--regular;
-  font-size: em(24);
 
   @include margin(1em null);
+
+  @include media($tablet-up) {
+    font-size: em(32);
+    font-weight: $font__serif--medium;
+  }
 }
 .t-head--two {
+  font-size: em(20);
   font-family: $font__serif;
   font-weight: $font__serif--medium;
-  font-size: em(20);
 }
 .t-head--three {
   font-weight: normal;
   font-size: em(18);
 
-  @include margin(.5em null);
+  @include margin(1em null);
 }
 .t-head--four {
-  font-weight: normal;
   font-size: em(16);
+  font-weight: normal;
 
   @include margin(.5em null);
 }
 
 .t-big {
   font-size: em(20);
+
+  @include media($tablet-up) {
+    font-size: em(24);
+    font-weight: $font__sans--light;
+  }
+
+  @include media($laptop-up) {
+    font-size: em(32);
+  }
 }
 
 .t-price {
+  font-size: em(20);
   font-family: $font__serif;
   font-weight: $font__serif--light;
-  font-size: em(20);
 }
 .t-term {
-  font-weight: $font__sans--light;
   font-size: em(24);
+  font-weight: $font__sans--light;
+
+  @include media($phablet-up) {
+    font-size: em(36);
+    font-weight: $font__sans--thin;
+  }
+
+  @include media($laptop-up) {
+    font-size: em(48);
+  }
 }
 .t-figure {
   font-weight: $font__sans--ultralight;
-  font-size: em(64);
+  font-size: 3.75em;
 }
 
 .t-small {
@@ -58,6 +81,13 @@
   color: white;
 }
 
+.t-smallcaps {
+  font-size: em(14);
+  font-weight: $font__sans--medium;
+
+  text-transform: uppercase;
+  letter-spacing: $tracking--l;
+}
 .t-caps {
   font-size: 1em;
 

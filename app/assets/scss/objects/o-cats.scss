@@ -1,0 +1,152 @@
+.o-cats {
+  position: relative;
+
+  margin-bottom: -1em;
+
+  // Side gradients
+  &:before, &:after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 1em;
+    z-index: 500;
+
+    width: 2em;
+
+    pointer-events: none;
+  }
+
+  &:before {
+    left: 0;
+    background-image: linear-gradient(to right, white, rgba(white, 0));
+  }
+
+  &:after {
+    right: 0;
+    background-image: linear-gradient(to left, white, rgba(white, 0));
+  }
+
+  @include media($tablet-up) {
+    &:before, &:after {
+      width: 3em;
+    }
+  }
+}
+
+.o-cats__wrapper {
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  // Divider line
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: 7.5em;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+
+    border-bottom: $stroke--b solid $grey--800;
+  }
+}
+
+.o-cats__item {
+  display: inline-block;
+  width: auto;
+
+  text-align: center;
+
+  @include padding(null 1em);
+
+  @include link--light;
+  transition: color $duration--b;
+
+  &:first-child {
+    @include padding(null 1.5em);
+    margin-right: -.5em;
+  }
+  &:last-child {
+    @include padding(null 1.5em);
+    margin-left: -.5em;
+  }
+
+  @include media($tablet-up) {
+    @include padding(null 1.5em);
+    
+    &:first-child {
+      @include padding(null 3em);
+      margin-right: -1.5em;
+    }
+    &:last-child {
+      @include padding(null 3em);
+      margin-right: -1.5em;
+    }
+  }
+
+  // Chevron
+  &:before, &:after {
+    content: "";
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+    transition: border-width $duration--b;
+
+    border: 0 solid transparent;
+    border-bottom-width: 0;
+  }
+
+  &:before {
+    top: 7.5em;
+
+    border-top-color: $grey--800;
+  }
+
+  &:after {
+    top: 7.3125em;
+
+    border-top-color: white;
+  }
+
+  &.is-selected {
+    color: $grey--000;
+
+    &:before, &:after {
+      border-width: 1em;
+    }
+
+    svg {
+      stroke: url(#gradientActive);
+    }
+  }
+}
+
+.o-cats__icon {
+  height: em(66);
+
+  line-height: 1;
+
+  svg {
+    vertical-align: middle;
+
+    stroke: url(#gradientPassive);
+  }
+
+  // Pseudo-centering
+  &:before {
+    @include pseudo-center;
+  }
+}
+
+.o-cats__title {
+  margin-top: .5em;
+}

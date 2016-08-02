@@ -1,0 +1,98 @@
+.o-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding-top: em(80);
+
+  background-color: $grey--000;
+  color: white;
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: em(80);
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    min-height: 34em;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @include media($small) {
+    text-align: center;
+
+    min-height: 100vmax;
+  }
+
+  @include media($tablet-up) {
+    &:after {
+      top: 0;
+      bottom: -35%;
+      left: 35%;
+      right: -20%;
+    }
+  }
+
+  @include media($laptop-up) {
+    padding-top: em(126);
+  }
+}
+
+.o-hero__wrap {
+  @include media($small) {
+    padding-top: 1.5em;
+  }
+}
+
+.o-hero__content {
+  position: relative;
+  z-index: 500;
+
+  max-width: 30em;
+
+  @include collapse-children;
+
+  @include media($small) {
+    color: $grey--600;
+
+    @include margin(null auto);
+  }
+
+  @include media($laptop-up) {
+    max-width: 40em;
+  }
+}
+
+.o-hero__title {
+  @include media($small) {
+    display: none;
+  }
+}
+
+.o-hero__text {
+  @include media($small) {
+    @include margin(0 null);
+  }
+}
+
+.o-hero__button {
+  @include media($small) {
+    display: none;
+  }
+}
+
+.o-hero__link {
+  &:link, &:visited {
+    color: inherit;
+  }
+  &:hover, &:active {
+    color: $grey--800;
+  }  
+
+  border-bottom: $stroke--s solid rgba(white, .25);
+}

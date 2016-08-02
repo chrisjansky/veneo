@@ -1,0 +1,21 @@
+.o-fullbutton {
+  display: block;
+
+  text-align: center;
+
+  font-size: em(20);
+  line-height: em(60);
+
+  background-color: $grey--900;
+}
+
+.o-fullbutton__icon {
+  display: inline-block;
+
+  stroke: currentColor;
+
+  vertical-align: middle;
+  margin-left: .75em;
+
+  line-height: 1;
+}

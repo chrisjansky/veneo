@@ -1,0 +1,67 @@
+.o-toggle {
+  border: none;
+  padding: .5em;
+
+  color: $color2--200;
+  background-color: transparent;
+
+  line-height: 1;
+  white-space: nowrap;
+
+  stroke: currentColor;
+
+  &:hover {
+    color: $color2--400;
+
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.o-toggle__textset {
+  font-size: em(18);
+  font-weight: $font__sans--medium;
+
+  vertical-align: middle;
+
+  @include margin(null .75em);
+
+  @include media($small) {
+    display: none;
+  }
+}
+
+.o-toggle__iconset {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.o-toggle__text--active {
+  display: none;
+
+  .toggle--is-active & {
+    display: inline-block;
+  }
+}
+
+.o-toggle__text--passive {
+  .toggle--is-active & {
+    display: none;
+  }
+}
+
+.o-toggle__icon--active {
+  display: none;
+
+  .toggle--is-active & {
+    display: inline-block;
+  }
+}
+.o-toggle__icon--passive {
+  .toggle--is-active & {
+    display: none;
+  }
+}

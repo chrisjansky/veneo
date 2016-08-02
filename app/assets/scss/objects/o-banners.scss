@@ -1,0 +1,39 @@
+.o-banners {
+  @include clearfix;
+}
+
+.o-banners__link {
+  @include link--neutral;
+}
+
+.o-banners__image {
+  width: 100%;
+}
+
+.o-banners__item {
+  margin-bottom: 1.25em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media($phablet) {
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+
+    @include span-columns(3 of 6);
+    @include omega(2n);
+  }
+  @include media($tablet-up) {
+    margin-bottom: 0;
+
+    @include span-columns(3 of 12);
+  }
+}
+
+.o-banners__title {
+  margin-bottom: 0;
+
+  text-align: center;
+}

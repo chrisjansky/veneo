@@ -1,0 +1,93 @@
+.o-spotlight {
+  position: absolute;
+  top: em(80);
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+
+  background-color: $color2--500;
+
+  transition-property: transform, visibility;
+  transition-duration: $duration--b;
+
+  transform: translateY(-100%);
+
+  visibility: hidden;
+
+  .search--is-active & {
+    visibility: visible;
+
+    transform: translateY(0);
+
+    transition: transform $duration--b, visibility 0s;
+  }
+
+  @include media($laptop-up) {
+    top: em(126);
+  }
+}
+
+.o-spotlight__input {
+  width: 100%;
+
+  background-color: transparent;
+  border: none;
+  @include padding(0 1.625rem);
+
+  font-size: em(24);
+  font-weight: $font__sans--light;
+  line-height: 3;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include media($tablet) {
+    @include padding(0 2.25rem);
+  }
+
+  @include media($laptop-up) {
+    @include padding(0 1.5em);
+
+    font-size: em(32);
+  }
+
+  @include media($large) {
+    @include padding(null 2em);
+  }
+}
+
+.o-spotlight__submit {
+  background-color: transparent;
+  border: none;
+  padding: 0 1.625em;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  stroke: white;
+
+  @include media($tablet) {
+    @include padding(null 2.25em);
+  }
+
+  @include media($laptop) {
+    @include padding(null 3em);
+  }
+
+  @include media($large) {
+    @include padding(null 4em);
+  }
+
+  &:hover {
+    cursor: pointer;
+    stroke: rgba(white, .75);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

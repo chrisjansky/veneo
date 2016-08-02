@@ -1,0 +1,53 @@
+.m-bespoke {
+  @include clearfix;
+  position: relative;
+
+  background-color: $grey--900;
+
+  &:before {
+    content: "";
+    display: block;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: em(200);
+
+    background: url("../images/photo_2.jpg") no-repeat right top / cover;
+  }
+
+  @include media($tablet-up) {
+    background-color: $grey--800;
+
+    &:before {
+      position: absolute;
+      height: 100%;
+
+      right: em(360);
+    }
+  }
+}
+
+.m-bespoke__wrap {
+  @include media($tablet-up) {
+    float: right;
+  }
+}
+
+.m-bespoke__content {
+  position: relative;
+  z-index: 100;
+
+  @include media($tablet-up) {
+    max-width: em(400);
+  }
+
+  @include collapse-children;
+}
+
+.m-bespoke__button {
+  display: block;
+
+  margin-top: 3em;
+}

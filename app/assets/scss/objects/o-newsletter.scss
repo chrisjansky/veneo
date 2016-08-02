@@ -1,0 +1,139 @@
+.o-newsletter {
+  position: relative;
+  overflow: hidden;
+
+  color: white;
+  background-color: $grey--600;
+
+  @include margin(null em(10));
+
+  @include media($phablet) {
+    @include margin(null 1em);
+  }
+  @include media($medium) {
+    @include margin(null 1.5em);
+  }
+  @include media($large) {
+    @include margin(null 4em);
+  }
+}
+
+.o-newsletter__wrap {
+  &:after {
+    content: "";
+    display: block;
+
+    background: url("../images/photo_3.jpg") no-repeat center bottom / contain;
+
+    @include media($small) {
+      padding-bottom: 65%;
+
+      margin-top: -3.5em;
+    }
+
+    @include media($tablet-up) {
+      background-position: left bottom;
+      background-size: cover;
+
+      position: absolute;
+      top: -15%;
+      bottom: 0;
+      left: 32.5%;
+      right: 0;
+    }
+  }
+}
+
+.o-newsletter__content {
+  position: relative;
+  z-index: 100;
+
+  @include collapse-children;
+
+  box-sizing: content-box;
+  padding: 2em;
+
+  @include media($tablet-up) {
+    max-width: 26em;
+  }
+  @include media($large) {
+    padding: 3em;
+  }
+}
+
+.o-newsletter__form {
+  position: relative;
+  z-index: 100;
+
+  @include padding(null 1em 1em);
+
+  @include media($tablet-up) {
+    width: 50%;
+    min-width: em(480);
+    max-width: em(600);
+
+    padding-bottom: 2em;
+    padding-left: 2em;
+
+    margin-top: 4em;
+  }
+  @include media($laptop-up) {
+    margin-top: 8em;
+  }
+
+  @include media($large) {
+    padding-bottom: 3em;
+    padding-left: 3em;
+  }
+}
+
+.o-newsletter__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.o-newsletter__input {
+  border: none;
+  border-radius: 0;
+  padding: 0 1em;
+
+  font-size: em(18);
+  line-height: 3em;
+
+  width: 100%;
+
+  @include media($small) {
+    text-align: center;
+  }
+
+  @include media($tablet-up) {
+    float: left;
+    width: 50%;
+  }
+}
+
+.o-newsletter__submit {
+  border: none;
+  border-radius: 0;
+  padding: 0 1em;
+
+  font-weight: $font__sans--medium;
+  line-height: 3.375em;
+  text-transform: uppercase;
+  letter-spacing: $tracking--b;
+
+  background-color: $grey--000;
+  color: white;
+
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $grey--100;
+  }
+
+  @include media($tablet-up) {
+    width: 50%;
+  }
+}

@@ -1,0 +1,34 @@
+.o-bar {
+  position: relative;
+
+  width: 100%;
+  display: table;
+
+  margin-bottom: 1.5em;
+}
+
+.o-bar__title {
+  display: table-cell;
+
+  @include collapse-children;
+
+  @include media($tablet-up) {
+    display: block;
+
+    text-align: center;
+  }
+}
+
+.o-bar__side {
+  display: table-cell;
+
+  text-align: right;
+
+  @include media($tablet-up) {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    line-height: 3em;
+  }
+}

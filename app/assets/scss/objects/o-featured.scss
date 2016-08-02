@@ -1,0 +1,15 @@
+.o-featured__list {
+  margin-bottom: -1.5em;
+}
+
+.o-featured__item {
+  @include media($phablet) {
+    @include span-columns(3 of 6);
+    @include omega(2n);
+  }
+
+  @include media($tablet-up) {
+    @include span-columns(3 of 9);
+    @include omega(3n);
+  }
+}

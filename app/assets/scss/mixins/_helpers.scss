@@ -19,6 +19,14 @@
   }
 }
 
+@mixin link--lighter {
+  &:link, &:visited {
+    color: $grey--700;
+  }
+  &:hover, &:active {
+    color: white;
+  }
+}
 @mixin link--light {
   &:link, &:visited {
     color: $grey--600;
@@ -34,4 +42,15 @@
   &:hover, &:active {
     color: $grey--300;
   }
+}
+
+@mixin pseudo-center {
+  content: "";
+
+  display: inline-block;
+
+  width: 0;
+  height: 100%;
+
+  vertical-align: middle;
 }

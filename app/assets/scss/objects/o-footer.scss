@@ -1,0 +1,61 @@
+.o-footer {
+  background-color: $grey--000;
+  color: white;
+}
+
+.o-footer__logo {
+  display: block;
+
+  @include media($tablet-up) {
+    position: absolute;
+  }
+}
+
+.o-footer__group {
+  @include clearfix;
+  @include collapse-children;
+
+  margin-bottom: 1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media($small) {
+    margin-top: 1.5em;
+  }
+
+  @include media($tablet) {
+    @include shift(2 of 9);
+  }
+
+  @include media($laptop-up) {
+    @include shift(4 of 12);
+  }
+}
+
+.o-footer__title {
+  color: $grey--500;
+}
+
+.o-footer__list {
+  list-style-type: none;
+  padding-left: 0;
+  @include margin(.5em null);
+
+  font-size: em(18);
+
+  @include media($phablet-up) {
+    @include margin(0 null);
+
+    @include span-columns(4.5 of 9);
+  }
+
+  @include media($tablet) {
+    @include span-columns(3.5 of 7);
+  }
+
+  @include media($laptop-up) {
+    @include span-columns(4 of 8);
+  }
+}
