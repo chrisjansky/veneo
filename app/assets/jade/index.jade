@@ -1,87 +1,59 @@
 extends templates/_site
 
 block template-content
-  header.o-header
-    .o-header__content
-      .o-header__logo
-        a.o-logo(href="#"): include ../svg/logo_veneo.svg
-        small.o-header__badge.t-smallcaps Lubomír Krčmář od r. 1991
-
-      ul.o-shortcuts
-        li.o-shortcuts__item
-          a.o-shortcuts__link(href="#") Můj účet
-        li.o-shortcuts__item
-          a.o-shortcuts__link(href="#") 2 ks v košíku
-        li.o-shortcuts__item--half
-          a.o-shortcuts__link.t-caps(href="#") EN
-        li.o-shortcuts__item--half
-          a.o-shortcuts__link.t-caps(href="#") CZK
-
-      .o-hud.l-inline
-        .o-hud__cell.l-inline__cell
-          button.o-toggle(data-toggle="pages--is-active")
-            span.o-toggle__iconset
-              span.o-toggle__icon--passive: include ../svg/icon_menu.svg
-              span.o-toggle__icon--active: include ../svg/icon_close.svg
-            span.o-toggle__text Menu
-          nav.o-pages
-            ul.o-pages__list
-              each instance in ["Naše šperky", "Ruční výroba", "Šperky na zakázku", "Časté otázky", "Kontakty"]
-                li.o-pages__item
-                  a.o-pages__link(href="#")= instance
-        .o-hud__cell.l-inline__cell--right
-          button.o-toggle(data-toggle="search--is-active")
-            span.o-toggle__iconset
-              span.o-toggle__icon--passive: include ../svg/icon_search.svg
-              span.o-toggle__icon--active: include ../svg/icon_close.svg
-            span.o-toggle__text Search
+  include partials/_header
 
   section.m-landing.o-hero
     .o-hero__content
-      p.o-hero__text.t-big
-        | Originální šperky vyrobeny tradičními zlatnickými postupy a&nbsp;pod dohledem zlatnického mistra 
-        a.t-link--light(href="#") Lubomíra Krčmáře
-        | .
+      .o-hero__wrap.l-wrap
+        h1.o-hero__title.t-head--one Jedinečnost, kvalita, preciznost.
+        p.o-hero__text.t-big
+          | Originální šperky vyrobeny tradičními zlatnickými postupy a&nbsp;pod dohledem zlatnického mistra 
+          a.o-hero__link(href="#") Lubomíra Krčmáře
+          | .
+        a(href="#").o-hero__button.o-capsbutton
+          span.t-caps Filozofie značky
+          span.o-capsbutton__icon: include ../svg/chevron_right.svg
 
   section.m-selector.o-section
     .m-selector__wrap.l-wrap
       h1.o-section__head--center.t-head--one 25 let vyrábíme zlaté a&nbsp;stříbrné šperky
-    .o-cats.swiper-container(data-slider)
-      .o-cats__wrapper.swiper-wrapper
-        a(href="#", data-cat-item).o-cats__item.o-cats__item--active.swiper-slide
+    .o-cats
+      .o-cats__wrapper(data-slider)
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_ring.svg
           .o-cats__title Prsteny
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_earring.svg
           .o-cats__title Náušnice
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_pendant.svg
           .o-cats__title Přívěsky
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_set.svg
           .o-cats__title Soupravy
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_bracelet.svg
           .o-cats__title Náramky
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_necklace.svg
           .o-cats__title Náhrdelníky
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_chainlet.svg
           .o-cats__title Řetízky
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_wedding.svg
           .o-cats__title Snubní a zásnubní
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_male.svg
           .o-cats__title Pánské šperky
-        a(href="#", data-cat-item).o-cats__item.swiper-slide
+        a(href="#", data-cat-item).o-cats__item
           .o-cats__icon: include ../svg/cat_box.svg
           .o-cats__title Krabičky
-      span.o-cats__rule
+
     .o-featured
-      .l-wrap
-        each instance in [1, 2, 3]
+      .o-featured__list.l-wrap
+        each instance in [1, 2, 3, 4, 5, 6]
           a(href="#").o-featured__item.o-item
             span.o-item__thumbnail
               img.o-item__image(src="assets/images/img_product_#{instance}.jpg", alt="Product")
@@ -92,20 +64,19 @@ block template-content
             small.o-item__count.t-small #{instance * 2} variant
       a(href="#").o-featured__button.o-fullbutton
         span.o-fullbutton__text Přejít do kategorie Prsteny
-        span.o-fullbutton__icon: include ../svg/arrow_right.svg
+        span.o-fullbutton__icon: include ../svg/chevron_right.svg
 
-  section.m-bespoke.o-section--light
-    .m-bespoke__banner
-      img.m-bespoke__image(src="assets/images/photo_2.jpg", alt="Photo")
-    .l-wrap
-      h1.o-section__head.t-head--one Katalogové i&nbsp;originální šperky na míru
-      p.t-paragraph--light Jiná internetová zlatnictví šperky prodávají, my je vyrábíme. Šperky z&nbsp;katalogu si můžete objednat tak, jak je vidíte, na přání je upravíme na míru. Měnit lze cokoli &mdash; velikost, osazení kameny, zapínání, vždy můžete volit mezi zlatem a&nbsp;stříbrem. Zhotovíme i&nbsp;šperky podle vašeho návrhu a&nbsp;z&nbsp;vašeho zlata.
-      a(href="#").o-capsbutton
-        span.t-caps Šperky na zakázku
-        span.o-capsbutton__icon: include ../svg/arrow_right.svg
+  section.m-bespoke
+    .m-bespoke__wrap.l-wrap
+      .m-bespoke__content
+        h1.o-section__head.t-head--one Katalogové i&nbsp;originální šperky na míru
+        p.t-paragraph--light Jiná internetová zlatnictví šperky prodávají, my je vyrábíme. Šperky z&nbsp;katalogu si můžete objednat tak, jak je vidíte, na přání je upravíme na míru. Měnit lze cokoli &mdash; velikost, osazení kameny, zapínání, vždy můžete volit mezi zlatem a&nbsp;stříbrem. Zhotovíme i&nbsp;šperky podle vašeho návrhu a&nbsp;z&nbsp;vašeho zlata.
+        a(href="#").m-bespoke__button.o-capsbutton
+          span.t-caps Šperky na zakázku
+          span.o-capsbutton__icon: include ../svg/chevron_right.svg
 
   section.m-reasons.l-wrap
-    h1.o-section__head.t-head--one 7&nbsp;důvodu pro veneo
+    h1.o-section__head--center.t-head--one 7&nbsp;důvodů pro veneo
 
     ul.m-reasons__list
       li.m-reasons__item.t-term Originalita a&nbsp;jedinečnost
@@ -116,18 +87,18 @@ block template-content
       li.m-reasons__item.t-term Poštovné zdarma
       li.m-reasons__item.t-term Dárková krabička v&nbsp;ceně
 
-    a(href="#").o-capsbutton
+    a(href="#").m-reasons__button.o-capsbutton
       span.t-caps Filozofie značky
-      span.o-capsbutton__icon: include ../svg/arrow_right.svg
+      span.o-capsbutton__icon: include ../svg/chevron_right.svg
 
   section.o-section--light.l-wrap
-    .o-bar.l-inline
-      .l-inline__cell
+    .o-bar
+      .o-bar__title
         h1.o-section__head.t-head--one Časté dotazy
-      .l-inline__cell--right
+      .o-bar__side
         a(href="#").o-capsbutton
           span.t-caps Více
-          span.o-capsbutton__icon: include ../svg/arrow_right.svg
+          span.o-capsbutton__icon: include ../svg/chevron_right.svg
 
     .o-banners
       each instance, index in ["Objednáváte prsten? Změřte se.", "Jak vyrábíme šperky na zakázku?", "Co vše můžete u šperků měnit?", "Člověkem stvořený nebo přírodní drahokam?"]
@@ -136,69 +107,73 @@ block template-content
             img.o-banners__image(src="assets/images/banner_#{index + 1}.jpg", alt="FAQ Photo")
             h3.o-banners__title.t-head--three= instance
 
-  section.o-section--dark.l-wrap
+  section.m-stats.o-section--dark.l-wrap
     h1.o-section__head--center.t-head--one Již 25&nbsp;let děláme zákazníkům radost
 
-    ul.m-stats
+    ul.m-stats__list
       li.m-stats__item
+        span.m-stats__logo: include ../svg/logo_heureka.svg
         .m-stats__content
-          span.m-stats__logo: include ../svg/logo_heureka.svg
           strong.m-stats__figure.t-figure 95&thinsp;%
         p.m-stats__text.t-paragraph--light Ověřeno zákazníky portálu Heuréka
       li.m-stats__item
+        span.m-stats__logo: include ../svg/logo_etsy.svg
         .m-stats__content
-          span.m-stats__logo: include ../svg/logo_etsy.svg
           strong.m-stats__figure.t-figure 5/5
           span.m-stats__shape--right: include ../svg/shape_star.svg
         p.m-stats__text.t-paragraph--light Nejvyšší hodnocení v obchodě Etsy
       li.m-stats__item
+        span.m-stats__logo: include ../svg/logo_fler.svg
         .m-stats__content
-          span.m-stats__logo: include ../svg/logo_fler.svg
           strong.m-stats__figure.t-figure 99&thinsp;%
         p.m-stats__text.t-paragraph--light Hodnoceno uživateli portálu fler
       li.m-stats__item
+        span.m-stats__logo: include ../svg/logo_facebook.svg
         .m-stats__content
-          span.m-stats__logo: include ../svg/logo_facebook.svg
           span.m-stats__shape--left: include ../svg/shape_like.svg
           strong.m-stats__figure.t-figure 1&thinsp;641
         p.m-stats__text.t-paragraph--light Přidejte se k&nbsp;fanouškům na Facebooku
       li.m-stats__item
+        span.m-stats__logo: include ../svg/logo_urad.svg
         .m-stats__content
-          span.m-stats__logo: include ../svg/logo_urad.svg
           span.m-stats__shape: include ../svg/shape_certificate.svg
         p.m-stats__text.t-paragraph--light Pod kontrolou Puncovního úřadu ČR
 
   footer.o-footer
     .l-wrap
-      a.o-footer__logo.o-logo(href="#"): include ../svg/logo_veneo.svg
-      h4.o-footer__title.t-head--three Zlatnictví provozuje
-      ul.o-list
-        li.o-list__item Lubomír Krčmář – zlatník a&nbsp;hodinář
-        li.o-list__item Dílna a prodejna Plumlovská 49, Prostějov
-        li.o-list__item IČ 12307521&emsp;DIČ CZ6405090142
-      ul.o-list
-        li.o-list__item +420 582 337 520
-        li.o-list__item +420 776 336 196
-        li.o-list__item: a.t-link--white(href="#") zlatnictvi@veneo.cz
-      h4.o-footer__title.t-head--three Šperky sami vyrábíme
-      ul.o-list
-        li.o-list__item 14karátové zlato, Au ryzost 585/000
-        li.o-list__item Stříbro slit. “Sagin”, Ag ryzost 925/000
-        li.o-list__item Šperky kontroluje Puncovní úřad ČR
-      ul.o-list
-        li.o-list__item Materiál, typ a barva kamenů na přání
-        li.o-list__item 2 roky záruka, úprava velikosti zdarma
-        li.o-list__item: a.t-link--white(href="#") Více v Obchodních podmínkách
+      a.o-footer__logo.o-logo(href="#"): include ../svg/logo_veneo_new.svg
+      .o-footer__group
+        h4.o-footer__title.t-head--three Zlatnictví provozuje
+        ul.o-footer__list
+          li.o-footer__item Lubomír Krčmář – zlatník a&nbsp;hodinář
+          li.o-footer__item Dílna a prodejna Plumlovská 49, Prostějov
+          li.o-footer__item IČ 12307521&emsp;DIČ CZ6405090142
+        ul.o-footer__list
+          li.o-footer__item +420 582 337 520
+          li.o-footer__item +420 776 336 196
+          li.o-footer__item: a.t-link--white(href="#") zlatnictvi@veneo.cz
+      .o-footer__group
+        h4.o-footer__title.t-head--three Šperky sami vyrábíme
+        ul.o-footer__list
+          li.o-footer__item 14karátové zlato, Au ryzost 585/000
+          li.o-footer__item Stříbro slit. “Sagin”, Ag ryzost 925/000
+          li.o-footer__item Šperky kontroluje Puncovní úřad ČR
+        ul.o-footer__list
+          li.o-footer__item Materiál, typ a barva kamenů na přání
+          li.o-footer__item 2 roky záruka, úprava velikosti zdarma
+          li.o-footer__item: a.t-link--white(href="#") Více v Obchodních podmínkách
 
     .o-newsletter
-      .o-newsletter__content
-        h2.t-head--one Novinky, akce  a&nbsp;zajímavosti ze světa šperků
-        p.t-paragraph--white Odebírejte náš novinkový zpravodaj a&nbsp;buďte v obraze. Zasíláme maximálně jednou za 14 dnů.
+      .o-newsletter__wrap
+        .o-newsletter__content
+          h2.t-head--one Novinky, akce  a&nbsp;zajímavosti ze světa šperků
+          p.t-paragraph--white Odebírejte náš novinkový zpravodaj a&nbsp;buďte v obraze. Zasíláme maximálně jednou za 14 dnů.
       form.o-newsletter__form
         fieldset.o-newsletter__fieldset
-          input.o-newsletter__input.o-input(type="text", placeholder="Váš e-mail")
-          input.o-newsletter__submit.o-submit(type="submit", value="Odebírat newsletter")
+          input.o-newsletter__input(type="text", placeholder="Váš e-mail")
+          input.o-newsletter__submit(type="submit", value="Odebírat newsletter")
 
     .o-disclaimer.l-wrap
-      h5.t-head--four ©&thinsp;2016 Zlaté a&nbsp;stříbrné šperky Veneo®
-      small.t-head--four Web zajistili designéři Jakub Krčmář a&nbsp;Christian Jánský, systém Ivorius webdesign.
+      .o-disclaimer__content
+        h5.t-head--four ©&thinsp;2016 Zlaté a&nbsp;stříbrné šperky Veneo®
+        small.t-head--four Web zajistili designéři Jakub Krčmář a&nbsp;Christian Jánský, systém Ivorius webdesign.
