@@ -17,21 +17,31 @@
     pointer-events: none;
   }
 
-  &:before {
-    left: 0;
-    background-image: linear-gradient(to right, white, rgba(white, 0));
-  }
-
-  &:after {
-    right: 0;
-    background-image: linear-gradient(to left, white, rgba(white, 0));
-  }
-
   @include media($tablet-up) {
     &:before, &:after {
       width: 3em;
     }
   }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+.o-cats--light:before {
+  background-image: linear-gradient(to right, white, rgba(white, 0));
+}
+.o-cats--light:after {
+  background-image: linear-gradient(to left, white, rgba(white, 0));
+}
+.o-cats--dark:before {
+  background-image: linear-gradient(to right, $grey--100, rgba($grey--100, 0));
+}
+.o-cats--dark:after {
+  background-image: linear-gradient(to left, $grey--100, rgba($grey--100, 0));
 }
 
 .o-cats__wrapper {
@@ -40,7 +50,7 @@
   white-space: nowrap;
 
   // Divider line
-  &:after {
+  .o-cats--light &:after {
     content: "";
 
     position: absolute;
@@ -83,7 +93,18 @@
     }
     &:last-child {
       @include padding(null 3em);
-      margin-right: -1.5em;
+      margin-left: -1.5em;
+    }
+  }
+
+  @include media($large) {
+    &:first-child {
+      @include padding(null 4em);
+      margin-right: -2.5em;
+    }
+    &:last-child {
+      @include padding(null 4em);
+      margin-left: -2.5em;
     }
   }
 
@@ -107,25 +128,38 @@
 
   &:before {
     top: 7.5em;
-
+  }
+  .o-cats--light &:before {
     border-top-color: $grey--800;
   }
+  .o-cats--dark &:before {
+    border-top-color: $grey--100;
+  }
 
-  &:after {
+  .o-cats--light &:after {
     top: 7.3125em;
 
     border-top-color: white;
   }
 
   &.is-selected {
-    color: $grey--000;
-
     &:before, &:after {
       border-width: 1em;
     }
+  }
+
+  .o-cats--light &.is-selected {
+    color: $grey--000;
 
     svg {
-      stroke: url(#gradientActive);
+      stroke: url(#gradient-light-on);
+    }
+  }
+  .o-cats--dark &.is-selected {
+    color: white;
+
+    svg {
+      stroke: url(#gradient-dark-on);
     }
   }
 }
@@ -137,8 +171,13 @@
 
   svg {
     vertical-align: middle;
+  }
 
-    stroke: url(#gradientPassive);
+  .o-cats--light & svg {
+    stroke: url(#gradient-light-off);
+  }
+  .o-cats--dark & svg {
+    stroke: url(#gradient-dark-off);
   }
 
   // Pseudo-centering
@@ -149,4 +188,9 @@
 
 .o-cats__title {
   margin-top: .5em;
+}
+
+// Variants
+.o-cats--dark {
+  padding-top: 1.5em;
 }
