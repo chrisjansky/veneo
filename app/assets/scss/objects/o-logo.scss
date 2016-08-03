@@ -1,0 +1,14 @@
+.o-logo {
+  &:link, &:visited {
+    color: white;
+  }
+
+  svg {
+    display: block;
+
+    fill: white;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

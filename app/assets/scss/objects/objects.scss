@@ -1,51 +1,7 @@
-.o-logo {
-  &:link, &:visited {
-    color: white;
-  }
-
-  svg {
-    display: block;
-
-    fill: white;
-
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .o-hud {
   @include media($laptop-up) {
     margin-top: .75em;
   }
-}
-
-.o-disclaimer {
-  color: $grey--300;
-}
-.o-disclaimer__content {
-  @include collapse-children;
-
-  @include media($tablet) {
-    @include shift(2 of 9);
-  }
-
-  @include media($laptop-up) {
-    @include shift(4 of 12);
-  }
-}
-
-.o-capsbutton {
-  font-weight: $font__sans--medium;
-}
-.o-capsbutton__icon {
-  display: inline-block;
-
-  stroke: currentColor;
-
-  vertical-align: middle;
-  margin-left: .75em;
-
-  line-height: 1;
 }
 
 .o-dim {
@@ -74,4 +30,11 @@
   .search--is-active & {
     display: block;
   }
+}
+
+.o-top {
+  padding-top: em(126);
+
+  color: white;
+  background-color: $grey--100;
 }

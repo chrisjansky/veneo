@@ -1,0 +1,13 @@
+.o-capsbutton {
+  font-weight: $font__sans--medium;
+}
+.o-capsbutton__icon {
+  display: inline-block;
+
+  stroke: currentColor;
+
+  vertical-align: middle;
+  margin-left: .75em;
+
+  line-height: 1;
+}

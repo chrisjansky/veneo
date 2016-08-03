@@ -1,0 +1,9 @@
+.o-demoted__list {
+  padding-top: 0;
+
+  margin-bottom: -1.5em;
+}
+.o-demoted__item {
+  @include span-columns(3 of 12);
+  @include omega(4n);
+}

@@ -1,0 +1,14 @@
+.o-disclaimer {
+  color: $grey--300;
+}
+.o-disclaimer__content {
+  @include collapse-children;
+
+  @include media($tablet) {
+    @include shift(2 of 9);
+  }
+
+  @include media($laptop-up) {
+    @include shift(4 of 12);
+  }
+}

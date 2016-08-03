@@ -1,0 +1,28 @@
+.o-blurb__content {
+  @include margin(null auto);
+  max-width: 60em;
+
+  box-sizing: content-box;
+}
+.o-blurb__title {
+  text-align: center;
+}
+.o-blurb__text {
+  columns: 17em 2;
+  column-gap: 2em;
+
+  strong {
+    font-weight: 600;
+  }
+
+  a {
+    border-bottom: $stroke--b solid rgba($grey--000, .125);
+  }
+  a:link, a:visited {
+    color: inherit;
+  }
+  a:hover {
+    color: $c-hover;
+    border-bottom-color: rgba($c-hover, .25);
+  }
+}
