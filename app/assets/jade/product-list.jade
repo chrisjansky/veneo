@@ -1,0 +1,41 @@
+extends templates/_site
+
+block template-content
+  include partials/_header
+
+  section.o-top.o-top--cats
+    +catSelector("dark")
+
+  section.o-section
+    .l-wrap
+      h1.o-section__head--center.t-head--one Dámské zlaté a stříbrné prsteny s kameny
+    .o-filters
+      each instance in ["Všechny druhy", "Všechny kameny", "Od nejprodávanějších"]
+        .o-filters__item
+          select.o-filters__select
+            option(selected)= instance
+            option Další volba
+            option Poslední volba
+          span.o-filters__icon: include ../svg/arrow_down.svg
+    .o-featured
+      .o-featured__list.l-wrap
+        each instance in [1, 2, 3, 4, 5, 6]
+          +productThumb(instance, "o-featured__item")
+    .o-demoted
+      .o-demoted__list.l-wrap
+        each instance in [1, 2, 3, 4, 5, 6, 1, 2]
+          +productThumb(instance, "o-demoted__item")
+    a(href="#").o-fullbutton
+        span.o-fullbutton__text Zobrazit další
+        span.o-fullbutton__icon: include ../svg/icon_plus.svg
+
+  section.o-blurb.o-section
+    article.o-blurb__content.l-wrap
+      h1.o-blurb__title.t-head--five Prstýnek jako šperk a jeho původ
+      p.o-blurb__text.t-paragraph--light V našem sortimentu naleznete jak prsteny se zirkony, tak&nbsp;s jinými kameny. <strong>Do stříbrných&nbsp;i zlatých prstenů také můžete vsazovat kameny na přání.</strong> Můžete tak mít jakýkoliv prsten se zirkonem, rubínem, růžovým zirkonem, safírem, spinelem, černým zirkonem, ametystem, swarogreenem, padparačem. Za příplatek poté také&nbsp;s brliantem, opálem, australským opálem, thajským opálem či&nbsp;s korálem. Zlaté&nbsp;a stříbrné prsteny jsou naší výrobní specialitou. Z&nbsp;našeho sortimentu stříbrných prstenů přímo vyrábíme veškeré dámské stříbrné prsteny&nbsp;s kameny, dámské stříbrné prsteny bez kamenů, <a href="#">dětské stříbrné prsteny</a>, pánské stříbrné prsteny&nbsp;s kameny&nbsp;a pánské stříbrné prsteny bez kamenů. Všechny prstýnky vyrábíme nejenom jako celostříbrné prsteny, ale rovněž&nbsp;i jako zlaté prsteny.
+
+  include partials/_faq
+
+  include partials/_stats
+
+  include partials/_footer
