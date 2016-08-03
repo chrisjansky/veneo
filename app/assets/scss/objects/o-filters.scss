@@ -1,0 +1,70 @@
+.o-filters {
+  @include clearfix;
+
+  border-bottom: $stroke--b solid $grey--900;
+  border-top: $stroke--b solid $grey--900;
+
+  @include padding(null 4em);
+}
+
+.o-filters__item {
+  position: relative;
+
+  float: left;
+
+  width: 33.333%;
+
+  border-left: $stroke--b solid $grey--900;
+  border-right: $stroke--b solid $grey--900;
+
+  &:nth-child(2) {
+    border: none;
+  }
+}
+
+.o-filters__select {
+  @include appearance(none);
+  @include padding(null 1.625em);
+  border: none;
+  background-color: transparent;
+
+  width: 100%;
+
+  text-transform: uppercase;
+  letter-spacing: em(1);
+  line-height: 3.5em;
+
+  color: $grey--500;
+
+  &:hover {
+    cursor: pointer;
+
+    color: $c-hover;
+  }
+
+  &:focus {
+    color: $grey--000;
+
+    outline: none;
+  }
+}
+
+.o-filters__icon {
+  position: absolute;
+  right: 1em;
+  top: 0;
+
+  stroke: $grey--800;
+
+  pointer-events: none;
+
+  height: 3.5em;
+
+  &:before {
+    @include pseudo-center;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+}
