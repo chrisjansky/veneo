@@ -1,0 +1,62 @@
+.o-quote {
+  text-align: center;
+
+  margin-bottom: 2.5em;
+}
+
+.o-quote__text {
+  color: $color2--500;
+
+  @include margin(.5em null);
+
+  &:before, &:after {
+    display: inline-block;
+    vertical-align: middle;
+
+    color: $grey--300;
+
+    font-size: 2em;
+    line-height: 1;
+  }
+
+  &:before {
+    content: "\201E";
+  }
+  &:after {
+    content: "\201C";
+  }
+}
+
+.o-quote__footer {
+  display: table;
+  width: 100%;
+
+  font-size: em(18);
+
+  border-top: $stroke--b solid $grey--200;
+
+  max-width: 30em;
+  @include margin(null auto);
+}
+
+.o-quote__author {
+  display: table-cell;
+  width: 50%;
+
+  padding-top: 1em;
+
+  color: $grey--500;
+  font-style: normal;
+}
+
+.o-quote__description {
+  display: table-cell;
+  width: 50%;
+
+  padding-top: 1em;
+
+  color: $grey--300;
+  font-weight: $font__sans--regular;
+
+  border-left: $stroke--b solid $grey--200;
+}

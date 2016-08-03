@@ -4,9 +4,18 @@
   text-align: center;
 
   font-size: em(20);
-  line-height: em(60);
+  line-height: 3.5;
 
   background-color: $grey--900;
+
+  stroke-width: 2;
+
+  @include media($large) {
+    font-size: em(24);
+    font-weight: $font__sans--light;
+
+    stroke-width: 1;
+  }
 }
 
 .o-fullbutton__icon {
