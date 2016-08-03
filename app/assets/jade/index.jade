@@ -54,15 +54,8 @@ block template-content
     .o-featured
       .o-featured__list.l-wrap
         each instance in [1, 2, 3, 4, 5, 6]
-          a(href="#").o-featured__item.o-item
-            span.o-item__thumbnail
-              img.o-item__image(src="assets/images/img_product_#{instance}.jpg", alt="Product")
-            h2.o-item__title.t-head--two Product #{instance}
-            .o-item__prices
-              span.o-item__price--silver.t-price #{instance * 1} 549 Kč
-              span.o-item__price--gold.t-price #{instance * 3} 689 Kč
-            small.o-item__count.t-small #{instance * 2} variant
-      a(href="#").o-featured__button.o-fullbutton
+          +productThumb(instance, "o-featured__item")
+      a(href="#").o-fullbutton
         span.o-fullbutton__text Přejít do kategorie Prsteny
         span.o-fullbutton__icon: include ../svg/chevron_right.svg
 
@@ -91,89 +84,8 @@ block template-content
       span.t-caps Filozofie značky
       span.o-capsbutton__icon: include ../svg/chevron_right.svg
 
-  section.o-section--light.l-wrap
-    .o-bar
-      .o-bar__title
-        h1.o-section__head.t-head--one Časté dotazy
-      .o-bar__side
-        a(href="#").o-capsbutton
-          span.t-caps Více
-          span.o-capsbutton__icon: include ../svg/chevron_right.svg
+  include partials/_faq
 
-    .o-banners
-      each instance, index in ["Objednáváte prsten? Změřte se.", "Jak vyrábíme šperky na zakázku?", "Co vše můžete u šperků měnit?", "Člověkem stvořený nebo přírodní drahokam?"]
-        article.o-banners__item
-          a.o-banners__link(href="#")
-            img.o-banners__image(src="assets/images/banner_#{index + 1}.jpg", alt="FAQ Photo")
-            h3.o-banners__title.t-head--three= instance
+  include partials/_stats
 
-  section.m-stats.o-section--dark.l-wrap
-    h1.o-section__head--center.t-head--one Již 25&nbsp;let děláme zákazníkům radost
-
-    ul.m-stats__list
-      li.m-stats__item
-        span.m-stats__logo: include ../svg/logo_heureka.svg
-        .m-stats__content
-          strong.m-stats__figure.t-figure 95&thinsp;%
-        p.m-stats__text.t-paragraph--light Ověřeno zákazníky portálu Heuréka
-      li.m-stats__item
-        span.m-stats__logo: include ../svg/logo_etsy.svg
-        .m-stats__content
-          strong.m-stats__figure.t-figure 5/5
-          span.m-stats__shape--right: include ../svg/shape_star.svg
-        p.m-stats__text.t-paragraph--light Nejvyšší hodnocení v obchodě Etsy
-      li.m-stats__item
-        span.m-stats__logo: include ../svg/logo_fler.svg
-        .m-stats__content
-          strong.m-stats__figure.t-figure 99&thinsp;%
-        p.m-stats__text.t-paragraph--light Hodnoceno uživateli portálu fler
-      li.m-stats__item
-        span.m-stats__logo: include ../svg/logo_facebook.svg
-        .m-stats__content
-          span.m-stats__shape--left: include ../svg/shape_like.svg
-          strong.m-stats__figure.t-figure 1&thinsp;641
-        p.m-stats__text.t-paragraph--light Přidejte se k&nbsp;fanouškům na Facebooku
-      li.m-stats__item
-        span.m-stats__logo: include ../svg/logo_urad.svg
-        .m-stats__content
-          span.m-stats__shape: include ../svg/shape_certificate.svg
-        p.m-stats__text.t-paragraph--light Pod kontrolou Puncovního úřadu ČR
-
-  footer.o-footer
-    .l-wrap
-      a.o-footer__logo.o-logo(href="#"): include ../svg/logo_veneo_new.svg
-      .o-footer__group
-        h4.o-footer__title.t-head--three Zlatnictví provozuje
-        ul.o-footer__list
-          li.o-footer__item Lubomír Krčmář – zlatník a&nbsp;hodinář
-          li.o-footer__item Dílna a prodejna Plumlovská 49, Prostějov
-          li.o-footer__item IČ 12307521&emsp;DIČ CZ6405090142
-        ul.o-footer__list
-          li.o-footer__item +420 582 337 520
-          li.o-footer__item +420 776 336 196
-          li.o-footer__item: a.t-link--white(href="#") zlatnictvi@veneo.cz
-      .o-footer__group
-        h4.o-footer__title.t-head--three Šperky sami vyrábíme
-        ul.o-footer__list
-          li.o-footer__item 14karátové zlato, Au ryzost 585/000
-          li.o-footer__item Stříbro slit. “Sagin”, Ag ryzost 925/000
-          li.o-footer__item Šperky kontroluje Puncovní úřad ČR
-        ul.o-footer__list
-          li.o-footer__item Materiál, typ a barva kamenů na přání
-          li.o-footer__item 2 roky záruka, úprava velikosti zdarma
-          li.o-footer__item: a.t-link--white(href="#") Více v Obchodních podmínkách
-
-    .o-newsletter
-      .o-newsletter__wrap
-        .o-newsletter__content
-          h2.t-head--one Novinky, akce  a&nbsp;zajímavosti ze světa šperků
-          p.t-paragraph--white Odebírejte náš novinkový zpravodaj a&nbsp;buďte v obraze. Zasíláme maximálně jednou za 14 dnů.
-      form.o-newsletter__form
-        fieldset.o-newsletter__fieldset
-          input.o-newsletter__input(type="text", placeholder="Váš e-mail")
-          input.o-newsletter__submit(type="submit", value="Odebírat newsletter")
-
-    .o-disclaimer.l-wrap
-      .o-disclaimer__content
-        h5.t-head--four ©&thinsp;2016 Zlaté a&nbsp;stříbrné šperky Veneo®
-        small.t-head--four Web zajistili designéři Jakub Krčmář a&nbsp;Christian Jánský, systém Ivorius webdesign.
+  include partials/_footer

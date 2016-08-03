@@ -1,0 +1,9 @@
+mixin productThumb(instance, type)
+  a.o-item(href="#", class=type)
+    span.o-item__thumbnail
+      img.o-item__image(src="assets/images/img_product_#{instance}.jpg", alt="Product")
+    h2.o-item__title.t-head--two Product #{instance}
+    .o-item__prices
+      span.o-item__price--silver.t-price #{instance * 1} 549 Kč
+      span.o-item__price--gold.t-price #{instance * 3} 689 Kč
+    small.o-item__count.t-small #{instance * 2} variant
