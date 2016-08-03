@@ -3,7 +3,17 @@ mixin productThumb(instance, type)
     span.o-item__thumbnail
       img.o-item__image(src="assets/images/img_product_#{instance}.jpg", alt="Product")
     h2.o-item__title.t-head--two Product #{instance}
-    .o-item__prices
-      span.o-item__price--silver.t-price #{instance * 1} 549 Kč
-      span.o-item__price--gold.t-price #{instance * 3} 689 Kč
-    small.o-item__count.t-small #{instance * 2} variant
+
+    .o-item__pricelist
+      .o-item__pricegroup--silver
+        strong.o-item__price.t-price #{instance * 1} 549 Kč
+        small.o-item__label.t-small Stříbro
+      .o-item__pricegroup--gold
+        strong.o-item__price.t-price #{instance * 3} 689 Kč
+        small.o-item__label.t-small Zlato
+
+    .o-item__variants
+      em.o-item__number.t-small #{instance * 2} variant
+      ul.o-item__colorlist
+        each color, instance in {"Safír": "#6A6BA6", "Opál": "#999999", "Rubín": "#DD3D7B", "Emerald": "#2BD175", "Zirkon": "#D1D1D1", "Topaz": "#1991A6", "Akvamarín": "#4DACD7"}
+          li.o-item__color(style="background-color: #{color}")= instance

@@ -21,10 +21,13 @@ $grey--700:   hsb(000, 000, 075);
 $grey--800:   hsb(000, 000, 087);
 $grey--900:   hsb(000, 000, 096);
 
-$color--silver:   $grey--600;
-$color--gold:     $color2--500;
+$color--silver:   $grey--500;
+$color--gold:     $color2--300;
 $color--platinum: $grey--700;
 $color--rose:     hsb(017, 036, 096);
+
+$color--silver-fade: $grey--700;
+$color--gold-fade: $color2--500;
 
 // Interactive
 $c-link:         $color1--500;

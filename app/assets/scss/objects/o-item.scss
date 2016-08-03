@@ -5,7 +5,9 @@
 
   margin-bottom: 1.5em;
 
-  @include link--neutral;
+  &:link, &:visited {
+    color: $grey--000;
+  }
 }
 
 .o-item__thumbnail {
@@ -26,6 +28,15 @@
     height: 50%;
 
     background-image: linear-gradient(to top, white, rgba(white, 0));
+
+    transition: opacity $duration--m;
+  }
+
+  .device--is-desktop &:after {
+    opacity: 0;
+  }
+  .device--is-desktop .o-item:hover &:after {
+    opacity: 1;
   }
 }
 
@@ -34,20 +45,129 @@
 }
 
 .o-item__title {
-  margin-top: -1em;
   margin-bottom: 0;
+
+  .device--is-mobile & {
+    margin-top: -1em;
+  }
+
+  transition: transform $duration--b;
+
+  .device--is-desktop .o-item:hover & {
+    transform: translateY(-1.5em);
+  }
 }
 
-.o-item__prices {
+.o-item__pricelist {
   @include margin(.25em null);
 }
 
-.o-item__price--gold {
-  color: $color--gold;
 
-  margin-left: 1em;
+[class^="o-item__pricegroup"],
+[class*=" o-item__pricegroup"] {
+  display: inline-block;
+
+  position: relative;
 }
 
-.o-item__price--silver {
-  color: $color--silver;
+.o-item__pricegroup--gold {
+  color: $color--gold-fade;
+
+  margin-left: 1em;
+
+  .device--is-mobile &,
+  .o-item:hover & {
+    color: $color--gold;
+  }
+}
+
+.o-item__pricegroup--silver {
+  color: $color--silver-fade;
+
+  .device--is-mobile &,
+  .o-item:hover & {
+    color: $color--silver;
+  }
+}
+
+.o-item__price {
+  display: inline-block;
+
+  transition: transform $duration--b;
+
+  .device--is-desktop .o-item:hover & {
+    transform: translateY(-1.5em);
+  }
+}
+
+.o-item__label {
+  display: block;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+  transition: opacity $duration--b;
+
+  .o-item:hover & {
+    opacity: 1;
+  }
+
+  .device--is-mobile & {
+    display: none;
+  }
+}
+
+.o-item__variants {
+  position: relative;
+}
+
+.o-item__number {
+  color: $grey--700;
+
+  font-style: normal;
+
+  transition: opacity $duration--b;
+
+  .device--is-desktop .o-item:hover & {
+    opacity: 0;
+  }
+}
+
+.o-item__colorlist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  @include margin(0 null);
+
+  opacity: 0;
+  transition: opacity $duration--b;
+
+  .o-item:hover & {
+    opacity: 1;
+  }
+
+  .device--is-mobile & {
+    display: none;
+  }
+}
+
+.o-item__color {
+  display: inline-block;
+
+  padding: em(3);
+  overflow: hidden;
+  width: 0;
+  height: 0;
+
+  transform: rotate(45deg);
+
+  @include margin(null .25em);
 }

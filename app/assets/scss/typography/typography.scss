@@ -51,7 +51,7 @@
 .t-price {
   font-size: em(20);
   font-family: $font__serif;
-  font-weight: $font__serif--light;
+  font-weight: $font__serif--regular;
 }
 .t-term {
   font-size: em(24);
@@ -79,8 +79,6 @@
 
 .t-small {
   font-size: em(16);
-
-  color: $grey--700;
 }
 
 [class^="t-paragraph"],
