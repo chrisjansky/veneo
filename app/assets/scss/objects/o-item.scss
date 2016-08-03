@@ -68,12 +68,12 @@
   display: inline-block;
 
   position: relative;
+
+  @include margin(null .5em);
 }
 
 .o-item__pricegroup--gold {
   color: $color--gold-fade;
-
-  margin-left: 1em;
 
   .device--is-mobile &,
   .o-item:hover & {

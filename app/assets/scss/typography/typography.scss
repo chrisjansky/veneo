@@ -32,7 +32,11 @@
   font-family: $font__serif;
   font-weight: $font__serif--medium;
 
-  @include margin(1.5em null);
+  @include margin(1em null);
+
+  @include media($tablet-up) {
+    @include margin(1.5em null);
+  }
 }
 
 .t-big {
@@ -71,10 +75,14 @@
   font-size: 3.75em;
 }
 .t-quote {
-  font-size: em(32);
+  font-size: em(24);
   font-family: $font__serif;
   font-weight: $font__serif--light;
   font-style: italic;
+
+  @include media($phablet-up) {
+    font-size: em(32);
+  }
 }
 
 .t-small {

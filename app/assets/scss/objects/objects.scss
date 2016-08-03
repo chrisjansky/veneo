@@ -33,10 +33,14 @@
 }
 
 .o-top {
-  padding-top: em(126);
+  padding-top: em(80);
 
   color: white;
   background-color: $grey--100;
+
+  @include media($laptop-up) {
+    padding-top: em(126);
+  }
 }
 
 .o-top--cats {

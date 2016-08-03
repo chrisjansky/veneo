@@ -4,34 +4,54 @@
   border-bottom: $stroke--b solid $grey--900;
   border-top: $stroke--b solid $grey--900;
 
-  @include padding(null 4em);
+  @include padding(null 1.625em);
+
+  @include media($tablet) {
+    @include padding(null 2.25em);
+  }
+  @include media($laptop) {
+    @include padding(null 3em);
+  }
+  @include media($large) {
+    @include padding(null 4em);
+  }
 }
 
 .o-filters__item {
   position: relative;
 
-  float: left;
+  border: $stroke--b solid $grey--900;
+  border-top: none;
 
-  width: 33.333%;
+  @include media($small) {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 
-  border-left: $stroke--b solid $grey--900;
-  border-right: $stroke--b solid $grey--900;
+  @include media($tablet-up) {
+    float: left;
 
-  &:nth-child(2) {
-    border: none;
+    width: 33.333%;
+
+    &:first-child,
+    &:last-child {
+      border-bottom: none;
+    }
+    &:nth-child(2) {
+      border: none;
+    }
   }
 }
 
 .o-filters__select {
   @include appearance(none);
-  @include padding(null 1.625em);
+  @include padding(null 1em);
   border: none;
   background-color: transparent;
 
   width: 100%;
 
-  text-transform: uppercase;
-  letter-spacing: em(1);
   line-height: 3.5em;
 
   color: $grey--500;
@@ -46,6 +66,13 @@
     color: $grey--000;
 
     outline: none;
+  }
+
+  @include media($laptop-up) {
+    @include padding(null 1.625em);
+
+    text-transform: uppercase;
+    letter-spacing: em(1);
   }
 }
 
