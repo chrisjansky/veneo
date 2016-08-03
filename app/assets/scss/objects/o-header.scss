@@ -6,7 +6,7 @@
   width: 100%;
   z-index: 2000;
 
-  transition: transform $duration--m;
+  transition: transform $duration--l;
 
   &.headroom--unpinned {
     transform: translateY(-100%);
@@ -34,7 +34,7 @@
     @include padding(null 4em);
   }
 
-  transition: background-color $duration--b $duration--m;
+  transition: background-color $duration--b $duration--l;
 
   .search--is-active & {
     background-color: $grey--000;
