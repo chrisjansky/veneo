@@ -16,7 +16,9 @@
       "bower_components/headroom.js/dist/headroom.js",
       "bower_components/headroom.js/dist/jQuery.headroom.js",
       "app/assets/js/app.js",
-      "app/assets/js/v-toggle.js"
+      "app/assets/js/v-toggle.js",
+      "app/assets/js/v-detect.js",
+      "app/assets/js/v-device.js"
     ]
   },
   "injectDist": {
