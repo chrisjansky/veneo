@@ -1,33 +1,43 @@
 mixin catSelector(type)
   .o-cats(class="o-cats--#{type}")
-    .o-cats__wrapper(data-slider)
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_ring.svg
-        .o-cats__title Prsteny
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_earring.svg
-        .o-cats__title Náušnice
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_pendant.svg
-        .o-cats__title Přívěsky
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_set.svg
-        .o-cats__title Soupravy
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_bracelet.svg
-        .o-cats__title Náramky
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_necklace.svg
-        .o-cats__title Náhrdelníky
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_chainlet.svg
-        .o-cats__title Řetízky
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_wedding.svg
-        .o-cats__title Snubní a zásnubní
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_male.svg
-        .o-cats__title Pánské šperky
-      a(href="#", data-cat-item).o-cats__item
-        .o-cats__icon: include ../../svg/cat_box.svg
-        .o-cats__title Krabičky
+    ul.o-cats__list(data-slider)
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_ring.svg
+          .o-cats__title Prsteny
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_earring.svg
+          .o-cats__title Náušnice
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_pendant.svg
+          .o-cats__title Přívěsky
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_set.svg
+          .o-cats__title Soupravy
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_bracelet.svg
+          .o-cats__title Náramky
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_necklace.svg
+          .o-cats__title Náhrdelníky
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_chainlet.svg
+          .o-cats__title Řetízky
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_wedding.svg
+          .o-cats__title Snubní a zásnubní
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_male.svg
+          .o-cats__title Pánské šperky
+      li.o-cats__item
+        a.o-cats__link(href="#", data-cat-link)
+          .o-cats__icon: include ../../svg/cat_box.svg
+          .o-cats__title Krabičky

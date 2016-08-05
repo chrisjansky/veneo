@@ -44,7 +44,11 @@
   background-image: linear-gradient(to left, $grey--100, rgba($grey--100, 0));
 }
 
-.o-cats__wrapper {
+.o-cats__list {
+  list-style-type: none;
+  @include margin(0 null);
+  padding-left: 0;
+
   overflow: hidden;
 
   white-space: nowrap;
@@ -71,9 +75,6 @@
   text-align: center;
 
   @include padding(null 1em);
-
-  @include link--light;
-  transition: color $duration--b;
 
   &:first-child {
     @include padding(null 1.5em);
@@ -147,15 +148,20 @@
       border-width: 1em;
     }
   }
+}
 
-  .o-cats--light &.is-selected {
+.o-cats__link {
+  @include link--light;
+  transition: color $duration--b;
+
+  .o-cats--light .is-selected & {
     color: $grey--000;
 
     svg {
       stroke: url(#gradient-light-on);
     }
   }
-  .o-cats--dark &.is-selected {
+  .o-cats--dark .is-selected & {
     color: white;
 
     svg {

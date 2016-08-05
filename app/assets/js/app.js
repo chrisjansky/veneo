@@ -33,7 +33,7 @@ $catSlider.on("staticClick.flickity", function(event, pointer, cellElement, cell
   }
 })
 
-$("[data-cat-item]").on("click", function(event) {
+$("[data-cat-link]").on("click", function(event) {
   event.preventDefault();
 })
 
