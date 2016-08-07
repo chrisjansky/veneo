@@ -1,7 +1,7 @@
 extends templates/_site
 
 block template-content
-  include partials/_header
+  +header("fade")
 
   section.m-landing.o-hero
     .o-hero__content
@@ -32,7 +32,7 @@ block template-content
     .m-bespoke__wrap.l-wrap
       .m-bespoke__content
         h1.o-section__head.t-head--one Katalogové i&nbsp;originální šperky na míru
-        p.t-paragraph--light Jiná internetová zlatnictví šperky prodávají, my je vyrábíme. Šperky z&nbsp;katalogu si můžete objednat tak, jak je vidíte, na přání je upravíme na míru. Měnit lze cokoli &mdash; velikost, osazení kameny, zapínání, vždy můžete volit mezi zlatem a&nbsp;stříbrem. Zhotovíme i&nbsp;šperky podle vašeho návrhu a&nbsp;z&nbsp;vašeho zlata.
+        p.t-text--light Jiná internetová zlatnictví šperky prodávají, my je vyrábíme. Šperky z&nbsp;katalogu si můžete objednat tak, jak je vidíte, na přání je upravíme na míru. Měnit lze cokoli &mdash; velikost, osazení kameny, zapínání, vždy můžete volit mezi zlatem a&nbsp;stříbrem. Zhotovíme i&nbsp;šperky podle vašeho návrhu a&nbsp;z&nbsp;vašeho zlata.
         a(href="#").m-bespoke__button.o-capsbutton
           span.t-caps Šperky na zakázku
           span.o-capsbutton__icon: include ../svg/chevron_right.svg
