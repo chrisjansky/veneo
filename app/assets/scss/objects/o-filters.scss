@@ -48,6 +48,7 @@
   @include appearance(none);
   @include padding(null 1em);
   border: none;
+  border-radius: 0;
   background-color: transparent;
 
   width: 100%;
