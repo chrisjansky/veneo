@@ -1,0 +1,45 @@
+.o-detail {
+  @include clearfix;
+}
+
+.o-detail__top {
+  text-align: center;
+}
+
+.o-detail__text {
+  color: $grey--300;
+}
+
+.o-detail__gallery {
+  float: left;
+  width: 50%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.o-detail__info {
+  overflow: auto;
+}
+
+.o-detail__bar {
+  display: table;
+  width: 100%;
+
+  @include margin(2em null 1em);
+}
+
+.o-detail__cell {
+  display: table-cell;
+
+  @include collapse-children;
+
+  &:last-child {
+    text-align: right;
+  }
+}
+
+.o-detail__body {
+  // padding-bottom: 0;
+}

@@ -1,0 +1,54 @@
+.o-check {
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.o-check__input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.o-check__box {
+  display: inline-block;
+  vertical-align: middle;
+
+  width: em(30);
+  height: em(30);
+
+  border-radius: $radius--b;
+  border: $stroke--b solid $grey--700;
+
+  margin-right: 1em;
+
+  stroke: white;
+
+  text-align: center;
+
+  transition: background-color $duration--s;
+
+  &:before {
+    @include pseudo-center;
+  }
+
+  svg {
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+  }
+
+  .o-check:hover & {
+    border-color: $grey--400;
+  }
+
+  .o-check__input:checked + & {
+    border-color: $grey--300;
+    background-color: $grey--300;
+  }
+}
+
+.o-check__text {
+  font-size: em(18);
+}

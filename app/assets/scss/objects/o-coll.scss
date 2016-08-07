@@ -1,0 +1,89 @@
+.o-coll {
+  @include margin(4em null);
+}
+
+.o-coll__content {
+  position: relative;
+}
+
+.o-coll__thumbs {
+  display: block;
+
+  @include margin(null 20%);
+  text-align: center;
+}
+
+.o-coll__image {
+  display: inline-block;
+
+  max-width: em(160);
+  width: 25%;
+
+  border-radius: 50%;
+
+  @include margin(null -2.5%);
+
+  transition: margin $duration--b;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .o-coll__thumbs:hover & {
+    @include margin(null -1.25%);
+  }
+}
+
+[class^="o-coll__priceset"],
+[class*=" o-coll__priceset"] {
+  position: absolute;
+
+  width: 20%;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  text-align: center;
+}
+
+.o-coll__priceset--silver {
+  left: 0;
+
+  color: $color--silver;
+}
+.o-coll__priceset--gold {
+  right: 0;
+
+  color: $color--gold;
+}
+
+[class^="o-coll__figure"],
+[class*=" o-coll__figure"] {
+  font-size: em(24);
+  font-family: $font__serif;
+  font-weight: $font__serif--regular;
+}
+
+
+.o-coll__figure--crossed {
+  text-decoration: none;
+
+  background-image: linear-gradient(to left, currentColor, currentColor);
+  background-size: 100% $stroke--b;
+  background-position: center 60%;
+  background-repeat: repeat-x;
+
+  opacity: .5;
+}
+
+.o-coll__figure--new {
+  margin-left: 1em;
+
+  font-style: normal;
+}
+
+.o-coll__label {
+  display: block;
+
+  margin-top: 1em;
+}

@@ -1,0 +1,51 @@
+.o-tabs {
+  @include clearfix;
+  
+  list-style-type: none;
+  padding-left: 0;
+
+  text-align: center;
+}
+
+.o-tabs__item {
+  display: inline;
+}
+
+.o-tabs__link {
+  display: inline-block;
+
+  font-size: em(20);
+  @include padding(.5em 15% 1em);
+
+  text-decoration: none;
+
+  border-right: $stroke--b solid $grey--800;
+
+  .o-tabs__item:last-child & {
+    border-right: none;
+  }
+
+  &.tab--is-active {
+    color: $grey--000;
+  }
+}
+
+.o-tabs__title {
+  font-size: 1em;
+  font-weight: $font__sans--regular;
+
+  @include margin(0 null);
+}
+
+.o-tabs__content {
+  display: none;
+  width: 100%;
+
+  border-top: $stroke--b solid $grey--800;
+}
+
+.tab--is-open {
+  display: block;
+
+  float: left;
+}

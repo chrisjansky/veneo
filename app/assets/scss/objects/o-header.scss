@@ -43,7 +43,8 @@
     transition-delay: 0s;
   }
 
-  .headroom--not-top & {
+  .headroom--not-top &,
+  .o-header--stay & {
     background-color: $grey--000;
   }
 }

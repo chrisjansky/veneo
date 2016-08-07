@@ -1,0 +1,82 @@
+.o-mats {
+  @include clearfix;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  margin :-.25em;
+}
+
+.o-mats__item {
+  float: left;
+  width: 50%;
+}
+
+.o-mats__label {
+  position: relative;
+  display: block;
+
+  border: $stroke--b solid $grey--900;
+  border-radius: $radius--b;
+
+  color: $grey--600;
+  background-color: $grey--900;
+
+  margin: .25rem;
+  padding: 1rem 1.5rem;
+
+  font-size: em(20);
+  font-family: $font__serif;
+  font-weight: $font__serif--regular;
+
+  transition: background-color $duration--s;
+
+  &:hover {
+    cursor: pointer;
+
+    border-color: $grey--800;
+    background-color: transparent;
+  }
+
+  .material--is-active & {
+    color: $grey--000;
+    background-color: transparent;
+    border-color: $grey--500;
+  }
+}
+
+.o-mats__radio {
+  position: absolute;
+  visibility: hidden;
+}
+
+.o-mats__icon {
+  display: inline-block;
+  vertical-align: 100%;
+
+  line-height: 1;
+
+  margin-right: .75em;
+}
+.o-mats__text {
+  display: inline-block;
+}
+.o-mats__title {
+  font-weight: $font__serif--regular;
+}
+.o-mats__price {
+  display: block;
+}
+
+.o-mats__label--silver {
+  stroke: $color--silver;
+}
+.o-mats__label--gold {
+  stroke: $color--gold;
+}
+.o-mats__label--platinum {
+  stroke: $color--platinum;
+}
+.o-mats__label--rose {
+  stroke: $color--rose;
+}

@@ -1,0 +1,66 @@
+.o-bread {
+  list-style-type: none;
+  padding-left: 0;
+  padding-bottom: 1em;
+
+  border-bottom: $stroke--b solid $grey--800;
+}
+
+.o-bread__crumb {
+  display: inline-block;
+
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  // Chevron
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+
+    border-style: solid;
+    border-color: $grey--800;
+    border-width: $stroke--b $stroke--b 0 0;
+
+    height: .75em;
+    width: .75em;
+
+    margin-left: 1em;
+
+    transform: rotate(45deg);
+  }
+
+  &:last-child:after {
+    content: none;
+  }
+}
+
+.o-bread__link {
+  stroke: currentColor;
+
+  font-size: em(18);
+
+  svg {
+    vertical-align: middle;
+  }
+}
+
+.o-bread__current {
+  font-size: em(18);
+  font-weight: $font__sans--medium;
+  font-style: normal;
+}
+
+.o-bread__count {
+  display: inline-block;
+
+  vertical-align: middle;
+  margin-left: 1.25em;
+
+  font-size: em(14);
+
+  color: $grey--500;
+}

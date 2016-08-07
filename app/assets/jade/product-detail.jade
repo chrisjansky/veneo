@@ -1,0 +1,164 @@
+extends templates/_site
+
+block template-content
+  +header("stay")
+
+  section.o-top.o-top--vars
+    .l-wrap--v-small
+      ol.o-bread
+        li.o-bread__crumb: a.o-bread__link(href="index"): include ../svg/icon_home.svg
+        each instance in ["Prsteny", "Dámské s kameny"]
+          li.o-bread__crumb: a.o-bread__link(href="#")= instance
+        li.o-bread__crumb
+          em.o-bread__current Tanečnice
+          small.o-bread__count 4 variant
+    ul.o-vars
+      - var index = 1
+      each color, instance in {"Safír": "#6A6BA6", "Opál": "#999999", "Rubín": "#DD3D7B", "Emerald": "#2BD175"}
+        li.o-vars__item
+          a.o-vars__link(href="#", style="color: #{color}")
+            img.o-vars__thumb(src="assets/images/img_thumbnail_#{index++}.jpg", alt="Thumbnail")
+            strong.o-vars__title= instance
+
+  main.o-detail
+    .o-detail__top.l-wrap
+      h1.o-detail__title.t-head--one Tanečnice — prsten se safírem a&nbsp;čirými zirkony
+      p.o-detail__text.t-medium Výrazný stříbrný (či zlatý) prsten se safírem a&nbsp;čirými zirkony.
+
+    .o-detail__gallery
+      img(src="assets/images/img_product_1.jpg", alt="Detail")
+
+    .o-detail__info.l-wrap--horizontal
+      table.o-table
+        tr
+          td Kámen
+          td
+            .l-inline
+              .l-inline__cell Opál, Růžový zirkon
+              .l-inline__cell: a.t-smallcaps(href="#") Změnit
+        tr
+          td Rozměr motivu
+          td 1,4&thinsp;cm &times; 1,4&thinsp;cm
+        tr
+          td Váha
+          td 2,60&thinsp;g
+
+      .o-detail__bar
+        .o-detail__cell
+          h2.o-detail__subtitle.t-head--two Vyberte velikost
+        .o-detail__cell
+          a.t-smallcaps(href="#") Jak se měří?
+
+      .o-dropdown
+        select.o-dropdown__select
+          option(selected) 50 (US 13&ndash;22,2 mm)
+          option Další volba
+          option Poslední volba
+        span.o-dropdown__icon: include ../svg/arrow_down.svg
+
+      .o-detail__bar
+        .o-detail__cell
+          h2.o-detail__subtitle.t-head--two Vyberte materiál
+        .o-detail__cell
+          a.t-smallcaps(href="#") O našich materiálech
+
+      ul.o-mats
+        - var index = 1
+        each instance, tag in {"silver": "Stříbro", "gold": "Zlato", "platinum": "Bílé zlato", "rose": "Růžové zlato"}
+          li.o-mats__item(data-mats-item)
+            label.o-mats__label(class="o-mats__label--#{tag}")
+              span.o-mats__icon: include ../svg/icon_jewel.svg
+              input.o-mats__radio(type="radio", name="materials")
+              .o-mats__text
+                strong.o-mats__title= instance
+                span.o-mats__price #{index++ * 2} 389 Kč
+
+      ul.o-bonus
+        each instance in ["Dárková krabička a doprava zdarma", "Skladem"]
+          li.o-bonus__item
+            span.o-bonus__icon: include ../svg/icon_check.svg
+            strong.o-bonus__text= instance
+
+      h2.o-detail__subtitle.t-head--two Jiné kameny, drahokamy či rytí?
+      label.o-check
+        input.o-check__input(type="checkbox")
+        span.o-check__box: include ../svg/icon_check.svg
+        span.o-check__text Chci upravit šperky dle mého přání
+
+  section.o-sticky
+    .o-sticky__cell
+      img.o-sticky__portrait(src="assets/images/portrait_small_1.jpg", alt="Lubomír Krčmář")
+      .o-sticky__text
+        | Potřebujete poradit?<br>
+        span.t-text--light +420 776 336 196
+    .o-sticky__cell.o-sticky__settings
+      .o-sticky__icon--jewel: include ../svg/icon_jewel_small.svg
+      .o-sticky__text
+        | Stříbro, vel. 50<br>
+        a.t-link--tan(href="#") Upraveno na přání
+    .o-sticky__cell.o-sticky__bonus
+      .o-sticky__icon--check: include ../svg/icon_check.svg
+      .o-sticky__text Skladem<br>Doprava zdarma
+    .o-sticky__cell
+      .o-sticky__text
+        strong.o-sticky__price.t-head--two 2 099 Kč<br>
+        span.t-text--light vč. DPH
+      a(href="#").o-sticky__button.o-button--primary
+        span.o-button__icon: include ../svg/icon_cart.svg
+        | Do košíku
+
+  section.o-detail__body.l-wrap
+    ul.o-tabs(data-tabs)
+      li.o-tabs__item
+        a.o-tabs__link(href="#"): h2.o-tabs__title Popis šperku
+        .o-tabs__content
+          article.o-article
+            h1.o-article__title.t-head--five Tanečnice — prsten se safírem a&nbsp;čirými zirkony
+            p.o-article__text: +dummy(50)
+            p.o-article__contact Dotazy Vám rádi zodpovíme e-mailem na #[a.t-link--tan(href="#") zlatnictvi@veneo.cz], telefonicky na +420 582 337 520 či prostřednictvím #[a.t-link--tan(href="#") diskuze k tomuto šperku].
+
+      li.o-tabs__item
+        a.o-tabs__link(href="#"): h2.o-tabs__title 9 komentářů
+        .o-tabs__content
+          article.o-article
+            p.o-article__text: +dummy(40)
+            p.o-article__text: +dummy(20)
+
+    .o-perks
+      h3.o-perks__title.t-head--two Ke šperku získáte
+      ul.o-perks__list
+        each instance in ["Dárkovou krabičku", "Poštovné zdarma", "2 roky záruky", "Možnost vrácení do 14 dnů", "Možnost jedné úpravy velikosti zdarma", "Mezinárodní certifikát pro šperky s drahými kameny", "Záruku kvality pod kontrolou Puncovního úřadu ČR"]
+          li.o-perks__item
+            span.o-perks__icon: include ../svg/icon_check.svg
+            strong.o-perks__text= instance
+
+    .o-coll.o-section
+      h3.o-section__head--center.t-head--one V soupravě Tanečnice s 15% slevou
+      .o-coll__content
+        a(href="#").o-coll__thumbs
+          each instance in [1, 2, 3, 4]
+            img.o-coll__image(src="assets/images/img_product_#{instance}.jpg", alt="Collection image")
+        .o-coll__priceset--silver
+          s.o-coll__figure--crossed 6 549 Kč
+          em.o-coll__figure--new 4 189 Kč
+          span.o-coll__label Stříbro
+        .o-coll__priceset--gold
+          s.o-coll__figure--crossed 13 549 Kč
+          em.o-coll__figure--new 10 189 Kč
+          span.o-coll__label Zlato
+
+  section.o-related
+    .l-wrap--horizontal
+      h3.o-section__head--center.t-head--one Často kupované společně
+      .o-related__list
+        each instance in [1, 2, 3, 4]
+          +productThumb(instance, "o-related__item")
+    a(href="#").o-fullbutton
+      span.o-fullbutton__text Zobrazit 3 další
+      span.o-fullbutton__icon: include ../svg/icon_plus.svg
+
+  include partials/_reasons
+
+  include partials/_stats
+
+  include partials/_footer

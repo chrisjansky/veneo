@@ -1,0 +1,22 @@
+.o-article {
+  @include margin(null auto);
+  @include collapse-children;
+
+  max-width: 50em;
+
+  @include add-wrap(vertical);
+}
+
+.o-article__text {
+  font-size: em(24);
+  font-weight: $font__sans--light;
+
+  color: $grey--400;
+}
+
+.o-article__contact {
+  font-size: em(24);
+  font-weight: $font__sans--light;
+
+  color: $color2--300;
+}

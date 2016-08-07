@@ -10,7 +10,8 @@ var
   $searchToggle = $("[data-search]");
 
 var
-  toggleActiveClass = "toggle--is-active";
+  toggleActiveClass = "toggle--is-active",
+  matActiveClass = "material--is-active";
 
 $("[data-header]").headroom({
   offset: 20,
@@ -35,6 +36,11 @@ $catSlider.on("staticClick.flickity", function(event, pointer, cellElement, cell
 
 $("[data-cat-link]").on("click", function(event) {
   event.preventDefault();
+})
+
+$("[data-mats-item]").on("click", function(event) {
+  $(this).siblings().removeClass(matActiveClass);
+  $(this).addClass(matActiveClass);
 })
 
 $("[data-close]").on("click", function(event) {

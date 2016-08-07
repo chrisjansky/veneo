@@ -1,0 +1,33 @@
+[class^="o-button--"],
+[class*=" o-button--"] {
+  display: inline-block;
+
+  border-radius: $radius--b;
+  padding: 0 1.25em;
+
+  font-weight: $font__sans--medium;
+  line-height: em(44);
+  text-transform: uppercase;
+  letter-spacing: $tracking--b;
+
+  fill: currentColor
+}
+
+.o-button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+
+  margin-right: .75em;
+}
+
+.o-button--primary {
+  &:link, &:visited {
+    color: white;
+    background-color: $positive--500;
+  }
+  &:hover, &:active {
+    color: rgba(white, .75);
+    background-color: $positive--400;
+  }
+}

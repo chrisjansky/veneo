@@ -1,0 +1,65 @@
+.o-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  background-color: $grey--900;
+
+  @include add-wrap(horizontal);
+  @include padding(1.25em null);
+  // border-top: $stroke--b solid rgba($grey--000, .125);
+}
+
+.o-sticky__cell {
+  // outline: 1px solid green;
+  // flex: 1;
+  // text-align: center;
+}
+
+.o-sticky__portrait {
+  display: inline-block;
+  vertical-align: top;
+
+  width: em(46);
+  margin-right: .5em;
+
+  border-radius: 50%;
+}
+
+.o-sticky__text {
+  display: inline-block;
+  vertical-align: middle;
+
+  font-size: em(18);
+}
+
+.o-sticky__bonus {
+  color: $positive--500;
+}
+
+[class^="o-sticky__icon"],
+[class*=" o-sticky__icon"] {
+  position: relative;
+  top: 2px; // Optical offset
+
+  display: inline-block;
+
+  line-height: 1;
+  vertical-align: top;
+
+  stroke: currentColor;
+
+  margin-right: .5em;
+}
+
+.o-sticky__button {
+  vertical-align: middle;
+
+  margin-left: 2em;
+}

@@ -35,9 +35,6 @@
 .o-top {
   padding-top: em(80);
 
-  color: white;
-  background-color: $grey--100;
-
   @include media($laptop-up) {
     padding-top: em(126);
   }
@@ -45,6 +42,9 @@
 
 .o-top--cats {
   position: relative;
+
+  color: white;
+  background-color: $grey--100;
 
   &:before {
     content: "";
@@ -56,5 +56,36 @@
     height: 1em;
 
     background-color: white;
+  }
+}
+
+.o-top--vars {
+  background-color: $grey--900;
+}
+
+.o-table {
+  font-size: em(18);
+
+  color: $grey--300;
+
+  border-collapse: collapse;
+
+  td {
+    border: $stroke--b solid $grey--800;
+    padding: .5em 1em;
+  }
+
+  td:first-child {
+    border-left: none;
+
+    padding-left: 0;
+  }
+  td:last-child {
+    border-right: none;
+
+    padding-right: 0;
+  }
+  tr:last-child td {
+    border-bottom: none;
   }
 }

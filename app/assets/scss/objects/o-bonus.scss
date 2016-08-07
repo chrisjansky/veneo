@@ -1,0 +1,45 @@
+.o-bonus {
+  display: table;
+  width: 100%;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  @include margin(1.5em null);
+
+  color: $positive--500;
+
+  border-top: $stroke--b solid $positive--600;
+  border-bottom: $stroke--b solid $positive--600;
+}
+
+.o-bonus__item {
+  display: table-cell;
+
+  text-align: center;
+
+  @include padding(1em null);
+
+  border-right: $stroke--b solid $positive--600;
+
+  &:last-child {
+    width: 30%;
+    border-right: none;
+  }
+}
+
+.o-bonus__text {
+  font-size: em(18);
+  font-weight: $font__sans--medium;
+}
+
+.o-bonus__icon {
+  display: inline-block;
+
+  line-height: 1;
+  vertical-align: middle;
+
+  margin-right: .75rem;
+
+  stroke: currentColor;
+}

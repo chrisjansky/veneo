@@ -1,0 +1,66 @@
+.o-dropdown {
+  position: relative;
+}
+
+.o-dropdown__select {
+  @include appearance(none);
+  @include padding(null 1em);
+  border: $stroke--b solid $grey--800;
+  border-radius: $radius--b;
+  background-color: transparent;
+
+  width: 100%;
+
+  line-height: 3.25em;
+
+  color: $grey--500;
+
+  &:hover {
+    cursor: pointer;
+
+    color: $grey--000;
+    border-color: $grey--700;
+  }
+
+  &:focus {
+    color: $c-link;
+    border-color: $color1--700;
+
+    outline: none;
+  }
+
+  @include media($laptop-up) {
+    @include padding(null 1.625em);
+
+    text-transform: uppercase;
+    letter-spacing: em(1);
+  }
+}
+
+.o-dropdown__icon {
+  position: absolute;
+  right: 1em;
+  top: 0;
+
+  stroke: $grey--800;
+
+  pointer-events: none;
+
+  height: 3.5em;
+
+  &:before {
+    @include pseudo-center;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  .o-dropdown:hover & {
+    stroke: $grey--700;
+  }
+
+  .o-dropdown__select:focus + & {
+    stroke: $color1--700;
+  }
+}

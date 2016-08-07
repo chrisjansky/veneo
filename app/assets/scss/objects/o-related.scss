@@ -1,0 +1,15 @@
+.o-related__list {
+  @include clearfix;
+}
+
+.o-related__item {
+  @include media($phablet) {
+    @include span-columns(3 of 6);
+    @include omega(2n);
+  }
+
+  @include media($tablet-up) {
+    @include span-columns(3 of 12);
+    @include omega(4n);
+  }
+}
