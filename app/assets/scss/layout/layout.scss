@@ -1,20 +1,55 @@
-.l-wrap {
-  @include margin(null auto);
+@mixin add-wrap ($direction: both) {
+  @if ($direction == horizontal) {
+    @include padding(null 1.625em);
 
-  padding: 2.25em 1.625em;
+    @include media($tablet) {
+      @include padding(null 2.25em);
+    }
+    @include media($laptop) {
+      @include padding(null 3em);
+    }
+    @include media($large) {
+      @include padding(null 4em);
+    }
+  } @else if ($direction == vertical) {
+    @include padding(2.25em null);
+
+    @include media($tablet) {
+      @include padding(2.25em null);
+    }
+    @include media($laptop-up) {
+      @include padding(3em null);
+    }
+  } @else {
+    padding: 2.25em 1.625em;
+
+    @include media($tablet) {
+      padding: 2.25em;
+    }
+    @include media($laptop) {
+      padding: 3em;
+    }
+    @include media($large) {
+      padding: 3em 4em;
+    }
+  }
+}
+
+[class^="l-wrap"],
+[class*=" l-wrap"] {
+  @include margin(null auto);
 
   @include clearfix;
   @include collapse-children;
 
-  @include media($tablet) {
-    padding: 2.25em;
-  }
-  @include media($laptop) {
-    padding: 3em;
-  }
-  @include media($large) {
-    padding: 3em 4em;
-  }
+  @include add-wrap(both);
+}
+
+.l-wrap--horizontal {
+  @include padding(0 null);
+}
+.l-wrap--v-small {
+  @include padding(1.5em null);
 }
 
 .l-inline {
@@ -22,14 +57,17 @@
 
   width: 100%;
 }
-[class^="l-inline__cell"],
-[class*=" l-inline__cell"] {
+.l-inline__cell {
   display: table-cell;
 
   vertical-align: middle;
 
   @include collapse-children;
+
+  &:last-child {
+    text-align: right;
+  }
 }
-.l-inline__cell--right {
-  text-align: right;
-}
+// .l-inline__cell--right {
+//   text-align: right;
+// }
