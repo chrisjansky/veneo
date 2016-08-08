@@ -15,6 +15,8 @@
       "bower_components/flickity/dist/flickity.pkgd.js",
       "bower_components/headroom.js/dist/headroom.js",
       "bower_components/headroom.js/dist/jQuery.headroom.js",
+      "bower_components/waypoints/lib/jquery.waypoints.js",
+      "bower_components/waypoints/lib/shortcuts/sticky.js",
       "app/assets/js/app.js",
       "app/assets/js/v-detect.js",
       "app/assets/js/v-device.js",
