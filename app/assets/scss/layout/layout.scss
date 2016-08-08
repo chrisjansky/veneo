@@ -48,6 +48,9 @@
 .l-wrap--horizontal {
   @include padding(0 null);
 }
+.l-wrap--vertical {
+  @include padding(null 0);
+}
 .l-wrap--v-small {
   @include padding(1.5em null);
 }
