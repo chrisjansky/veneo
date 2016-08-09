@@ -9,51 +9,37 @@ var
   $pagesToggle = $("[data-pages]"),
   $searchToggle = $("[data-search]");
 
-var
-  toggleActiveClass = "toggle--is-active",
-  matActiveClass = "material--is-active";
-
 $("[data-header]").headroom({
   offset: 20,
   tolerance: {
     down: 5,
     up: 50
   }
-});
-
-var $catSlider = $("[data-slider]").flickity({
-  contain: true,
-  draggable: true,
-  prevNextButtons: false,
-  pageDots: false
-});
-
-$catSlider.on("staticClick.flickity", function(event, pointer, cellElement, cellIndex) {
-  if (typeof cellIndex == "number") {
-    $catSlider.flickity("selectCell", cellIndex)
-  }
 })
 
-$("[data-cat-link]").on("click", function(event) {
-  event.preventDefault();
-})
+// Sticky Add to Cart panel
+var $sticky = $("[data-sticky]");
 
-$("[data-mats-item]").on("click", function(event) {
-  $(this).siblings().removeClass(matActiveClass);
-  $(this).addClass(matActiveClass);
-})
+if ($sticky.length > 0) {
+  var
+    stickyStart = new Waypoint({
+      element: document.getElementById("js-sticky-start"),
+      handler: function(direction) {
+        $sticky.toggleClass("panel--is-stuck", direction == "down");
+      },
+      offset: "bottom-in-view"
+    }),
+    stickyEnd = new Waypoint({
+      element: document.getElementById("js-sticky-end"),
+      handler: function(direction) {
+        $sticky.toggleClass("panel--is-unstuck", direction == "down");
 
-$("[data-close]").on("click", function(event) {
-  $html.removeClass("search--is-active");
-  $toggle.removeClass(toggleActiveClass);
-})
-
-$pagesToggle.on("click", function(event) {
-  $html.removeClass("search--is-active");
-  $searchToggle.removeClass(toggleActiveClass);
-})
-
-$searchToggle.on("click", function(event) {
-  $html.removeClass("pages--is-active");
-  $pagesToggle.removeClass(toggleActiveClass);
-})
+        if (direction == "down") {
+          $sticky.css({top: this.element.offsetTop});
+        } else {
+          $sticky.removeAttr("style");
+        }
+      },
+      offset: "bottom-in-view"
+    })
+}
