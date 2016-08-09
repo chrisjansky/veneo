@@ -1,9 +1,8 @@
-.o-cats__list {
-  .flickity-viewport {
-    box-sizing: content-box;
+.flickity-viewport {
+  box-sizing: content-box;
 
-    padding-bottom: 2.5em;
+  .o-cats--white &,
+  .o-cats--dark & {
+    padding-bottom: 2.75em;
   }
 }
-
-

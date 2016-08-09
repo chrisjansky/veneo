@@ -10,13 +10,9 @@
   color: $grey--300;
 }
 
-.o-detail__gallery {
+.o-detail__viewer {
   float: left;
   width: 50%;
-
-  img {
-    width: 100%;
-  }
 }
 
 .o-detail__info {
@@ -42,4 +38,10 @@
 
 .o-detail__body {
   // padding-bottom: 0;
+}
+
+.o-detail__code {
+  font-size: em(14);
+
+  color: $grey--500;
 }

@@ -1,9 +1,11 @@
-.o-sticky {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2000;
+[class^="o-sticky-container"],
+[class*=" o-sticky-container"] {
+  height: em(94);
 
+  border-top: $stroke--b solid $grey--900;
+}
+
+.o-sticky {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,12 +16,21 @@
   @include add-wrap(horizontal);
   @include padding(1.25em null);
   // border-top: $stroke--b solid rgba($grey--000, .125);
+
+  &.panel--is-stuck {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1500;
+  }
+
+  &.panel--is-unstuck {
+    position: absolute;
+    bottom: auto;
+  }
 }
 
 .o-sticky__cell {
-  // outline: 1px solid green;
-  // flex: 1;
-  // text-align: center;
 }
 
 .o-sticky__portrait {

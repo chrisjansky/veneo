@@ -1,6 +1,6 @@
 .o-vars {
   list-style-type: none;
-  margin-bottom: 0;
+  @include margin(0 null);
 
   text-align: center;
 
@@ -8,31 +8,84 @@
   padding-bottom: 1.5em;
 }
 
-.o-vars__item {
+[class^="o-vars__item"],
+[class*=" o-vars__item"] {
   display: inline-block;
+  vertical-align: top;
 
-  @include margin(null .5em);
+  margin-left: 1em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.o-vars__item--bespoke {
+  margin-left: 2em;
 }
 
 .o-vars__link {
   display: inline-block;
+
+  text-align: center;
+
+  @include link--light;
 }
 
 .o-vars__thumb {
   width: em(90);
   border-radius: 50%;
+
+  transition: opacity $duration--s;
+
+  .variant--is-active & {
+    opacity: .5;
+  }
 }
 
-.o-vars__title {
+.o-vars__gem {
   display: inline-block;
 
   margin-top: 1em;
-  padding: em(4);
+  padding: em(2);
   overflow: hidden;
   width: 0;
   height: 0;
 
-  background-color: currentColor;
+  border: $stroke--b solid currentColor;
 
   transform: rotate(45deg);
+  transition: background-color $duration--s;
+
+  .variant--is-active & {
+    background-color: currentColor;
+  }
+}
+
+.o-vars__symbol {
+  display: inline-block;
+
+  width: em(90);
+  height: em(90);
+
+  border-radius: 50%;
+  background-color: white;
+
+  stroke: $grey--700;
+
+  &:before {
+    @include pseudo-center;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+}
+
+.o-vars__title {
+  display: block;
+
+  font-weight: $font__sans--regular;
+
+  margin-top: .625em;
 }

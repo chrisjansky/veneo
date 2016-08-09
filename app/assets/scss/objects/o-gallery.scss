@@ -11,6 +11,10 @@
 }
 
 .o-gallery__pager {
+  position: relative;
+
+  text-align: center;
+
   background-color: $grey--900;
 
   @include padding(1.25em null);
