@@ -1,4 +1,6 @@
 .o-vars {
+  position: relative;
+
   list-style-type: none;
   @include margin(0 null);
 
@@ -6,6 +8,31 @@
 
   padding-left: 0;
   padding-bottom: 1.5em;
+
+  // Side gradients
+  &:before, &:after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 500;
+
+    width: 2em;
+
+    pointer-events: none;
+  }
+
+  &:before {
+    left: 0;
+
+    background-image: linear-gradient(to right, $grey--900, rgba($grey--900, 0));
+  }
+  &:after {
+    right: 0;
+
+    background-image: linear-gradient(to left, $grey--900, rgba($grey--900, 0));
+  }
 }
 
 [class^="o-vars__item"],
@@ -16,7 +43,12 @@
   margin-left: 1em;
 
   &:first-child {
+    padding-left: 1.5em;
+
     margin-left: 0;
+  }
+  &:last-child {
+    padding-right: 1.5em;
   }
 }
 
@@ -28,6 +60,7 @@
   display: inline-block;
 
   text-align: center;
+  white-space: nowrap;
 
   @include link--light;
 }

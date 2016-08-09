@@ -4,12 +4,18 @@
   list-style-type: none;
   padding-left: 0;
 
-  margin :-.25em;
+  margin: 0 -.25em;
 }
 
 .o-mats__item {
-  float: left;
-  width: 50%;
+  // Disable margin collapse
+  display: inline-block;
+  width: 100%;
+
+  @include media($phablet-up) {
+    float: left;
+    width: 50%;
+  }
 }
 
 .o-mats__label {
@@ -23,7 +29,7 @@
   background-color: $grey--900;
 
   margin: .25rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem .75rem 1rem 1.25rem;
 
   font-size: em(20);
   font-family: $font__serif;
@@ -56,7 +62,7 @@
 
   line-height: 1;
 
-  margin-right: .75em;
+  margin-right: .5em;
 }
 .o-mats__text {
   display: inline-block;

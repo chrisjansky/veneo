@@ -1,21 +1,32 @@
 [class^="o-sticky-container"],
 [class*=" o-sticky-container"] {
-  height: em(94);
+  .device--is-desktop & {
+    height: em(94);
 
-  border-top: $stroke--b solid $grey--900;
+    border-top: $stroke--b solid $grey--900;
+  }
+}
+.o-sticky-container--end {
+  .device--is-mobile & {
+    display: none;
+  }
 }
 
 .o-sticky {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  flex-wrap: wrap;
+
   width: 100%;
 
   background-color: $grey--900;
 
   @include add-wrap(horizontal);
-  @include padding(1.25em null);
-  // border-top: $stroke--b solid rgba($grey--000, .125);
+  @include padding(1.75em null);
+
+  @include media($laptop-up) {
+    @include padding(1.25em null);
+  }
 
   &.panel--is-stuck {
     position: fixed;
@@ -31,6 +42,26 @@
 }
 
 .o-sticky__cell {
+  flex: 1 1 auto;
+
+  @include media($small) {
+    &:first-child,
+    &:last-child {
+      width: 100%;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+  @include media($tablet) {
+    &:last-child {
+      width: 100%;
+
+      text-align: center;
+
+      margin-top: 1.25em;
+    }
+  }
 }
 
 .o-sticky__portrait {
@@ -45,7 +76,6 @@
 
 .o-sticky__text {
   display: inline-block;
-  vertical-align: middle;
 
   font-size: em(18);
 }
@@ -60,17 +90,56 @@
   top: 2px; // Optical offset
 
   display: inline-block;
+  width: 1.5em;
 
+  text-align: center;
   line-height: 1;
   vertical-align: top;
 
   stroke: currentColor;
 
   margin-right: .5em;
+
+  @include media($small) {
+    margin-left: .75em;
+
+    margin-right: 1.125em;
+  }
+}
+
+.o-sticky__price {
+  @include media($small) {
+    display: block;
+
+    text-align: center;
+  }
+}
+.o-sticky__figure {
+  @include media($mobile) {
+    display: inline-block;
+
+    margin-right: .75em;
+  }
+
+  display: block;
+
+  // Baseline adjustment
+  margin-top: -4px;
 }
 
 .o-sticky__button {
-  vertical-align: middle;
+  @include media($small) {
+    display: block;
+    text-align: center;
 
-  margin-left: 2em;
+    margin-top: .75em;
+  }
+
+  @include media($tablet) {
+    margin-left: 2em;
+  }
+
+  @include media($laptop-up) {
+    float: right;
+  }
 }

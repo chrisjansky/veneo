@@ -1,18 +1,20 @@
 .o-perks {
-  text-align: center;
+  @include media($tablet-up) {
+    text-align: center;
+  }
 }
 
 .o-perks__list {
   position: relative;
 
   list-style-type: none;
-  padding-left: 0;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  @include padding(null $stroke--s);
+  @include margin(-$stroke--s null);
+  padding: $stroke--s;
 
   // Hide side borders
   &:before, &:after {
@@ -20,6 +22,7 @@
     position: absolute;
     top: 0;
     height: 100%;
+    z-index: 100;
 
     width: $stroke--b;
 
@@ -34,30 +37,53 @@
   }
 }
 
+.o-perks__title {
+  margin-top: 0;
+
+  text-align: center;
+}
+
 .o-perks__item {
+  position: relative;
+
   flex: 1 1 auto;
 
-  line-height: 3;
-  @include padding(null 1em);
+  @include padding(.75em 1em);
 
   margin: -$stroke--s;
 
   border: $stroke--b solid $grey--800;
+
+  @include media($small) {
+    padding-left: 3.75em;
+  }
 }
 
 .o-perks__text {
   font-weight: $font__sans--regular;
-  font-size: em(18);
 
   margin-right: .5em; // Optical balance
+
+  @include media($tablet-up) {
+    font-size: em(18);
+  }
 }
 
 .o-perks__icon {
-  display: inline-block;
-  vertical-align: middle;
-
-  margin-right: 1em;
+  line-height: 1.75;
 
   stroke: $positive--500;
-  line-height: 1;
+
+  @include media($small) {
+    position: absolute;
+    left: 1.25em;
+  }
+  @include media($tablet-up) {
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-right: 1em;
+
+    line-height: 1;
+  }
 }

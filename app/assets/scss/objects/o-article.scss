@@ -7,16 +7,28 @@
   @include add-wrap(vertical);
 }
 
-.o-article__text {
-  font-size: em(24);
-  font-weight: $font__sans--light;
+.o-article__content {
+  @include collapse-children;
 
+  @include media($small) {
+    text-align: left;
+  }
+}
+
+.o-article__text,
+.o-article__contact {
+  font-size: em(18);
+
+  @include media($tablet-up) {
+    font-size: em(24);
+    font-weight: $font__sans--light;
+  }
+}
+
+.o-article__text {
   color: $grey--400;
 }
 
 .o-article__contact {
-  font-size: em(24);
-  font-weight: $font__sans--light;
-
   color: $color2--300;
 }

@@ -1,6 +1,7 @@
 .o-tabs {
   @include clearfix;
   
+  @include margin(0 null);
   list-style-type: none;
   padding-left: 0;
 
@@ -12,10 +13,11 @@
 }
 
 .o-tabs__link {
+  position: relative;
+
   display: inline-block;
 
-  font-size: em(20);
-  @include padding(.5em 15% 1em);
+  @include padding(.5em 1.25em 1em);
 
   text-decoration: none;
 
@@ -25,8 +27,46 @@
     border-right: none;
   }
 
+  @include media($phablet-up) {
+    font-size: em(20);
+
+    @include padding(null 10%);
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+    transition: border-width $duration--b;
+
+    border: 0 solid transparent;
+    border-bottom-width: 0;
+  }
+  &:before {
+    top: 100%;
+    border-top-color: $grey--800;
+  }
+  &:after {
+    top: 100%;
+
+    transform: translateX(-50%) translateY(-$stroke--m);
+    border-top-color: white;
+  }
+
   &.tab--is-active {
     color: $grey--000;
+  }
+  &.tab--is-active:before,
+  &.tab--is-active:after {
+    border-width: 1em;
   }
 }
 

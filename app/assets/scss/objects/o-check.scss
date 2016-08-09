@@ -50,5 +50,7 @@
 }
 
 .o-check__text {
-  font-size: em(18);
+  @include media($laptop-up) {
+    font-size: em(18);
+  }
 }

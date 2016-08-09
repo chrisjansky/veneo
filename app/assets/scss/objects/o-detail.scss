@@ -11,33 +11,49 @@
 }
 
 .o-detail__viewer {
-  float: left;
-  width: 50%;
+  @include media($laptop-up) {
+    float: left;
+    width: 50%;
+  }
 }
 
 .o-detail__info {
-  overflow: auto;
+  margin-top: 2.25em;
+  
+  @include media($laptop-up) {
+    overflow: auto;
+
+    margin-top: 0;
+    padding-left: 2em;
+  }
 }
 
 .o-detail__bar {
-  display: table;
-  width: 100%;
-
   @include margin(2em null 1em);
+
+  @include media($small) {
+    text-align: center;
+  }
+  @include media($tablet-up) {
+    display: table;
+
+    width: 100%;
+  }
 }
 
 .o-detail__cell {
-  display: table-cell;
-
   @include collapse-children;
 
-  &:last-child {
-    text-align: right;
+  @include media($tablet-up) {
+    display: table-cell;
+
+    &:last-child {
+      text-align: right;
+    }
   }
 }
 
 .o-detail__body {
-  // padding-bottom: 0;
 }
 
 .o-detail__code {

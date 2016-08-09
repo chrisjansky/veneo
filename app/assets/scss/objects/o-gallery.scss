@@ -2,12 +2,21 @@
   white-space: nowrap;
 
   overflow: hidden;
+
+  text-align: center;
 }
 
 .o-gallery__image {
   width: 100%;
+  max-width: 100vmin;
 
   display: inline-block;
+
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .o-gallery__pager {
@@ -29,7 +38,7 @@
     bottom: 0;
     z-index: 500;
 
-    width: 3em;
+    width: 2em;
 
     pointer-events: none;
   }
@@ -47,8 +56,13 @@
 
 .o-gallery__thumb {
   display: inline-block;
-  width: em(90);
-  height: em(90);
+  width: em(60);
+  height: em(60);
+
+  @include media($laptop-up) {
+    width: em(90);
+    height: em(90);
+  }
 
   box-sizing: content-box;
 
@@ -65,10 +79,10 @@
   }
 
   &:first-child {
-    padding-left: 3em;
+    padding-left: 1.5em;
   }
   &:last-child {
-    padding-right: 3em;
+    padding-right: 1.5em;
     margin-right: 0;
   }
 }

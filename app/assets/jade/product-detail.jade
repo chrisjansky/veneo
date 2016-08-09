@@ -9,9 +9,9 @@ block template-content
         li.o-bread__crumb: a.o-bread__link(href="index"): include ../svg/icon_home.svg
         each instance in ["Prsteny", "Dámské s kameny"]
           li.o-bread__crumb: a.o-bread__link(href="#")= instance
-        li.o-bread__crumb
+        li.o-bread__crumb(data-toggle="bread--is-active")
           em.o-bread__current Tanečnice
-          small.o-bread__count 4 variant
+          small.o-bread__count 4 varianty
     ul.o-vars(data-slider)
       - var index = 1
       each color, instance in {"Safír": "#6A6BA6", "Opál": "#999999", "Rubín": "#DD3D7B", "Emerald": "#2BD175"}
@@ -113,8 +113,8 @@ block template-content
         .o-sticky__icon--check: include ../svg/icon_check.svg
         .o-sticky__text Skladem<br>Doprava zdarma
       .o-sticky__cell
-        .o-sticky__text
-          strong.o-sticky__price.t-head--two 2 099 Kč<br>
+        .o-sticky__text.o-sticky__price
+          strong.o-sticky__figure.t-head--two 2 099 Kč<br>
           span.t-text--light vč. DPH
         a(href="#").o-sticky__button.o-button--primary
           span.o-button__icon: include ../svg/icon_cart.svg
@@ -123,15 +123,16 @@ block template-content
   section.o-detail__body.l-wrap
     ul.o-tabs(data-tabs)
       li.o-tabs__item
-        a.o-tabs__link(href="#"): h2.o-tabs__title Popis šperku
+        a.o-tabs__link(href="javascript::"): h2.o-tabs__title Popis šperku
         .o-tabs__content
           article.o-article
             h1.o-article__title.t-head--five Tanečnice — prsten se safírem a&nbsp;čirými zirkony
-            p.o-article__text: +dummy(50)
-            p.o-article__contact Dotazy Vám rádi zodpovíme e-mailem na #[a.t-link--tan(href="#") zlatnictvi@veneo.cz], telefonicky na +420 582 337 520 či prostřednictvím #[a.t-link--tan(href="#") diskuze k tomuto šperku].
+            .o-article__content
+              p.o-article__text: +dummy(50)
+              p.o-article__contact Dotazy Vám rádi zodpovíme e-mailem na #[a.t-link--tan(href="#") zlatnictvi@veneo.cz], telefonicky na +420 582 337 520 či prostřednictvím #[a.t-link--tan(href="#") diskuze k tomuto šperku].
 
       li.o-tabs__item
-        a.o-tabs__link(href="#"): h2.o-tabs__title 9 komentářů
+        a.o-tabs__link(href="javascript::"): h2.o-tabs__title 9 komentářů
         .o-tabs__content
           article.o-article
             p.o-article__text: +dummy(40)

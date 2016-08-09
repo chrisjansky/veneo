@@ -1,26 +1,47 @@
 .o-table {
-  font-size: em(18);
-
   color: $grey--300;
 
   border-collapse: collapse;
 
   td {
-    border: $stroke--b solid $grey--800;
-    padding: .5em 1em;
+    font-size: em(18);
   }
 
-  td:first-child {
-    border-left: none;
+  @include media($small) {
+    td {
+      display: block;
+    }
+    td:first-child {
+      padding-top: .75em;
+      color: $grey--700;
 
-    padding-left: 0;
+      font-size: em(14);
+    }
+    tr:not(:last-child) td:last-child {
+      margin-bottom: .75em;
+    }
+    tr {
+      border-top: $stroke--b solid $grey--800;
+    }
   }
-  td:last-child {
-    border-right: none;
 
-    padding-right: 0;
-  }
-  tr:last-child td {
-    border-bottom: none;
+  @include media($tablet-up) {
+    td {
+      border: $stroke--b solid $grey--800;
+      padding: .5em 1em;
+    }
+    td:first-child {
+      border-left: none;
+
+      padding-left: 0;
+    }
+    td:last-child {
+      border-right: none;
+
+      padding-right: 0;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
   }
 }

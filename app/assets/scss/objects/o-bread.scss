@@ -7,16 +7,18 @@
 }
 
 .o-bread__crumb {
-  display: inline-block;
+  @include media($tablet-up) {
+    display: inline-block;
+  }
 
-  margin-right: 1em;
+  margin-right: .5em;
 
   &:last-child {
     margin-right: 0;
   }
 
   // Chevron
-  &:after {
+  &:before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -28,13 +30,37 @@
     height: .75em;
     width: .75em;
 
-    margin-left: 1em;
+    margin-right: 1em;
 
     transform: rotate(45deg);
   }
 
-  &:last-child:after {
-    content: none;
+  &:first-child:before {
+    border-color: transparent;
+
+    @include media($tablet-up) {
+      content: none;
+    }
+  }
+
+  @include media($small) {
+    margin-left: -.25em;
+    margin-bottom: .25em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      display: none;
+    }
+    html:not(.bread--is-active) &:last-child:before {
+      transform: rotate(135deg) translateX(-.375em);
+    }
+
+    .bread--is-active & {
+      display: block;
+    }
   }
 }
 
@@ -63,4 +89,10 @@
   font-size: em(14);
 
   color: $grey--500;
+
+  @include media($small) {
+    float: right;
+
+    line-height: 1.75;
+  }
 }
