@@ -1,15 +1,13 @@
 .o-cats {
   position: relative;
 
-  margin-bottom: -1em;
-
   // Side gradients
   &:before, &:after {
     content: "";
 
     position: absolute;
     top: 0;
-    bottom: 1em;
+    bottom: 1.25em;
     z-index: 500;
 
     width: 2em;
@@ -31,11 +29,17 @@
     right: 0;
   }
 }
-.o-cats--light:before {
+.o-cats--white:before {
   background-image: linear-gradient(to right, white, rgba(white, 0));
 }
-.o-cats--light:after {
+.o-cats--white:after {
   background-image: linear-gradient(to left, white, rgba(white, 0));
+}
+.o-cats--light:before {
+  background-image: linear-gradient(to right, $grey--900, rgba($grey--900, 0));
+}
+.o-cats--light:after {
+  background-image: linear-gradient(to left, $grey--900, rgba($grey--900, 0));
 }
 .o-cats--dark:before {
   background-image: linear-gradient(to right, $grey--100, rgba($grey--100, 0));
@@ -54,7 +58,7 @@
   white-space: nowrap;
 
   // Divider line
-  .o-cats--light &:after {
+  .o-cats--white &:after {
     content: "";
 
     position: absolute;
@@ -74,40 +78,47 @@
 
   text-align: center;
 
-  @include padding(null 1em);
+  margin-right: 2em;
 
   &:first-child {
-    @include padding(null 1.5em);
-    margin-right: -.5em;
+    padding-left: 1.5em;
   }
   &:last-child {
-    @include padding(null 1.5em);
-    margin-left: -.5em;
+    padding-right: 1.5em;
+
+    margin-right: 0;
   }
 
-  @include media($tablet-up) {
-    @include padding(null 1.5em);
+  @include media($medium) {
+    margin-right: 2.5em;
     
     &:first-child {
-      @include padding(null 3em);
-      margin-right: -1.5em;
+      padding-left: 2.75em;
     }
     &:last-child {
-      @include padding(null 3em);
-      margin-left: -1.5em;
+      padding-right: 2.75em;
     }
   }
 
   @include media($large) {
+    margin-right: 2.75em;
+
     &:first-child {
-      @include padding(null 4em);
-      margin-right: -2.5em;
+      padding-left: 3.75em;
     }
     &:last-child {
-      @include padding(null 4em);
-      margin-left: -2.5em;
+      padding-right: 3.75em;
     }
   }
+}
+
+.o-cats__link {
+  position: relative;
+
+  display: block;
+
+  @include link--light;
+  // transition: color $duration--b;
 
   // Chevron
   &:before, &:after {
@@ -130,43 +141,54 @@
   &:before {
     top: 7.5em;
   }
-  .o-cats--light &:before {
+  .o-cats--white &:before {
     border-top-color: $grey--800;
+  }
+  .o-cats--light &:before {
+    content: none;
   }
   .o-cats--dark &:before {
     border-top-color: $grey--100;
   }
 
-  .o-cats--light &:after {
+  .o-cats--white &:after {
     top: 7.3125em;
 
     border-top-color: white;
   }
 
-  &.is-selected {
-    &:before, &:after {
-      border-width: 1em;
-    }
+  &.category--is-active:before,
+  &.category--is-active:after {
+    border-width: 1em;
+  }
+
+  .o-cats--white & {
+    stroke: url(#gradient--light);
+  }
+  .o-cats--light & {
+    stroke: url(#gradient--medium);
+  }
+  .o-cats--dark & {
+    stroke: url(#gradient--dark);
+  }
+
+  .o-cats--light &:hover {
+    stroke: url(#gradient--on);
   }
 }
 
-.o-cats__link {
-  @include link--light;
-  transition: color $duration--b;
+.o-cats--white .category--is-active {
+  color: $grey--000;
 
-  .o-cats--light .is-selected & {
-    color: $grey--000;
-
-    svg {
-      stroke: url(#gradient-light-on);
-    }
+  svg {
+    stroke: url(#gradient--on);
   }
-  .o-cats--dark .is-selected & {
-    color: white;
+}
+.o-cats--dark .category--is-active {
+  color: white;
 
-    svg {
-      stroke: url(#gradient-dark-on);
-    }
+  svg {
+    stroke: url(#gradient--on);
   }
 }
 
@@ -177,13 +199,6 @@
 
   svg {
     vertical-align: middle;
-  }
-
-  .o-cats--light & svg {
-    stroke: url(#gradient-light-off);
-  }
-  .o-cats--dark & svg {
-    stroke: url(#gradient-dark-off);
   }
 
   // Pseudo-centering
@@ -197,6 +212,13 @@
 }
 
 // Variants
+.o-cats--white,
 .o-cats--dark {
-  padding-top: 1.5em;
+  margin-bottom: -1em;
+}
+.o-cats--dark {
+  padding-top: 1.75em;
+}
+.o-cats--light {
+  @include padding(2em null);
 }

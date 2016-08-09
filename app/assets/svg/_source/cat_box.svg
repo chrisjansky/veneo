@@ -4,19 +4,19 @@
     <title>cat_box</title>
     <desc>Created with Sketch.</desc>
     <defs>
-      <linearGradient id="gradient-light-off" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
+      <linearGradient id="gradient--light" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stop-color="#EBEBEB" />
         <stop offset="100%" stop-color="#DEDEDE" />
       </linearGradient>
-      <linearGradient id="gradient-light-on" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stop-color="#F2D3AA" />
-        <stop offset="100%" stop-color="#A69279" />
+      <linearGradient id="gradient--medium" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#DEDEDE" />
+        <stop offset="100%" stop-color="#D1D1D1" />
       </linearGradient>
-      <linearGradient id="gradient-dark-off" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
+      <linearGradient id="gradient--dark" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stop-color="#6B6B6B" />
         <stop offset="100%" stop-color="#5E5E5E" />
       </linearGradient>
-      <linearGradient id="gradient-dark-on" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
+      <linearGradient id="gradient--on" gradientTransform="rotate(45)" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stop-color="#F2D3AA" />
         <stop offset="100%" stop-color="#A69279" />
       </linearGradient>
