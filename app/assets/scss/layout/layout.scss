@@ -1,6 +1,6 @@
 @mixin add-wrap ($direction: both) {
   @if ($direction == horizontal) {
-    @include padding(null 1.625em);
+    @include padding(null 1.25em);
 
     @include media($tablet) {
       @include padding(null 2.25em);
@@ -12,7 +12,7 @@
       @include padding(null 4em);
     }
   } @else if ($direction == vertical) {
-    @include padding(2.25em null);
+    @include padding(2em null);
 
     @include media($tablet) {
       @include padding(2.25em null);
@@ -21,7 +21,7 @@
       @include padding(3em null);
     }
   } @else {
-    padding: 2.25em 1.625em;
+    padding: 2em 1.25em;
 
     @include media($tablet) {
       padding: 2.25em;
@@ -52,7 +52,11 @@
   @include padding(null 0);
 }
 .l-wrap--v-small {
-  @include padding(1.5em null);
+  @include padding(1.25em null);
+
+  @include media($laptop-up) {
+    @include padding(1.5em null);
+  }
 }
 
 .l-inline {
@@ -71,6 +75,3 @@
     text-align: right;
   }
 }
-// .l-inline__cell--right {
-//   text-align: right;
-// }

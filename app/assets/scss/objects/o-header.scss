@@ -20,9 +20,8 @@
 
 .o-header__content {
   color: white;
-  border-bottom: $stroke--b solid rgba(white, .125);
 
-  padding: 1.5em 1.625em .75em;
+  padding: 1.5em 1.25em .75em;
 
   @include media($tablet) {
     @include padding(null 2.25em);
@@ -46,6 +45,10 @@
   .headroom--not-top &,
   .o-header--stay & {
     background-color: $grey--000;
+  }
+
+  html:not(.pages--is-active) .o-header--fade & {
+    border-bottom: $stroke--b solid rgba(white, .125);
   }
 }
 

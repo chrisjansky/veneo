@@ -33,7 +33,7 @@
 
   background-color: transparent;
   border: none;
-  @include padding(0 1.625rem);
+  @include padding(0 1.25rem);
 
   font-size: em(24);
   font-weight: $font__sans--light;
@@ -61,7 +61,7 @@
 .o-spotlight__submit {
   background-color: transparent;
   border: none;
-  padding: 0 1.625em;
+  padding: 0 1.25em;
 
   position: absolute;
   right: 0;

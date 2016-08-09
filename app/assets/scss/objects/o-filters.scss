@@ -4,7 +4,7 @@
   border-bottom: $stroke--b solid $grey--900;
   border-top: $stroke--b solid $grey--900;
 
-  @include padding(null 1.625em);
+  @include padding(null 1.25em);
 
   @include media($tablet) {
     @include padding(null 2.25em);
