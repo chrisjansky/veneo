@@ -1,4 +1,4 @@
-mixin header(type)
+mixin header(type, activeItem)
   header.o-header(data-header, class="o-header--#{type}")
     .o-header__content
       a.o-header__logo.o-logo(href="index.html"): include ../../svg/logo_veneo_new.svg
@@ -31,7 +31,7 @@ mixin header(type)
             ul.o-pages__list
               each link, instance in {"Naše šperky": "product-list.html", "Ruční výroba": "#", "Šperky na zakázku": "#", "Časté otázky": "#", "Kontakty": "#"}
                 li.o-pages__item
-                  a.o-pages__link(href=link)= instance
+                  a.o-pages__link(href=link, class=activeItem == instance ? "link--is-active" : null)= instance
         .o-hud__cell.l-inline__cell
           button.m-search-toggle.o-toggle(type="button", data-toggle="search--is-active", data-search)
             span.o-toggle__textset

@@ -59,4 +59,10 @@
 }
 .o-pages__link {
   @include link--lighter;
+
+  &.link--is-active {
+    color: white;
+
+    font-weight: $font__sans--medium;
+  }
 }
