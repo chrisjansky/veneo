@@ -25,6 +25,8 @@ $("[data-gallery]").imagesLoaded().done(function(instance) {
     pageDots: false
   });
 
+  Waypoint.refreshAll();
+
   galleryObj = $gallery.data("flickity");
 
   $gallery.on("select.flickity", function() {
@@ -39,6 +41,8 @@ $("[data-pager]").imagesLoaded().done(function(instance) {
     prevNextButtons: false,
     pageDots: false
   });
+
+  Waypoint.refreshAll();
   
   $galleryPager.on("click", "[data-pager-item]", function(event) {
     var index = $(event.currentTarget).index();

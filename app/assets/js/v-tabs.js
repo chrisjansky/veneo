@@ -9,6 +9,7 @@ $("[data-tabs]").each(function() {
 
 $("[data-tabs]").on("click", "li > a", function(event) {
   event.preventDefault();
+
   var $tabItem = $(this);
 
   if (!$tabItem.hasClass(tabActiveClass)) {
@@ -19,4 +20,8 @@ $("[data-tabs]").on("click", "li > a", function(event) {
     $tabList.find(".tab--is-active").removeClass(tabActiveClass);
     $tabItem.addClass(tabActiveClass);
   }
+
+  Waypoint.refreshAll();
+
+  panelRestick($sticky, document.getElementById("js-sticky-end"));
 });
