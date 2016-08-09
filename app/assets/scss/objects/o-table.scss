@@ -1,0 +1,26 @@
+.o-table {
+  font-size: em(18);
+
+  color: $grey--300;
+
+  border-collapse: collapse;
+
+  td {
+    border: $stroke--b solid $grey--800;
+    padding: .5em 1em;
+  }
+
+  td:first-child {
+    border-left: none;
+
+    padding-left: 0;
+  }
+  td:last-child {
+    border-right: none;
+
+    padding-right: 0;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
