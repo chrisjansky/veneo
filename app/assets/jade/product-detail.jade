@@ -134,9 +134,33 @@ block template-content
       li.o-tabs__item
         a.o-tabs__link(href="javascript::"): h2.o-tabs__title 9 komentářů
         .o-tabs__content
-          article.o-article
-            p.o-article__text: +dummy(40)
-            p.o-article__text: +dummy(20)
+          section.o-chat
+            .o-chat__list
+              each instance in [1, 2, 3]
+                article.o-chat__item
+                  .o-chat__info--left
+                    strong.o-chat__author Drahomír Panák
+                    time.o-chat__time 3. 12. 2014
+                  .o-chat__body
+                    .o-chat__content: p: +dummy(instance * 22)
+                    if (instance == 1 || instance == 3)
+                      .o-chat__reply
+                        .o-chat__answer: p: +dummy(instance * 15)
+                        .o-chat__info--right
+                          img.o-chat__portrait(src="assets/images/portrait_small_1.jpg", alt="Lubomír Krčmář")
+                          .o-chat__owner
+                            em.o-chat__note.t-smallcaps Odpovídá
+                            strong.o-chat__author Lubomír Krčmář
+                            time.o-chat__time 3. 12. 2014
+            form.o-chat__form
+              h3.o-chat__title.t-head--five Připojte se k diskuzi
+              .o-chat__formgroup
+                input.o-chat__input.o-input(type="text", placeholder="Vaše jméno")
+                input.o-chat__input.o-input(type="text", placeholder="E-mail (nezveřejníme)")
+                textarea.o-chat__textarea.o-textarea(rows="3", placeholder="Váš dotaz, komentář či hodnocení")
+                button.o-chat__submit.o-submit(type="submit")
+                  span.o-submit__icon: include ../svg/icon_ok.svg
+                  | Odeslat
 
     .o-perks
       h3.o-perks__title.t-head--two Ke šperku získáte

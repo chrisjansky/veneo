@@ -62,3 +62,73 @@
 .o-top--vars {
   background-color: $grey--900;
 }
+
+.o-input {
+  border: none;
+
+  background-image: linear-gradient(to right, $grey--800, $grey--500 60%, $color2--300 80%, $color2--600);
+  background-size: 400% $stroke--b;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+
+  transition: color $duration--m, background $duration--m;
+
+  padding: 0 0 .5em;
+
+  font-size: em(18);
+  color: $grey--200;
+
+  &:hover {
+    background-position: center bottom;
+  }
+
+  @include placeholder {
+    font-weight: $font__sans--light;
+    color: $grey--400;
+  }
+
+  &:focus {
+    color: $color2--300;
+
+    outline: 0;
+    background-position: right bottom;
+  }
+}
+
+.o-textarea {
+  width: 100%;
+
+  display: block;
+
+  padding: 1em 1.25em;
+  border: none;
+
+  background-color: $grey--900;
+
+  background-image: linear-gradient(to right, $grey--800, $grey--500 60%, $color2--300 80%, $color2--600);
+  background-size: 400% $stroke--b;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+
+  transition: color $duration--m, background $duration--m;
+
+  font-size: em(18);
+  color: $grey--200;
+
+  @include placeholder {
+    font-weight: $font__sans--light;
+    color: $grey--400;
+  }
+
+  &:hover {
+    background-position: center bottom;
+  }
+
+  &:focus {
+    outline: none;
+
+    color: $color2--300;
+    background-position: right bottom;
+    background-color: $color2--800;
+  }
+}
