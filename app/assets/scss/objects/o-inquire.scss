@@ -1,0 +1,43 @@
+.o-inquire {
+  position: relative;
+}
+
+.o-inquire__title {
+  text-align: center;
+}
+
+.o-inquire__formgroup {
+  @include media($laptop-up) {
+    @include shift(2 of 12);
+    width: flex-grid(8, 12);
+  }
+}
+
+.o-inquire__input {
+  margin-bottom: 1em;
+
+  @include media($phablet) {
+    @include span-columns(3 of 6);
+  }
+  @include media($tablet-up) {
+    @include span-columns(5 of 10);
+
+    margin-bottom: 1.5em;
+  }
+  @include omega(2n);
+}
+
+.o-inquire__textarea {
+}
+
+.o-inquire__submit {
+  display: block;
+
+  @include margin(1.375em auto null);
+
+  @include media($laptop-up) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
