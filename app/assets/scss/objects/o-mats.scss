@@ -86,3 +86,62 @@
 .o-mats__label--rose {
   stroke: $color--rose;
 }
+
+.o-mats__tooltip {
+  visibility: hidden;
+
+  position: absolute;
+  z-index: 500;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  &:before,
+  &:after {
+    display: block;
+
+    @include margin(null auto);
+  }
+
+  .device--is-desktop .o-mats__label:hover & {
+    visibility: visible;
+  }
+
+  .o-mats__item:first-child &,
+  .o-mats__item:nth-child(2) & {
+      bottom: 100%;
+  }
+  .o-mats__item:first-child &:after,
+  .o-mats__item:nth-child(2) &:after {
+    @include triangle(.75em, $grey--000, down);
+    content: "";
+  }
+  .o-mats__item:nth-child(3) &,
+  .o-mats__item:last-child & {
+    top: 100%;
+  }
+  .o-mats__item:nth-child(3) &:before,
+  .o-mats__item:last-child &:before {
+    @include triangle(.75em, $grey--000, up);
+    content: "";
+  }
+}
+
+.o-mats__content {
+  display: inline-block;
+
+  color: white;
+  background-color: $grey--000;
+
+  padding: .75em 1em;
+  border-radius: $radius--b;
+
+  max-width: 20em;
+
+  font-size: rem(14);
+  font-family: $font__sans;
+  font-weight: $font__sans--regular;
+  line-height: 1.4;
+  text-align: left;
+}

@@ -21,7 +21,8 @@
   margin-top: 2.25em;
   
   @include media($laptop-up) {
-    overflow: auto;
+    float: left;
+    width: 50%;
 
     margin-top: 0;
     padding-left: 2em;
