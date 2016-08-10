@@ -1,13 +1,34 @@
 .o-capsbutton {
   font-weight: $font__sans--medium;
 }
-.o-capsbutton__icon {
+
+.chevron--left:before,
+.chevron--right:after {
+  content: "";
   display: inline-block;
-
-  stroke: currentColor;
-
   vertical-align: middle;
+
+  height: .625em;
+  width: .625em;
+
+  border-style: solid;
+  border-color: currentColor;
+
+  position: relative; // Vertical align
+  top: -1px;
+}
+
+.chevron--left:before {
+  border-width: $stroke--b 0 0 $stroke--b;
+
+  margin-right: .75em;
+
+  transform: rotate(-45deg);
+}
+.chevron--right:after {
+  border-width: $stroke--b $stroke--b 0 0;
+
   margin-left: .75em;
 
-  line-height: 1;
+  transform: rotate(45deg);
 }

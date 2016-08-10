@@ -11,9 +11,8 @@ block template-content
           | Originální šperky vyrobeny tradičními zlatnickými postupy a&nbsp;pod dohledem zlatnického mistra 
           a.o-hero__link(href="#") Lubomíra Krčmáře
           | .
-        a(href="#").o-hero__button.o-capsbutton
-          span.t-caps Filozofie značky
-          span.o-capsbutton__icon: include ../svg/chevron_right.svg
+        a(href="#").o-hero__button.o-capsbutton.chevron--right
+          span.o-capsbutton__text.t-caps Filozofie značky
 
   section.m-selector.o-section
     .m-selector__wrap.l-wrap
@@ -24,18 +23,16 @@ block template-content
       .o-featured__list.l-wrap
         each instance in [1, 2, 3, 4, 5, 6]
           +productThumb(instance, "o-featured__item")
-      a(href="#").o-fullbutton
+      a(href="#").o-fullbutton.chevron--right
         span.o-fullbutton__text Přejít do kategorie Prsteny
-        span.o-fullbutton__icon: include ../svg/chevron_right.svg
 
   section.m-bespoke
     .m-bespoke__wrap.l-wrap
       .m-bespoke__content
         h1.o-section__head.t-head--one Katalogové i&nbsp;originální šperky na míru
         p.t-text--light Jiná internetová zlatnictví šperky prodávají, my je vyrábíme. Šperky z&nbsp;katalogu si můžete objednat tak, jak je vidíte, na přání je upravíme na míru. Měnit lze cokoli &mdash; velikost, osazení kameny, zapínání, vždy můžete volit mezi zlatem a&nbsp;stříbrem. Zhotovíme i&nbsp;šperky podle vašeho návrhu a&nbsp;z&nbsp;vašeho zlata.
-        a(href="#").m-bespoke__button.o-capsbutton
-          span.t-caps Šperky na zakázku
-          span.o-capsbutton__icon: include ../svg/chevron_right.svg
+        a(href="#").m-bespoke__button.o-capsbutton.chevron--right
+          span.o-capsbutton__text.t-caps Šperky na zakázku
 
   include partials/_reasons
 
