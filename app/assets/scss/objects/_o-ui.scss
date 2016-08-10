@@ -1,0 +1,103 @@
+// Underscore to fix ordering issues with globbing
+.o-input {
+  width: 100%;
+
+  border: none;
+
+  background-image: linear-gradient(to right, $grey--800, $grey--500 60%, $color2--300 80%, $color2--600);
+  background-size: 400% $stroke--b;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+
+  transition: color $duration--m, background $duration--m;
+
+  padding: 0 0 .5em;
+
+  font-size: em(18);
+  color: $grey--200;
+
+  &:hover {
+    background-position: center bottom;
+  }
+
+  @include placeholder {
+    font-weight: $font__sans--light;
+    color: $grey--400;
+  }
+
+  &:focus {
+    color: $color2--300;
+
+    outline: 0;
+    background-position: right bottom;
+  }
+}
+
+.o-textarea {
+  width: 100%;
+
+  display: block;
+
+  padding: 1em;
+  border: none;
+  border-radius: 0;
+
+  background-color: $grey--900;
+
+  background-image: linear-gradient(to right, $grey--800, $grey--500 60%, $color2--300 80%, $color2--600);
+  background-size: 400% $stroke--b;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+
+  transition: color $duration--m, background $duration--m;
+
+  font-size: em(18);
+  color: $grey--200;
+
+  resize: vertical;
+
+  @include placeholder {
+    font-weight: $font__sans--light;
+    color: $grey--400;
+  }
+
+  &:hover {
+    background-position: center bottom;
+  }
+
+  &:focus {
+    outline: none;
+
+    color: $color2--300;
+    background-position: right bottom;
+    background-color: $color2--800;
+  }
+}
+
+.o-submit {
+  border: $stroke--b solid currentColor;
+  border-radius: $radius--b;
+  padding: 0 1.375em;
+
+  font-weight: $font__sans--medium;
+  line-height: em(44);
+  text-transform: uppercase;
+  letter-spacing: $tracking--b;
+
+  color: $positive--500;
+  background-color: transparent;
+  fill: currentColor;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $positive--400;
+  }
+}
+.o-submit__icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+
+  margin-right: .75em;
+}
