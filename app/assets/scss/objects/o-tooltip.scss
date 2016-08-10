@@ -1,0 +1,60 @@
+.o-tooltip {
+  position: relative;
+
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+
+  margin-left: .5em;
+
+  color: $c-link;
+  stroke: currentColor;
+
+  &:hover {
+    color: $c-hover;
+    cursor: help;
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.o-tooltip__wrap {
+  visibility: hidden;
+
+  position: absolute;
+  bottom: 1.25em;
+  left: -5em;
+  right: -5em;
+
+  text-align: center;
+
+  &:after {
+    display: block;
+
+    @include margin(null auto);
+    content: "";
+    @include triangle(.75em, rgba($grey--000, .95), down);
+  }
+
+  .o-tooltip:hover & {
+    visibility: visible;
+  }
+}
+
+.o-tooltip__content {
+  display: inline-block;
+
+  color: white;
+  background-color: rgba($grey--000, .95);
+
+  padding: .75em 1em;
+  border-radius: $radius--b;
+
+  max-width: 13em;
+
+  text-align: left;
+  font-size: rem(14);
+  line-height: 1.4;
+}
