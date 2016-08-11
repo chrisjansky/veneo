@@ -3,7 +3,9 @@
   width: 100%;
 
   border: none;
+  border-radius: 0;
 
+  background-color: transparent;
   background-image: linear-gradient(to right, $grey--800, $grey--500 60%, $color2--300 80%, $color2--600);
   background-size: 400% $stroke--b;
   background-repeat: repeat-x;
@@ -77,10 +79,9 @@
 
   border: $stroke--b solid currentColor;
   border-radius: $radius--b;
-  padding: 0 1.375em;
+  padding: .6875em 1.375em;
 
   font-weight: $font__sans--medium;
-  line-height: em(44);
   text-transform: uppercase;
   letter-spacing: $tracking--b;
 
@@ -94,6 +95,7 @@
     color: $positive--400;
   }
 }
+
 .o-submit__icon {
   display: inline-block;
   vertical-align: middle;
@@ -189,7 +191,7 @@
   text-align: right;
   white-space: nowrap;
 
-  padding-left: 1em;
+  padding-left: .5em;
 }
 
 .o-radio__note {
