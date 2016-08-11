@@ -1,0 +1,7 @@
+mixin input-dropdown(text)
+  .o-dropdown
+    select.o-dropdown__select
+      option(selected)!= text
+      option Další volba
+      option Poslední volba
+    span.o-dropdown__icon: include ../../svg/arrow_down.svg

@@ -1,0 +1,10 @@
+mixin input-radio()
+  label.o-radio
+    input.o-radio__input(type="radio", name="radio-#{instance}")
+    span.o-radio__circle
+    span.o-radio__content
+      .o-radio__text
+        strong.o-radio__title: +dummy(5)
+        span.o-radio__info: +dummy(5)
+      .o-radio__aside
+        em.o-radio__note + 150 Kč
