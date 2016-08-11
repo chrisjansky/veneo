@@ -24,7 +24,7 @@ block template-content
             h3.t-head--five: +dummy(5, "words")
             p.t-medium: +dummy(20)
           .o-blox__outro
-            p.t-text
+            p
               +dummy(15)
               | 
               a(href="#"): +dummy(5)
@@ -41,7 +41,7 @@ block template-content
             ul.o-list
               each instance in [1, 2, 3]
                 li.o-list__item: +dummy(instance * 5)
-            p.t-text
+            p
               +dummy(10)
               | 
               a(href="#"): +dummy(5)

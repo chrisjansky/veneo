@@ -1,5 +1,4 @@
 .o-list {
-  font-size: em(18);
   list-style-type: none;
   padding-left: 0;
 }
@@ -7,10 +6,18 @@
 .o-list__item {
   position: relative;
 
-  padding-left: 1em;
+  padding-left: 1.5em;
 
   &:not(:last-child) {
     margin-bottom: .5em;
+  }
+
+  .o-list--big & {
+    margin-left: .25em;
+    padding-left: 1.75em;
+  }
+  .o-list--big &:not(:last-child) {
+    margin-bottom: .75em;
   }
 
   &:before {
