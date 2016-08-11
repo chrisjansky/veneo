@@ -1,8 +1,14 @@
 .o-check {
   position: relative;
 
+  display: inline-block;
+
+  color: $grey--400;
+
   &:hover {
     cursor: pointer;
+
+    color: $grey--200;
   }
 }
 
@@ -12,14 +18,15 @@
 }
 
 .o-check__box {
-  display: inline-block;
-  vertical-align: middle;
+  position: relative;
 
-  width: em(30);
-  height: em(30);
+  display: inline-block;
+
+  width: em(24);
+  height: em(24);
 
   border-radius: $radius--b;
-  border: $stroke--b solid $grey--700;
+  background-image: linear-gradient(to bottom right, $grey--800, $grey--700);
 
   margin-right: 1em;
 
@@ -27,30 +34,56 @@
 
   text-align: center;
 
-  transition: background-color $duration--s;
-
   &:before {
     @include pseudo-center;
   }
 
   svg {
     position: relative;
-    top: -1px;
+    z-index: 50;
+
     vertical-align: middle;
   }
 
   .o-check:hover & {
-    border-color: $grey--400;
+    background-image: linear-gradient(to bottom right, $grey--700, $grey--600);
   }
 
   .o-check__input:checked + & {
-    border-color: $grey--300;
-    background-color: $grey--300;
+    background-image: linear-gradient(to bottom right, $grey--600, $grey--400);
+
+    stroke: $grey--500;
+  }
+
+  &:after {
+    content: "";
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: em(20);
+    height: em(20);
+
+    background-color: white;
+    border-radius: $radius--s;
+
+    transform: translate(-50%, -50%);
+
+    transition: transform $duration--b;
+  }
+
+  .o-check__input:checked + &:after {
+    transform: translate(-50%, -50%) scale(.9);
   }
 }
 
 .o-check__text {
-  @include media($laptop-up) {
+  :checked + .o-check__box + & {
+    color: $grey--200;
+  }
+
+  @include media($large) {
     font-size: em(18);
   }
 }

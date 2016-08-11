@@ -1,0 +1,167 @@
+.o-order {
+  margin-top: 3.5em;
+}
+
+.o-order__bar {
+  display: table;
+  width: 100%;
+
+  @include padding(.75em null);
+
+  border-bottom: $stroke--b solid $grey--850;
+
+  .o-order__column:first-child & {
+    padding-right: 2em;
+  }
+  .o-order__column:last-child & {
+    padding-left: 2em;
+  }
+}
+
+.o-order__cell {
+  display: table-cell;
+  vertical-align: middle;
+
+  &:last-child {
+    text-align: right;
+  }
+}
+
+.o-order__head {
+  @include margin(0 null);
+
+  display: inline-block;
+}
+
+.o-order__section {
+  margin-top: 3em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.o-order__container {
+  display: table;
+  width: 100%;
+}
+
+.o-order__column {
+  display: table-cell;
+  width: 50%;
+
+  // Silly way to ensure it is perfectly centered
+  &:first-child {
+    border-right: $stroke--s solid $grey--850;
+  }
+  &:last-child {
+    border-left: $stroke--s solid $grey--850;
+  }
+}
+
+.o-order__set {
+  border: none;
+  padding: 2.5em 0 3em;
+  margin: 0;
+
+  .o-order__column:first-child & {
+    padding-right: 2em;
+  }
+  .o-order__column:last-child & {
+    padding-left: 2em;
+  }
+}
+
+[class^="o-order__field"],
+[class*=" o-order__field"] {
+  margin-bottom: 1.125em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.o-order__field--medium {
+  margin-bottom: 1.75em;
+}
+.o-order__field--big {
+  margin-bottom: 2.75em;
+}
+
+.o-order__label {
+  display: block;
+
+  font-size: em(18);
+  line-height: 1;
+
+  margin-bottom: .75rem;
+
+  color: $grey--200;
+}
+
+[class^="o-order__action"],
+[class*=" o-order__action"] {
+  text-align: center;
+}
+
+.o-order__action--down:after,
+.o-order__action--up:before {
+  content: "";
+
+  display: block;
+  width: $stroke--b;
+
+  @include margin(null auto);
+
+  background-color: $grey--850;
+}
+.o-order__action--down:after {
+  height: 2em;
+}
+.o-order__action--up:before {
+  height: 4em;
+}
+
+
+.o-order__check {
+}
+
+.o-order__summary {
+  display: table;
+  width: 100%;
+
+  border-bottom: $stroke--b solid $grey--800;
+}
+.o-order__pricetag {
+  display: table-cell;
+  width: 50%;
+
+  text-align: right;
+
+  padding: 2em;
+
+  background-color: $grey--900;
+  border-right: $stroke--s solid $grey--800;
+}
+
+.o-order__tag {
+  @include margin(0 null);
+
+  color: $color2--200;
+}
+.o-order__total {
+  display: table-cell;
+  width: 50%;
+
+  padding: 2em;
+
+  border-left: $stroke--s solid $grey--800;
+}
+
+.o-order__disclaimer {
+  display: block;
+
+  color: $grey--600;
+  text-align: center;
+
+  margin-top: 2em;
+}

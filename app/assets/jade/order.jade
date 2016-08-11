@@ -1,0 +1,124 @@
+extends templates/_site
+
+block template-content
+  +header("stay", null)
+
+  .o-top
+    .l-wrap
+      section.o-cart
+        .o-cart__bar
+          a(href="product-list.html").o-cart__context.o-capsbutton.chevron--left
+            span.o-capsbutton__text.t-caps Nakupovat dále
+
+          h1.o-cart__head.t-head--one Košík a objednávka
+        .o-cart__list
+          - var index = 1
+          each color, instance in {"Tanečnice — prsten se safírem a&nbsp;čirými zirkony": "#6A6BA6", "Marabelle — prsten s&nbsp;rubínem": "#DD3D7B", "Isis – prsten s&nbsp;růžovými zirkony, akvamaríny, žlutými zirkony a&nbsp;padparačem": "#999999", "Odeta — prsten s&nbsp;venezuelským opálem": "#2BD175"}
+            article.o-cart__item
+              .o-cart__main
+                a.o-cart__thumb(href="product-detail.html", style="color: #{color}")
+                  img.o-cart__image(src="assets/images/img_product_thumb_#{index++}.jpg", alt="Product Thumbnail")
+
+                .o-cart__text
+                  a.o-cart__link(href="product-detail.html")
+                    h2.o-cart__title.t-head--five!= instance
+                  em.o-cart__settings Stříbro, vel. 22 (US 13&ndash;22,2 mm)
+                  ul.o-cart__options
+                    if (index == 3)
+                      li.o-cart__option.option--is-negative
+                        span.o-cart__icon: include ../svg/icon_cross.svg
+                        strong.o-cart__note Na objednání
+                    else
+                      li.o-cart__option.option--is-positive
+                        span.o-cart__icon: include ../svg/icon_check.svg
+                        strong.o-cart__note Skladem
+                    if (index == 4)
+                      li.o-cart__option
+                        a.o-cart__action--tan(href="#")
+                          span.o-cart__icon: include ../svg/icon_customize.svg
+                          strong.o-cart__note Upraveno na míru
+                            span.o-cart__message Prosím o vyrytí následujícího dovnitř prstenu: “Pro…
+                    else
+                      li.o-cart__option
+                        a(href="#")
+                          span.o-cart__icon: include ../svg/icon_customize.svg
+                          strong.o-cart__note Upravit na míru
+
+              .o-cart__aside
+                .o-cart__count
+                  input.o-input.o-cart__stepper(type="number", value="1", min="1")
+                  span.o-cart__suffix ks
+                strong.o-cart__price.t-price 4 189 Kč
+
+          footer.o-cart__footer
+            .o-cart__pricetags
+              h3.o-cart__tag--tax.t-italic Celkem vč. DPH
+              h4.o-cart__tag--notax.t-tiny Celkem bez DPH
+            .o-cart__total
+              strong.o-cart__price--tax.t-price 8 489 Kč
+              small.o-cart__price--notax.t-tiny 5 298 Kč
+
+      form.o-order
+        .o-order__section
+          .o-order__container
+            each instance, index in ["Doprava", "Platba"]
+              .o-order__column
+                .o-order__bar
+                  h1.o-order__head.t-head--five= instance
+                fieldset.o-order__set
+                  if index == 0
+                    .o-order__field--big
+                      label.o-order__label Vyberte stát
+                      +input-dropdown("Česká Republika")
+                    each input in [1, 2]
+                      .o-order__field
+                        +input-radio()
+                  else
+                    each input in [1, 2, 3, 4]
+                      .o-order__field
+                        +input-radio()
+
+        .o-order__section
+          .o-order__action--down
+            a(href="#").o-order__button.o-submit
+              span.o-submit__icon: include ../svg/icon_key.svg
+              | Přihlásit se a předvyplnit údaje
+
+          .o-order__container
+            each instance, index in ["Vaše údaje", "Kontaktní údaje"]
+              .o-order__column
+                .o-order__bar
+                  .o-order__cell
+                    h1.o-order__head.t-head--five= instance
+                  .o-order__cell
+                    label.o-check.o-order__check
+                      input.o-check__input(type="checkbox")
+                      span.o-check__box: include ../svg/icon_check_small.svg
+                      span.o-check__text Jiná doručovací adresa
+
+                fieldset.o-order__set
+                  if index == 0
+                    each input in ["Jméno", "Příjmení", "Telefon", "E-mail"]
+                      .o-order__field--medium
+                        input.o-input(type="text", placeholder=input)
+                  else
+                    each input in ["Ulice, č. p.", "Město", "PSČ"]
+                      .o-order__field--medium
+                        input.o-input(type="text", placeholder=input)
+
+        .o-order__summary
+          .o-order__pricetag
+            h3.o-order__tag.t-italic Celkem vč. DPH
+          .o-order__total
+            strong.o-order__price.t-price 8 489 Kč
+
+        .o-order__action--up
+          button.o-order__submit.o-submit(type="submit")
+            span.o-submit__icon: include ../svg/icon_ok.svg
+            | Odeslat objednávku
+
+        small.o-order__disclaimer.t-small Odesláním objednávky souhlasíte s&nbsp; #[a.t-link--light(href="#") Obchodními podmínkami].
+
+  include partials/_stats
+
+  include partials/_footer

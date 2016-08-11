@@ -65,6 +65,10 @@
   font-size: em(20);
   font-family: $font__serif;
   font-weight: $font__serif--regular;
+
+  @include media($large) {
+    font-size: em(24);
+  }
 }
 .t-term {
   font-size: em(24);
@@ -93,9 +97,24 @@
     font-size: em(32);
   }
 }
+.t-italic {
+  font-size: em(20);
+  font-family: $font__serif;
+  font-weight: $font__serif--light;
+  font-style: italic;
+
+  @include media($large) {
+    font-size: em(24);
+  }
+}
 
 .t-small {
   font-size: rem(16);
+  font-weight: $font__sans--regular;
+}
+.t-tiny {
+  font-size: rem(14);
+  font-weight: $font__sans--regular;
 }
 
 [class^="t-text"],
@@ -126,7 +145,7 @@
 .t-link--light {
   @include link--light;
   
-  border-bottom: $stroke--s solid rgba(white, .25);
+  border-bottom: $stroke--s solid $grey--800;
 }
 .t-link--white {
   &:link, &:visited {
