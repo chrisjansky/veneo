@@ -1,0 +1,55 @@
+extends templates/_site
+
+block template-content
+  +header("stay", null)
+
+  section.o-top.o-generic
+    .o-generic__top.l-wrap
+      h1.o-generic__head.t-head--one Časté otázky
+      .o-generic__text.t-medium
+        p
+          +dummy(15)
+          | 
+          a(href="#"): +dummy(5)
+          | 
+          +dummy(10)
+
+    .o-frequent.o-section--light.l-wrap
+      h2.o-frequent__title.t-head--five Nejhledanější
+      ul.o-frequent__list
+        each instance in ["Syntetický/přirodní opál", "Měření velikosti prstenu", "Rhodiování stříbra", "Dodání šperků skladem", "Osobní odběr"]
+          li.o-frequent__item
+            a(href="#").o-frequent__link= instance
+
+  main.o-qa
+    .o-qa__top.l-wrap
+      each instance in [1, 2]
+        .o-qa__column
+          h3.o-qa__head.t-head--six: +dummy(5, "words")
+          ul.o-qa__anchors.o-list.o-list--big
+            - var randomNumber = Math.ceil((Math.random() * 4))
+            - var itemCount = 0
+            while itemCount < randomNumber
+              li.o-qa__anchor.o-list__item: a.o-qa__link(data-scrollto, href="#anchor-#{randomNumber}"): +dummy(10)
+              - itemCount++
+          h3.o-qa__head.t-head--six: +dummy(5, "words")
+          ul.o-qa__anchors.o-list.o-list--big
+            - var randomNumber = Math.ceil((Math.random() * 4))
+            - var itemCount = 0
+            while itemCount < randomNumber
+              li.o-qa__anchor.o-list__item: a.o-qa__link(data-scrollto, href="#anchor-#{randomNumber}"): +dummy(10)
+              - itemCount++
+
+    each instance in [1, 2, 3, 4]
+      article.o-qa__topic.l-wrap
+        h2.o-qa__subhead.t-head--one: +dummy(5, "words")
+        dl.o-qa__entries
+          each item in [1, 2, 3]
+            dt.o-qa__entry(id="anchor-#{instance}")
+              h3.o-qa__term.t-head--three
+                +dummy(10, "words")
+            dd.o-qa__description: +dummy(20, "words")
+
+  include partials/_stats
+
+  include partials/_footer

@@ -15,14 +15,14 @@
   font-weight: $font__serif--medium;
 }
 .t-head--three {
-  font-weight: normal;
   font-size: em(18);
+  font-weight: $font__sans--regular;
 
   @include margin(1em null);
 }
 .t-head--four {
   font-size: em(16);
-  font-weight: normal;
+  font-weight: $font__sans--regular;
 
   @include margin(.5em null);
 }
@@ -39,6 +39,12 @@
 
     @include margin(1.5em null);
   }
+}
+.t-head--six {
+  font-weight: $font__sans--regular;
+  font-size: em(24);
+
+  @include margin(1em null);
 }
 
 .t-medium {

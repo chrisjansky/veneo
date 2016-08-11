@@ -1,0 +1,73 @@
+.o-frequent__title {
+  text-align: center;
+}
+
+.o-frequent__list {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow: hidden;
+
+  list-style-type: none;
+  @include padding(null em(2))
+  @include margin(-.75em em(-2) null);
+
+  
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+
+    width: em(4);
+
+    background-color: $grey--900;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+}
+
+.o-frequent__item {
+  position: relative;
+
+  flex: 1 1 auto;
+
+  text-align: center;
+
+  @include padding(null 1.25em);
+  margin-top: .75em;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+
+    content: "";
+    width: em(4);
+    height: em(4);
+
+    transform: translateY(-50%) rotate(45deg);
+
+    background-color: $grey--700;
+  }
+  &:before {
+    left: em(-2);
+  }
+  &:after {
+    right: em(-2);
+  }
+}
+
+.o-frequent__link {
+  @include link--dark;
+  border-bottom: $stroke--s solid;
+}
