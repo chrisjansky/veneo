@@ -1,0 +1,50 @@
+.o-blox {
+  display: table;
+  width: 100%;
+}
+
+.o-blox__image {
+  display: table-cell;
+  width: 50%;
+
+  padding-bottom: 50%;
+
+  background-position: center;
+  background-size: cover;
+}
+
+[class^="o-blox__content"],
+[class*=" o-blox__content"] {
+  display: table-cell;
+  width: 50%;
+
+  position: relative;
+}
+
+.o-blox__content--black {
+  color: white;
+  background-color: $grey--000;
+}
+
+.o-blox__intro {
+  padding: 2.75em;
+
+  @include collapse-children;
+}
+
+.o-blox__outro {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 2.75em;
+
+  @include collapse-children;
+
+  color: $grey--400;
+
+  .o-blox__content--black & {
+    color: $grey--700;
+  }
+}

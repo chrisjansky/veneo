@@ -1,0 +1,46 @@
+.o-triad {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    width: $stroke--s;
+
+    background-color: $grey--900;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+}
+
+.o-triad__item {
+  flex: 1 1 auto;
+}
+
+.o-triad__link {
+  display: block;
+  @include link--dark;
+
+  border: $stroke--b solid $grey--800;
+  border-right-width: $stroke--s;
+  border-left-width: $stroke--s;
+  border-bottom: none;
+
+  @include padding(.75em 1em);
+}

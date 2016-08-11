@@ -1,0 +1,18 @@
+.o-generic__top {
+  text-align: center;
+}
+
+.o-generic__text {
+  max-width: 30em;
+
+  @include margin(null auto);
+}
+
+.o-generic__subhead {
+  background-color: $grey--900;
+
+  @include margin(0 null);
+  @include padding(1.25em null);
+
+  text-align: center;
+}
