@@ -1,29 +1,50 @@
 .o-order {
-  margin-top: 3.5em;
+  @include media($tablet-up) {
+    margin-top: 3.5em;
+  }
 }
 
 .o-order__bar {
-  display: table;
-  width: 100%;
+  padding-bottom: .75em;
 
-  @include padding(.75em null);
+  border-bottom: $stroke--b solid $grey--900;
 
-  border-bottom: $stroke--b solid $grey--850;
+  @include media($mobile) {
+    text-align: center;
 
-  .o-order__column:first-child & {
-    padding-right: 2em;
+    margin-bottom: 1.5em;
   }
-  .o-order__column:last-child & {
-    padding-left: 2em;
+
+  @include media($tablet-up) {
+    .o-order__column:first-child & {
+      padding-right: 2em;
+    }
+    .o-order__column:last-child & {
+      padding-left: 2em;
+    }
+  }
+  @include media($laptop-up) {
+    display: table;
+    width: 100%;
+
+    padding-top: .75em;
   }
 }
 
 .o-order__cell {
-  display: table-cell;
-  vertical-align: middle;
+  @include media($mobile) {
+    &:last-child {
+      margin-top: .375em;
+    }
+  }
 
-  &:last-child {
-    text-align: right;
+  @include media($laptop-up) {
+    display: table-cell;
+    vertical-align: middle;
+
+    &:last-child {
+      text-align: right;
+    }
   }
 }
 
@@ -42,33 +63,58 @@
 }
 
 .o-order__container {
-  display: table;
-  width: 100%;
+  @include media($small) {
+    margin-top: 2em;
+  }
+
+  @include media($tablet-up) {
+    display: table;
+    width: 100%;
+  }
 }
 
 .o-order__column {
-  display: table-cell;
-  width: 50%;
+  @include media($small) {
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+  }
 
-  // Silly way to ensure it is perfectly centered
-  &:first-child {
-    border-right: $stroke--s solid $grey--850;
+  @include media($tablet-up) {
+    display: table-cell;
+    width: 50%;
+    
+    // Silly way to ensure it is perfectly centered
+    &:first-child {
+      border-right: $stroke--s solid $grey--850;
+    }
+    &:last-child {
+      border-left: $stroke--s solid $grey--850;
+    }
   }
-  &:last-child {
-    border-left: $stroke--s solid $grey--850;
-  }
+
 }
 
 .o-order__set {
   border: none;
-  padding: 2.5em 0 3em;
+  padding: 0;
   margin: 0;
 
-  .o-order__column:first-child & {
-    padding-right: 2em;
+  @include media($tablet-up) {
+    @include padding(2em null);
+
+    .o-order__column:first-child & {
+      padding-right: 2em;
+    }
+    .o-order__column:last-child & {
+      padding-left: 2em;
+    }
+    .o-order__section:first-child & {
+      padding-bottom: 0;
+    }
   }
-  .o-order__column:last-child & {
-    padding-left: 2em;
+  @include media($laptop-up) {
+    @include padding(2.5em null);
   }
 }
 
@@ -84,7 +130,11 @@
   margin-bottom: 1.75em;
 }
 .o-order__field--big {
-  margin-bottom: 2.75em;
+  margin-bottom: 2em;
+
+  @include media($tablet-up) {
+    margin-bottom: 2.75em;
+  }
 }
 
 .o-order__label {
@@ -105,8 +155,6 @@
 
 .o-order__action--down:after,
 .o-order__action--up:before {
-  content: "";
-
   display: block;
   width: $stroke--b;
 
@@ -116,9 +164,15 @@
 }
 .o-order__action--down:after {
   height: 2em;
+
+  @include media($tablet-up) {
+    content: "";
+  }
 }
 .o-order__action--up:before {
   height: 4em;
+
+  content: "";
 }
 
 
@@ -126,21 +180,33 @@
 }
 
 .o-order__summary {
-  display: table;
-  width: 100%;
-
   border-bottom: $stroke--b solid $grey--800;
+
+  @include media($small) {
+    text-align: center;
+
+    margin-top: 2em;
+  }
+  @include media($tablet-up) {
+    display: table;
+    width: 100%;
+  }
 }
 .o-order__pricetag {
-  display: table-cell;
-  width: 50%;
-
-  text-align: right;
-
-  padding: 2em;
+  padding: 1em .5em;
 
   background-color: $grey--900;
-  border-right: $stroke--s solid $grey--800;
+
+  @include media($tablet-up) {
+    display: table-cell;
+    width: 50%;
+
+    text-align: right;
+    
+    padding: 2em;
+
+    border-right: $stroke--s solid $grey--800;
+  }
 }
 
 .o-order__tag {
@@ -148,13 +214,18 @@
 
   color: $color2--200;
 }
+
 .o-order__total {
-  display: table-cell;
-  width: 50%;
+  padding: 1em .5em;
 
-  padding: 2em;
+  @include media($tablet-up) {
+    display: table-cell;
+    width: 50%;
 
-  border-left: $stroke--s solid $grey--800;
+    padding: 2em;
+
+    border-left: $stroke--s solid $grey--800;
+  }
 }
 
 .o-order__disclaimer {
