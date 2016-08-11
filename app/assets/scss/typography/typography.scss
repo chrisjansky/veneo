@@ -1,13 +1,12 @@
 .t-head--one {
   font-size: em(24);
   font-family: $font__serif;
-  font-weight: $font__serif--regular;
+  font-weight: $font__serif--medium;
 
   @include margin(1em null);
 
   @include media($tablet-up) {
     font-size: em(32);
-    font-weight: $font__serif--medium;
   }
 }
 .t-head--two {
@@ -28,13 +27,16 @@
   @include margin(.5em null);
 }
 .t-head--five {
-  font-size: em(24);
+  font-size: em(20);
   font-family: $font__serif;
-  font-weight: $font__serif--medium;
+  font-weight: $font__serif--regular;
 
   @include margin(1em null);
 
   @include media($tablet-up) {
+    font-size: em(24);
+    font-weight: $font__serif--medium;
+
     @include margin(1.5em null);
   }
 }
