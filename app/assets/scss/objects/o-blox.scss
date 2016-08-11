@@ -17,8 +17,6 @@
 [class*=" o-blox__content"] {
   display: table-cell;
   width: 50%;
-
-  position: relative;
 }
 
 .o-blox__content--black {
@@ -26,19 +24,22 @@
   background-color: $grey--000;
 }
 
+.o-blox__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 50vmax;
+}
+
 .o-blox__intro {
-  padding: 2.75em;
+  padding: 2.75em 2.75em 1em;
 
   @include collapse-children;
 }
 
 .o-blox__outro {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  padding: 2.75em;
+  padding: 1em 2.75em 2.75em;
 
   @include collapse-children;
 

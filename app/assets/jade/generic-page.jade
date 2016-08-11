@@ -13,22 +13,24 @@ block template-content
     article.o-blox
       .o-blox__image(style="background-image: url('assets/images/photo_2.jpg')")
       .o-blox__content--black
-        .o-blox__intro
-          h3.t-head--five: +dummy(5, "words")
-          p.t-medium: +dummy(20)
-        .o-blox__outro
-          p.t-text: +dummy(30)
+        .o-blox__flex
+          .o-blox__intro
+            h3.t-head--five: +dummy(5, "words")
+            p.t-medium: +dummy(20)
+          .o-blox__outro
+            p.t-text: +dummy(30)
 
     article.o-blox
       .o-blox__content--white
-        .o-blox__intro
-          h3.t-head--five: +dummy(5, "words")
-          p.t-medium: +dummy(10)
-        .o-blox__outro
-          ul.o-list
-            each instance in [1, 2, 3]
-              li.o-list__item: +dummy(instance * 5)
-          p.t-text: +dummy(20)
+        .o-blox__flex
+          .o-blox__intro
+            h3.t-head--five: +dummy(5, "words")
+            p.t-medium: +dummy(10)
+          .o-blox__outro
+            ul.o-list
+              each instance in [1, 2, 3]
+                li.o-list__item: +dummy(instance * 5)
+            p.t-text: +dummy(20)
       .o-blox__image(style="background-image: url('assets/images/photo_3.jpg')")
 
   section.o-section--light.l-wrap
