@@ -6,6 +6,7 @@
   max-width: 30em;
 
   @include margin(null auto);
+  @include collapse-children;
 
   a {
     @include link--black;
@@ -18,7 +19,7 @@
   background-color: $grey--900;
 
   @include margin(0 null);
-  @include padding(1.25em null);
+  @include padding(1.25em 1em);
 
   text-align: center;
 }

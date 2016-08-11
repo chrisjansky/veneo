@@ -1,13 +1,20 @@
 .o-blox {
-  display: table;
-  width: 100%;
+  @include media($tablet-up) {
+    display: table;
+    width: 100%;
+  }
 }
 
 .o-blox__image {
-  display: table-cell;
-  width: 50%;
+  @include media($small) {
+    height: 100vmin;
+  }
+  @include media($tablet-up) {
+    display: table-cell;
+    width: 50%;
 
-  padding-bottom: 50%;
+    padding-bottom: 50%;
+  }
 
   background-position: center;
   background-size: cover;
@@ -15,8 +22,10 @@
 
 [class^="o-blox__content"],
 [class*=" o-blox__content"] {
-  display: table-cell;
-  width: 50%;
+  @include media($tablet-up) {
+    display: table-cell;
+    width: 50%;
+  }
 }
 
 .o-blox__content--black {
@@ -43,19 +52,22 @@
   flex-direction: column;
   justify-content: space-between;
 
-  min-height: 50vmax;
+  @include media($tablet-up) {
+    min-height: 50vmax;
+  }
 }
 
 .o-blox__intro {
-  padding: 2.75em 2.75em 1em;
+  @include add-wrap(square);
 
   @include collapse-children;
 }
 
 .o-blox__outro {
-  padding: 1em 2.75em 2.75em;
-
+  @include add-wrap(square);
   @include collapse-children;
+
+  padding-top: 0 !important;
 
   color: $grey--400;
 
