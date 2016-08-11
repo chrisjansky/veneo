@@ -6,7 +6,13 @@ block template-content
   section.o-top.o-generic
     .o-generic__top.l-wrap
       h1.o-generic__head.t-head--one: +dummy(5, "words")
-      p.o-generic__text.t-medium: +dummy(30)
+      .o-generic__text.t-medium
+        p
+          +dummy(15)
+          | 
+          a(href="#"): +dummy(5)
+          | 
+          +dummy(10)
 
     h2.o-generic__subhead.t-head--five: +dummy(5, "words")
 

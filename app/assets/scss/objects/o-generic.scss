@@ -6,6 +6,12 @@
   max-width: 30em;
 
   @include margin(null auto);
+
+  a {
+    @include link--black;
+
+    border-bottom: $stroke--s solid;
+  }
 }
 
 .o-generic__subhead {

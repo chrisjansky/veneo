@@ -74,8 +74,10 @@
 @mixin link--black {
   &:link, &:visited {
     color: $grey--000;
+    border-bottom-color: rgba($grey--000, .25);
   }
   &:hover, &:active {
     color: $grey--300;
+    border-bottom-color: rgba($grey--300, .5);
   }
 }
