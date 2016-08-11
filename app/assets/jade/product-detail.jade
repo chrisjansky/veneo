@@ -62,12 +62,7 @@ block template-content
         .o-detail__cell
           a.t-smallcaps(href="#") Jak se měří?
 
-      .o-dropdown
-        select.o-dropdown__select
-          option(selected) 50 (US 13&ndash;22,2 mm)
-          option Další volba
-          option Poslední volba
-        span.o-dropdown__icon: include ../svg/arrow_down.svg
+      +input-dropdown("50 (US 13&ndash;22,2 mm)")
 
       .o-detail__bar
         .o-detail__cell
@@ -97,7 +92,7 @@ block template-content
       h2.o-detail__subtitle.t-head--two Jiné kameny, drahokamy či rytí?
       label.o-check
         input.o-check__input(type="checkbox")
-        span.o-check__box: include ../svg/icon_check.svg
+        span.o-check__box: include ../svg/icon_check_small.svg
         span.o-check__text Chci upravit šperky dle mého přání
 
   .l-wrap
