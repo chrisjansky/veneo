@@ -35,6 +35,14 @@
     color: $grey--400;
   }
 }
+@mixin link--dark {
+  &:link, &:visited {
+    color: $grey--200;
+  }
+  &:hover, &:active {
+    color: $grey--000;
+  }
+}
 @mixin link--neutral {
   &:link, &:visited {
     color: $grey--000;
