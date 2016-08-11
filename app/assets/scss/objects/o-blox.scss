@@ -22,6 +22,20 @@
 .o-blox__content--black {
   color: white;
   background-color: $grey--000;
+
+  a {
+    @include link--white;
+
+    border-bottom: $stroke--s solid;
+  }
+}
+
+.o-blox__content--white {
+  a {
+    @include link--dark;
+
+    border-bottom: $stroke--s solid;
+  }
 }
 
 .o-blox__flex {

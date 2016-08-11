@@ -147,23 +147,22 @@
 .t-link--light {
   @include link--light;
   
-  border-bottom: $stroke--s solid $grey--800;
+  border-bottom: $stroke--s solid;
 }
 .t-link--white {
-  &:link, &:visited {
-    color: white;
-    border-bottom: $stroke--s solid rgba(white, .25);
-  }
-  &:hover, &:active {
-    color: $grey--800;
-  }
+  @include link--white;
+
+  border-bottom: $stroke--s solid;
 }
 .t-link--tan {
   &:link, &:visited {
     color: $color2--300;
-    border-bottom: $stroke--s solid rgba($color2--300, .5);
+    border-bottom-color: rgba($color2--300, .5);
   }
   &:hover, &:active {
     color: $color2--200;
+    border-bottom-color: rgba($color2--200, .75);
   }
+
+  border-bottom: $stroke--s solid;
 }

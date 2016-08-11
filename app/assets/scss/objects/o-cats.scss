@@ -117,7 +117,13 @@
 
   display: block;
 
-  @include link--light;
+  .o-cats--white &,
+  .o-cats--light & {
+    @include link--light;
+  }
+  .o-cats--dark & {
+    @include link--medium;
+  }
   // transition: color $duration--b;
 
   // Chevron
@@ -178,14 +184,14 @@
 }
 
 .o-cats--white .category--is-active {
-  color: $grey--000;
+  color: $grey--000 !important;
 
   svg {
     stroke: url(#gradient--on);
   }
 }
 .o-cats--dark .category--is-active {
-  color: white;
+  color: white !important;
 
   svg {
     stroke: url(#gradient--on);

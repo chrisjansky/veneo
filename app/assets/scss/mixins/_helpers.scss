@@ -19,39 +19,6 @@
   }
 }
 
-@mixin link--lighter {
-  &:link, &:visited {
-    color: $grey--700;
-  }
-  &:hover, &:active {
-    color: white;
-  }
-}
-@mixin link--light {
-  &:link, &:visited {
-    color: $grey--600;
-  }
-  &:hover, &:active {
-    color: $grey--400;
-  }
-}
-@mixin link--dark {
-  &:link, &:visited {
-    color: $grey--200;
-  }
-  &:hover, &:active {
-    color: $grey--000;
-  }
-}
-@mixin link--neutral {
-  &:link, &:visited {
-    color: $grey--000;
-  }
-  &:hover, &:active {
-    color: $grey--300;
-  }
-}
-
 @mixin pseudo-center {
   content: "";
 
@@ -61,4 +28,54 @@
   height: 100%;
 
   vertical-align: middle;
+}
+
+// Links
+@mixin link--white {
+  &:link, &:visited {
+    color: white;
+    border-bottom-color: rgba(white, .25);
+  }
+  &:hover, &:active {
+    color: rgba(white, .75);
+    border-bottom-color: rgba(white, .375);
+  }
+}
+@mixin link--light {
+  &:link, &:visited {
+    color: $grey--500;
+    border-bottom-color: rgba($grey--500, .5);
+  }
+  &:hover, &:active {
+    color: $grey--300;
+    border-bottom-color: rgba($grey--300, .5);
+  }
+}
+@mixin link--medium {
+  &:link, &:visited {
+    color: $grey--400;
+    border-bottom-color: rgba($grey--400, .5);
+  }
+  &:hover, &:active {
+    color: $grey--600;
+    border-bottom-color: rgba($grey--600, .5);
+  }
+}
+@mixin link--dark {
+  &:link, &:visited {
+    color: $grey--200;
+    border-bottom-color: rgba($grey--200, .5);
+  }
+  &:hover, &:active {
+    color: $grey--400;
+    border-bottom-color: rgba($grey--400, .5);
+  }
+}
+@mixin link--black {
+  &:link, &:visited {
+    color: $grey--000;
+  }
+  &:hover, &:active {
+    color: $grey--300;
+  }
 }

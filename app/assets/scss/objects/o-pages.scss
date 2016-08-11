@@ -58,7 +58,12 @@
   }
 }
 .o-pages__link {
-  @include link--lighter;
+  &:link, &:visited {
+    color: $grey--700;
+  }
+  &:hover, &:active {
+    color: white;
+  }
 
   &.link--is-active {
     color: white;

@@ -35,7 +35,7 @@
 
 .o-triad__link {
   display: block;
-  @include link--dark;
+  @include link--medium;
 
   border: $stroke--b solid $grey--800;
   border-right-width: $stroke--s;
