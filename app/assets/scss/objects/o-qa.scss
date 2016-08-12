@@ -5,15 +5,27 @@
 .o-qa__column {
   @include collapse-children;
 
-  @include span-columns(6 of 12);
+  @include media($small) {
+    &:not(:last-child) {
+      margin-bottom: 1.5em;
+    }
+  }
+  @include media($tablet-up) {
+    @include span-columns(6 of 12);
+  }
 }
 
 .o-qa__head {
+  position: relative;
+
+  padding-left: 2rem;
+
   &:before {
-    display: inline-block;
-    width: 2rem;
     content: counter(top-count);
     counter-increment: top-count;
+
+    position: absolute;
+    left: 0;
   }
 }
 
@@ -22,13 +34,20 @@
 }
 
 .o-qa__subhead {
-  text-align: center;
+  position: relative;
+
+  padding-left: 2rem;
 
   &:before {
-    float: left;
+    position: absolute;
+    left: 0;
 
     content: counter(section-count);
     counter-increment: section-count;
+  }
+
+  @include media($tablet-up) {
+    text-align: center;
   }
 }
 
@@ -38,28 +57,38 @@
   margin-top: -1.25em;
 }
 .o-qa__entry {
-  @include span-columns(5 of 12);
-
   padding-top: 1.25em;
 
-  clear: both;
+  @include media($tablet-up) {
+    @include span-columns(5 of 12);
+
+    clear: both;
+  }
 }
+
 .o-qa__term {
   @include margin(0 null);
 
   color: $color2--300;
 }
+
 .o-qa__description {
-  @include span-columns(7 of 12);
   @include margin(null 0);
 
-  &:not(:last-child) {
-    padding-bottom: 1.25em;
+  @include padding(1.25em null);
 
-    border-bottom: $stroke--b solid $grey--900;
+  border-bottom: $stroke--b solid $grey--900;
+  
+  color: $grey--400;
+
+  &:last-child {
+    padding-bottom: 0;
+
+    border-bottom: none;
   }
 
-  padding-top: 1.25em;
-
-  color: $grey--400;
+  @include media($tablet-up) {
+    width: flex-grid(7, 12);
+    float: left;
+  }
 }
