@@ -1,0 +1,7 @@
+extends templates/_site
+
+block template-content
+  .l-wrap
+    ul
+      each instance in ["index", "product-list", "product-detail", "order", "faq", "generic-page"]
+        li: a(href="#{instance}.html")= instance
