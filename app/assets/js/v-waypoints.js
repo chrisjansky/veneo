@@ -2,18 +2,10 @@
 var $sticky = $("[data-sticky]");
 
 var
-  stuckClass = "panel--is-stuck",
   unstuckClass = "panel--is-unstuck";
 
 if ($sticky.length > 0 && currentDevice == "desktop") {
   var
-    stickyStart = new Waypoint({
-      element: document.getElementById("js-sticky-start"),
-      handler: function(direction) {
-        $sticky.toggleClass(stuckClass, direction == "down");
-      },
-      offset: "bottom-in-view"
-    }),
     stickyEnd = new Waypoint({
       element: document.getElementById("js-sticky-end"),
       handler: function(direction) {

@@ -1,14 +1,11 @@
-[class^="o-sticky-container"],
-[class*=" o-sticky-container"] {
+.o-sticky-container--end {
+  .device--is-mobile & {
+    display: none;
+  }
   .device--is-desktop & {
     height: em(94);
 
     border-top: $stroke--b solid $grey--900;
-  }
-}
-.o-sticky-container--end {
-  .device--is-mobile & {
-    display: none;
   }
 }
 
@@ -28,7 +25,7 @@
     @include padding(1.25em null);
   }
 
-  &.panel--is-stuck {
+  .device--is-desktop & {
     position: fixed;
     bottom: 0;
     left: 0;

@@ -55,6 +55,9 @@
 }
 
 .o-detail__body {
+  .device--is-desktop & {
+    padding-top: 0;
+  }
 }
 
 .o-detail__code {
