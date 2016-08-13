@@ -1,0 +1,26 @@
+.o-map {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.o-map__info {
+  font-family: $font__sans;
+
+  h1 {
+    font-weight: $font__sans--regular;
+    font-size: rem(20);
+    @include margin(0 null);
+  }
+  p {
+    margin-bottom: 0;
+
+    color: $grey--500;
+    
+    font-weight: $font__sans--regular;
+    font-size: rem(16);
+  }
+}
