@@ -26,3 +26,14 @@ function panelRestick($element, container) {
     $element.css({top: container.offsetTop});
   }
 }
+
+// Header background-color waypoint
+var headerFade = $header.waypoint({
+  handler: function(direction) {
+    $header.toggleClass("header--not-top", direction == "down");
+  },
+  offset: function() {
+    // Triger once scrolled past its height
+    return -this.element.clientHeight
+  }
+})
