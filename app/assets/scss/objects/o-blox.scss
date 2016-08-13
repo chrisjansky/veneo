@@ -64,8 +64,13 @@
 
   @include collapse-children;
 
-  @include media($laptop-up) {
+  p {
     font-size: em(18);
+
+    @include media($laptop-up) {
+      font-size: em(24);
+      font-weight: $font__sans--light;
+    }
   }
 }
 
