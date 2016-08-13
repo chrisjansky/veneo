@@ -32,7 +32,6 @@
 [class^="o-shortcuts__item"],
 [class*=" o-shortcuts__item"] {
   font-size: em(18);
-  // border-top: $stroke--b solid $grey--200;
 
   @include media($phablet-up) {
     display: inline-block;
@@ -71,5 +70,45 @@
   }
   &:hover, &:active {
     color: $color2--700;
+  }
+}
+
+.o-shortcuts__holder {
+  position: relative;
+
+  color: $color2--500;
+
+  &:hover {
+    color: $color2--700;
+  }
+
+  &:after {
+    position: absolute;
+    right: 0;
+    top: 45%;
+    content: "";
+
+    transform: translateY(-50%);
+
+    @include triangle(.5em, currentColor, down);
+  }
+}
+
+.o-shortcuts__select {
+  @include appearance(none);
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+
+  padding-right: .75em;
+
+  color: currentColor;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
   }
 }

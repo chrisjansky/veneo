@@ -14,9 +14,16 @@ mixin header(type, activeItem)
             span.o-shortcuts__icon: include ../../svg/icon_cart.svg
             | 2 ks v košíku
         li.o-shortcuts__item--half
-          a.o-shortcuts__link.t-caps(href="#") EN
+          .o-shortcuts__holder
+            select.o-shortcuts__select.t-caps
+              option(selected) EN
+              option CZ
         li.o-shortcuts__item--half
-          a.o-shortcuts__link.t-caps(href="#") CZK
+          .o-shortcuts__holder
+            select.o-shortcuts__select.t-caps
+              option(selected) CZK
+              option USD
+              option EUR
 
       .o-hud.l-inline
         .o-hud__cell.l-inline__cell
