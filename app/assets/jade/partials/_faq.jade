@@ -1,14 +1,15 @@
-section.o-section--light.l-wrap
-  .o-bar
-    .o-bar__title
-      h1.o-section__head.t-head--one Časté dotazy
-    .o-bar__side
-      a(href="#").o-capsbutton.chevron--right
-        span.o-capsbutton__text.t-caps Více
+section.o-section--light
+  .o-banners.l-wrap
+    .o-bar
+      .o-bar__title
+        h1.o-section__head.t-head--one Časté dotazy
+      .o-bar__side
+        a(href="#").o-capsbutton.chevron--right
+          span.o-capsbutton__text.t-caps Více
 
-  .o-banners
-    each instance, index in ["Objednáváte prsten? Změřte se.", "Jak vyrábíme šperky na zakázku?", "Co vše můžete u šperků měnit?", "Člověkem stvořený nebo přírodní drahokam?"]
-      article.o-banners__item
-        a.o-banners__link(href="#")
-          img.o-banners__image(src="assets/images/banner_#{index + 1}.jpg", alt="FAQ Photo")
-          h3.o-banners__title.t-head--three= instance
+    .o-banners__list
+      each instance, index in ["Objednáváte prsten? Změřte se.", "Jak vyrábíme šperky na zakázku?", "Co vše můžete u šperků měnit?", "Člověkem stvořený nebo přírodní drahokam?"]
+        article.o-banners__item
+          a.o-banners__link(href="#")
+            img.o-banners__image(src="assets/images/banner_#{index + 1}.jpg", alt="FAQ Photo")
+            h3.o-banners__title.t-head--three= instance

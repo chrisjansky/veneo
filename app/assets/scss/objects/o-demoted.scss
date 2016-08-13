@@ -1,5 +1,10 @@
 .o-demoted {
   padding-top: 0;
+
+  max-width: em($width--l);
+  
+  @include margin(null auto);
+  box-sizing: content-box;
 }
 
 .o-demoted__list {

@@ -17,8 +17,8 @@ block template-content
             option Další volba
             option Poslední volba
           span.o-filters__icon: include ../svg/arrow_down.svg
-    .o-featured
-      .o-featured__list.l-wrap
+    .o-featured.l-wrap
+      .o-featured__list
         each instance in [1, 2, 3, 4, 5, 6]
           +productThumb(instance, "o-featured__item")
     .o-demoted.l-wrap

@@ -1,4 +1,8 @@
 .o-perks {
+  max-width: em($width--m);
+  
+  @include margin(null auto);
+
   @include media($tablet-up) {
     text-align: center;
   }

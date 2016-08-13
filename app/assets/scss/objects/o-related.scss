@@ -1,7 +1,9 @@
 .o-related__list {
-  @include clearfix;
+  max-width: em($width--l);
+  
+  @include margin(null auto -1.5em);
 
-  margin-bottom: -1.5em;
+  @include clearfix;
 }
 
 .o-related__item {

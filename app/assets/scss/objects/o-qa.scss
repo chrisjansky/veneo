@@ -1,5 +1,9 @@
 .o-qa__top {
   counter-reset: top-count section-count;
+
+  max-width: em($width--m);
+  @include margin(null auto);
+  box-sizing: content-box;
 }
 
 .o-qa__column {
@@ -52,9 +56,10 @@
 }
 
 .o-qa__entries {
+  max-width: em($width--m);
+  
+  @include margin(-1.25em auto null);
   @include clearfix;
-
-  margin-top: -1.25em;
 }
 .o-qa__entry {
   padding-top: 1.25em;

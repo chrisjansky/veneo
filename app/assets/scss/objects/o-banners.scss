@@ -1,4 +1,11 @@
 .o-banners {
+  max-width: em($width--l);
+  
+  @include margin(null auto);
+  box-sizing: content-box;
+}
+
+.o-banners__list {
   @include clearfix;
 }
 

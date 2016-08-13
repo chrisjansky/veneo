@@ -16,6 +16,10 @@
 
 .o-coll__content {
   position: relative;
+
+  max-width: em($width--l);
+  
+  @include margin(null auto);
 }
 
 .o-coll__thumbs {

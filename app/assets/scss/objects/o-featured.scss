@@ -1,3 +1,10 @@
+.o-featured {
+  max-width: em($width--l);
+  
+  @include margin(null auto);
+  box-sizing: content-box;
+}
+
 .o-featured__list {
   @include clearfix;
 

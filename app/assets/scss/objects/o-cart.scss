@@ -44,6 +44,12 @@
   }
 }
 
+.o-cart__list {
+  max-width: em($width--m);
+  
+  @include margin(null auto);
+}
+
 .o-cart__item {
   &:not(:first-child) {
     border-top: $stroke--b solid $grey--850;

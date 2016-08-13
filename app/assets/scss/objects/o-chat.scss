@@ -1,4 +1,8 @@
 .o-chat {
+  max-width: em($width--m);
+  
+  @include margin(null auto);
+
   text-align: left;
 
   // Only top add-wrap values

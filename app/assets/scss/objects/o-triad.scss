@@ -1,4 +1,7 @@
 .o-triad {
+  max-width: em($width--l);
+  @include margin(null auto);
+
   position: relative;
 
   display: flex;

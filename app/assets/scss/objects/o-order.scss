@@ -1,4 +1,8 @@
 .o-order {
+  max-width: em($width--m);
+  
+  @include margin(null auto);
+
   @include media($tablet-up) {
     margin-top: 3.5em;
   }

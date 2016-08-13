@@ -1,3 +1,9 @@
+html {
+  @include media($tv) {
+    font-size: 1.25em;
+  }
+}
+
 html,
 body {
   height: 100%;
