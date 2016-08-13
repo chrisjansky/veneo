@@ -88,7 +88,7 @@
 
     border: $stroke--b solid currentColor;
 
-    transform: rotate(45deg);
+    transform: translateZ(0) rotate(45deg); // translateZ hack to fix border gap issues in Safari
     transition: background-color $duration--s;
   }
   &:hover:after {
