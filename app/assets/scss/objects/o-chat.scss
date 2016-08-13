@@ -1,7 +1,15 @@
 .o-chat {
   text-align: left;
 
-  @include add-wrap(vertical);
+  // Only top add-wrap values
+  padding-top: 2em;
+
+  @include media($tablet) {
+    padding-top: 2.25em;
+  }
+  @include media($laptop-up) {
+    padding-top: 3em;
+  }
 }
 
 .o-chat__list {
