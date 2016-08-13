@@ -1,5 +1,5 @@
 // Google Maps.
-function initMap() {
+function veneoMap() {
   var mapIframe = document.getElementById("js-map");
 
   if (mapIframe !== null) {
