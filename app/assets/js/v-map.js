@@ -11,14 +11,16 @@ function initMap() {
 
     var 
       map = new google.maps.Map(mapIframe, mapOptions),
-      infoWindow = new google.maps.InfoWindow(),
+      infoWindow = new google.maps.InfoWindow({
+        content: "<div class='o-map__info'><h1>veneo</h1><p>Plumlovská 830/49<br>796 01, Prostějov</p></div>"
+      }),
       mapMarker = new google.maps.Marker({
         position: mapOptions.center,
         map: map,
         animation: google.maps.Animation.DROP
       });
+
     google.maps.event.addListener(mapMarker, "click", function() {
-      infoWindow.setContent("<div class='o-map__info'><h1>veneo</h1><p>Plumlovská 830/49<br>796 01, Prostějov</p></div>");
       infoWindow.open(map, mapMarker);
     });
   }
