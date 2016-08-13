@@ -86,7 +86,7 @@
   transition: transform $duration--b;
 
   .device--is-desktop .o-item:hover & {
-    transform: translateY(-1.5em);
+    transform: translateY(-1.125em);
   }
 }
 
