@@ -2,12 +2,11 @@
   position: relative;
 
   list-style-type: none;
-  @include margin(0 null);
+  @include margin(0 null -1em);
 
   text-align: center;
 
   padding-left: 0;
-  padding-bottom: 1.5em;
 
   // Side gradients
   &:before, &:after {
@@ -15,7 +14,7 @@
 
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 1em;
     z-index: 500;
 
     width: 2em;
@@ -57,12 +56,39 @@
 }
 
 .o-vars__link {
+  position: relative;
+
   display: inline-block;
 
   text-align: center;
   white-space: nowrap;
 
   @include link--light;
+
+  // Chevron
+  &:before {
+    content: "";
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    left: 50%;
+    top: em(146);
+
+    transform: translateX(-50%);
+    transition: border-width $duration--b;
+
+    border: 0 solid transparent;
+    border-bottom-width: 0;
+    border-top-color: $grey--900;
+  }
+
+  .variant--is-active &:before,
+  .variant--is-active &:after {
+    border-width: 1em;
+  }
 }
 
 .o-vars__thumb {
