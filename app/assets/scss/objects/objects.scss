@@ -38,6 +38,9 @@
   @include media($laptop-up) {
     padding-top: em(126);
   }
+  @include media($tv) {
+    padding-top: 7.25em; // 20 * 7.25 = 145 = o-header Height
+  }
 }
 
 .o-top--cats {
