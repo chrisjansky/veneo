@@ -74,22 +74,40 @@
   }
 }
 
-.o-submit {
+[class^="o-submit--"],
+[class*=" o-submit--"] {
   display: inline-block;
 
-  border: $stroke--b solid currentColor;
   border-radius: $radius--b;
-  padding: .6875em 1.375em;
 
   font-weight: $font__sans--medium;
   text-transform: uppercase;
   letter-spacing: $tracking--b;
 
-  color: $positive--500;
-  background-color: transparent;
   fill: currentColor;
 
   cursor: pointer;
+}
+
+.o-submit--solid {
+  padding: .8125em 1.375em;
+  border: 0;
+
+  color: white;
+  background-color: $positive--500;
+
+  &:hover {
+    color: rgba(white, .75);
+    background-color: $positive--400;
+  }
+}
+
+.o-submit--outline {
+  padding: .6875em 1.375em;
+  border: $stroke--b solid currentColor;
+
+  color: $positive--500;
+  background-color: transparent;
 
   &:hover {
     color: $positive--400;
