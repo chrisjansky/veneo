@@ -17,18 +17,21 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  @include margin(-$stroke--s null);
-  padding: $stroke--s;
+  margin-right: -$stroke--s;
+  margin-left: -$stroke--s;
+  padding: 0;
+  border-top: $stroke--s solid $grey--800;
+  border-bottom: $stroke--s solid $grey--800;
 
   // Hide side borders
   &:before, &:after {
     content: "";
     position: absolute;
-    top: 0;
-    height: 100%;
+    top: -$stroke--s;
+    bottom: -$stroke--s;
     z-index: 100;
 
-    width: $stroke--b;
+    width: $stroke--s;
 
     background-color: white;
   }
@@ -54,9 +57,7 @@
 
   @include padding(.75em 1em);
 
-  margin: -$stroke--s;
-
-  border: $stroke--b solid $grey--800;
+  border: $stroke--s solid $grey--800;
 
   @include media($small) {
     padding-left: 3.75em;
