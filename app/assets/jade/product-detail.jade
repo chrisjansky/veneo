@@ -17,7 +17,7 @@ block template-content
       each color, instance in {"Safír": "#6A6BA6", "Opál": "#999999", "Rubín": "#DD3D7B", "Emerald": "#2BD175"}
         li.o-vars__item(class = index == 1 ? "variant--is-active" : null, data-vars-item)
           a.o-vars__link(href="#", style="color: #{color}")
-            img.o-vars__thumb(src="assets/images/img_thumbnail_#{index++}.jpg", alt="Thumbnail")
+            img.o-vars__thumb(src="assets/images/img_product_thumb_#{index++}.jpg", alt="Thumbnail")
             strong.o-vars__gem= instance
       li.o-vars__item--bespoke
         a.o-vars__link(href="#")
