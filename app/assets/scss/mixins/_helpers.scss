@@ -81,3 +81,13 @@
     border-bottom-color: rgba($grey--300, .5);
   }
 }
+@mixin link--tan {
+  &:link, &:visited {
+    color: $color2--300;
+    border-bottom-color: rgba($color2--300, .5);
+  }
+  &:hover, &:active {
+    color: $color2--200;
+    border-bottom-color: rgba($color2--200, .75);
+  }
+}

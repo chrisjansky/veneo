@@ -27,7 +27,7 @@
   @include margin(.5em null);
 }
 .t-head--five {
-  font-size: em(20);
+  font-size: rem(20);
   font-family: $font__serif;
   font-weight: $font__serif--regular;
 
@@ -161,14 +161,7 @@
   border-bottom: $stroke--s solid;
 }
 .t-link--tan {
-  &:link, &:visited {
-    color: $color2--300;
-    border-bottom-color: rgba($color2--300, .5);
-  }
-  &:hover, &:active {
-    color: $color2--200;
-    border-bottom-color: rgba($color2--200, .75);
-  }
+  @include link--tan;
 
   border-bottom: $stroke--s solid;
 }
