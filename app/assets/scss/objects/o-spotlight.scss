@@ -1,6 +1,6 @@
 .o-spotlight {
   position: absolute;
-  top: em(80);
+  top: 100%;
   left: 0;
   z-index: -1;
 
@@ -21,10 +21,6 @@
     transform: translateY(0);
 
     transition: transform $duration--b, visibility 0s;
-  }
-
-  @include media($laptop-up) {
-    top: em(126);
   }
 }
 
