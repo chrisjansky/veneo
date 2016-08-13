@@ -6,6 +6,8 @@
 }
 
 .o-blox__image {
+  position: relative;
+
   @include media($small) {
     height: 100vmin;
   }
@@ -61,6 +63,10 @@
   @include add-wrap(square);
 
   @include collapse-children;
+
+  @include media($laptop-up) {
+    font-size: em(18);
+  }
 }
 
 .o-blox__outro {
