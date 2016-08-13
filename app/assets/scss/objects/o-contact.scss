@@ -1,0 +1,19 @@
+.o-contact {
+  margin-top: 2.5em;
+
+  list-style-type: none;
+  padding-left: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.o-contact__item {
+  @include padding(null 2.5em);
+}
+
+.o-contact__link {
+  flex: 1 1 auto;
+  @include link--tan;
+}

@@ -1,0 +1,52 @@
+extends templates/_site
+
+block template-content
+  +header("stay", null)
+
+  section.o-top.o-generic
+    .o-generic__top.l-wrap
+      h1.o-generic__head.t-head--one Kontakt
+      .o-generic__text.t-medium
+        p Máte připomínku nebo dotaz, na který jste nenašli odpověď v&nbsp;#[a(href="faq.html") Častých otázkách]? Chcete si nechat vyrobit #[a(href="generic-page.html") šperk na zakázku] a&nbsp;potřebujete kalkulaci? Nebo poptáváte výrobu exkluzivního produktu a&nbsp;chcete si domluvit osobní schůzku s&nbsp;Lubomírem Krčmářem?<br>Spojte se s&nbsp;námi.
+      ul.o-contact
+        each instance in ["zlatnictvi@veneo.cz", "+420 582 337 520", "+420 776 336 196"]
+          li.o-contact__item
+            a.o-contact__link.t-medium(href="#")= instance
+
+    article.o-blox
+      .o-blox__image
+        iframe.o-map(frameborder="0", src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDO1mxHSkTP4u0_G5oWJOlPscRT7NIpINE&q=Plumlovská+830,Prostějov")
+      .o-blox__content--black
+        .o-blox__flex
+          .o-blox__intro
+            h3.t-head--five Jak se k nám dostanete
+            p Naši kamennou prodejnu se zlatnickou dílnou můžete navštívit na adrese Plumlovská 49, Prostějov. Najdete nás necelých 400 m od centra města.
+          .o-blox__outro
+            p Otevřeno máme v úterý a čtvrtek 10&ndash;12 a 14&ndash;16.
+            p Objednejte se však prosím dopředu, ať máte jistotu, že budeme mít otevřeno.
+
+    article.o-blox
+      .o-blox__content--white
+        .o-blox__flex
+          .o-blox__intro
+            h3.t-head--five Provozovatel
+            p Lubomír Krčmář &mdash; zlatník a hodinář
+          .o-blox__outro
+            ul.o-list
+              li.o-list__item Plumlovská 49, 760 01 Prostějov
+              li.o-list__item IČ: 12307521
+              li.o-list__item DIČ: CZ6405090142
+            p.t-tiny Registr: Okresní živnostenský úřad Okresního úřadu Prostějov č.j.: ŽÚ/2630/2000/Hoch ev.č. 370900-31176-02, vznik práva provozovat živnost: 4. 11. 1992 (více zápis v živnostenském rejstříku).
+          
+      .o-blox__image(style="background-image: url('assets/images/photo_2.jpg')")
+
+  section.o-section--light.l-wrap
+    h1.o-section__head--center.t-head--one Mohlo by Vás zajímat
+
+    ul.o-triad
+      each instance in ["Příběhy našich zákazníků", "Filozofie značky", "Nejčastější dotazy"]
+        li.o-triad__item: a.o-triad__link.t-medium(href="#")= instance
+
+  include partials/_stats
+
+  include partials/_footer

@@ -29,7 +29,7 @@ mixin header(type, activeItem)
               span.o-toggle__text--active Zavřít
           nav.o-pages
             ul.o-pages__list
-              each link, instance in {"Naše šperky": "product-list.html", "Ruční výroba": "generic-page.html", "Šperky na zakázku": "generic-page.html", "Časté otázky": "faq.html", "Kontakty": "#"}
+              each link, instance in {"Naše šperky": "product-list.html", "Ruční výroba": "generic-page.html", "Šperky na zakázku": "generic-page.html", "Časté otázky": "faq.html", "Kontakty": "contact.html"}
                 li.o-pages__item
                   a.o-pages__link(href=link, class=activeItem == instance ? "link--is-active" : null)= instance
         .o-hud__cell.l-inline__cell
