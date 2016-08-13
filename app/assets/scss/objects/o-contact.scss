@@ -1,5 +1,5 @@
 .o-contact {
-  margin-top: 2.5em;
+  margin-top: 1.5em;
 
   list-style-type: none;
   padding-left: 0;
@@ -10,10 +10,11 @@
 }
 
 .o-contact__item {
-  @include padding(null 2.5em);
+  @include padding(.25em 1.5em);
 }
 
 .o-contact__link {
   flex: 1 1 auto;
+
   @include link--tan;
 }

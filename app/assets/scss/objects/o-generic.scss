@@ -5,11 +5,13 @@
 .o-generic__text {
   max-width: 30em;
 
+  color: $grey--400;
+
   @include margin(null auto);
   @include collapse-children;
 
   a {
-    @include link--black;
+    @include link--medium;
 
     border-bottom: $stroke--s solid;
   }
