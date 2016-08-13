@@ -8,7 +8,7 @@ block template-content
       ol.o-bread
         li.o-bread__crumb: a.o-bread__link(href="index"): include ../svg/icon_home.svg
         each instance in ["Prsteny", "Dámské s kameny"]
-          li.o-bread__crumb: a.o-bread__link(href="#")= instance
+          li.o-bread__crumb: a.o-bread__link(href="product-list.html")= instance
         li.o-bread__crumb(data-toggle="bread--is-active")
           em.o-bread__current Tanečnice
           small.o-bread__count 4 varianty
@@ -16,11 +16,11 @@ block template-content
       - var index = 1
       each color, instance in {"Safír": "#6A6BA6", "Opál": "#999999", "Rubín": "#DD3D7B", "Emerald": "#2BD175"}
         li.o-vars__item(class = index == 1 ? "variant--is-active" : null, data-vars-item)
-          a.o-vars__link(href="#", style="color: #{color}")
+          a.o-vars__link(href="product-detail.html", style="color: #{color}")
             img.o-vars__thumb(src="assets/images/img_product_thumb_#{index++}.jpg", alt="Thumbnail")
             strong.o-vars__gem= instance
       li.o-vars__item--bespoke
-        a.o-vars__link(href="#")
+        a.o-vars__link(href="javascript::")
           .o-vars__symbol: include ../svg/icon_bespoke.svg
           strong.o-vars__title Vlastní na přání
 
@@ -44,7 +44,7 @@ block template-content
           td
             .l-inline
               .l-inline__cell Opál, Růžový zirkon
-              .l-inline__cell: a.t-smallcaps(href="#") Změnit
+              .l-inline__cell: a.t-smallcaps(href="javascript::") Změnit
         tr
           td
             | Rozměr motivu
@@ -60,7 +60,7 @@ block template-content
         .o-detail__cell
           h2.o-detail__subtitle.t-head--two Vyberte velikost
         .o-detail__cell
-          a.t-smallcaps(href="#") Jak se měří?
+          a.t-smallcaps(href="javascript::") Jak se měří?
 
       +input-dropdown("50 (US 13&ndash;22,2 mm)")
 
@@ -68,7 +68,7 @@ block template-content
         .o-detail__cell
           h2.o-detail__subtitle.t-head--two Vyberte materiál
         .o-detail__cell
-          a.t-smallcaps(href="#") O našich materiálech
+          a.t-smallcaps(href="javascript::") O našich materiálech
 
       ul.o-mats
         - var index = 1
@@ -108,7 +108,7 @@ block template-content
       .o-sticky__icon--jewel: include ../svg/icon_jewel_small.svg
       .o-sticky__text
         | Stříbro, vel. 50<br>
-        a.t-link--tan(href="#") Upraveno na přání
+        a.t-link--tan(href="javascript::") Upraveno na přání
     .o-sticky__cell.o-sticky__bonus
       .o-sticky__icon--check: include ../svg/icon_check.svg
       .o-sticky__text Skladem<br>Doprava zdarma
@@ -116,7 +116,7 @@ block template-content
       .o-sticky__text.o-sticky__price
         strong.o-sticky__figure.t-head--two 2 099 Kč<br>
         span.t-text--light vč. DPH
-      a(href="#").o-sticky__button.o-button--primary
+      a(href="javascript::").o-sticky__button.o-button--primary
         span.o-button__icon: include ../svg/icon_cart.svg
         | Do košíku
 
@@ -129,7 +129,7 @@ block template-content
             h1.o-article__title.t-head--five Tanečnice — prsten se safírem a&nbsp;čirými zirkony
             .o-article__content
               p.o-article__text: +dummy(50)
-              p.o-article__contact Dotazy Vám rádi zodpovíme e-mailem na #[a.t-link--tan(href="#") zlatnictvi@veneo.cz], telefonicky na +420 582 337 520 či prostřednictvím #[a.t-link--tan(href="#") diskuze k tomuto šperku].
+              p.o-article__contact Dotazy Vám rádi zodpovíme e-mailem na #[a.t-link--tan(href="javascript::") zlatnictvi@veneo.cz], telefonicky na +420 582 337 520 či prostřednictvím #[a.t-link--tan(href="javascript::") diskuze k tomuto šperku].
 
           .o-perks
             h3.o-perks__title.t-head--two Ke šperku získáte
@@ -175,7 +175,7 @@ block template-content
   .o-coll.o-section.l-wrap--horizontal
     h3.o-section__head--center.t-head--one V soupravě Tanečnice s 15% slevou
     .o-coll__content
-      a(href="#").o-coll__thumbs
+      a(href="javascript::").o-coll__thumbs
         each instance in [1, 2, 3, 4]
           img.o-coll__image(src="assets/images/img_product_#{instance}.jpg", alt="Collection image")
       .o-coll__priceset--silver
@@ -194,7 +194,7 @@ block template-content
         each instance in [1, 2, 3, 4]
           +productThumb(instance, "o-related__item")
       .o-cta
-        a(href="#").o-cta__button
+        a(href="javascript::").o-cta__button
           span.o-cta__text Zobrazit 3 další
           span.o-cta__icon: include ../svg/icon_plus.svg
 
