@@ -3,5 +3,5 @@ extends templates/_site
 block template-content
   .l-wrap
     ul
-      each instance in ["index", "product-list", "product-detail", "order", "faq", "generic-page"]
+      each instance in ["index", "product-list", "product-detail", "order", "faq", "generic-page", "contact"]
         li: a(href="#{instance}.html")= instance
