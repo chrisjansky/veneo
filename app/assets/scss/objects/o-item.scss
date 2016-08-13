@@ -73,21 +73,11 @@
 }
 
 .o-item__pricegroup--gold {
-  color: $color--gold-fade;
-
-  .device--is-mobile &,
-  .o-item:hover & {
-    color: $color--gold;
-  }
+  color: $color--gold;
 }
 
 .o-item__pricegroup--silver {
-  color: $color--silver-fade;
-
-  .device--is-mobile &,
-  .o-item:hover & {
-    color: $color--silver;
-  }
+  color: $color--silver;
 }
 
 .o-item__price {
