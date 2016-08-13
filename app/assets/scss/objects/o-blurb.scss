@@ -1,5 +1,7 @@
 .o-blurb__content {
+  padding-top: 0;
   @include margin(null auto);
+
   max-width: 60em;
 
   box-sizing: content-box;

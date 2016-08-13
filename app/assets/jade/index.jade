@@ -19,12 +19,13 @@ block template-content
       h1.o-section__head--center.t-head--one 25 let vyrábíme zlaté a&nbsp;stříbrné šperky
     +catSelector("white")
 
-    .o-featured
-      .o-featured__list.l-wrap
+    .o-featured.l-wrap
+      .o-featured__list
         each instance in [1, 2, 3, 4, 5, 6]
           +productThumb(instance, "o-featured__item")
-      a(href="#").o-fullbutton.chevron--right
-        span.o-fullbutton__text Přejít do kategorie Prsteny
+      .o-cta
+        a(href="#").o-cta__button
+          span.o-cta__text.chevron--right Přejít do kategorie Prsteny
 
   section.m-bespoke
     .m-bespoke__wrap.l-wrap

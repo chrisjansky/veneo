@@ -194,9 +194,10 @@ block template-content
       .o-related__list
         each instance in [1, 2, 3, 4]
           +productThumb(instance, "o-related__item")
-    a(href="#").o-fullbutton
-      span.o-fullbutton__text Zobrazit 3 další
-      span.o-fullbutton__icon: include ../svg/icon_plus.svg
+      .o-cta
+        a(href="#").o-cta__button
+          span.o-cta__text Zobrazit 3 další
+          span.o-cta__icon: include ../svg/icon_plus.svg
 
   include partials/_reasons
 

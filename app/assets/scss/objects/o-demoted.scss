@@ -1,5 +1,9 @@
-.o-demoted__list {
+.o-demoted {
   padding-top: 0;
+}
+
+.o-demoted__list {
+  @include clearfix;
 
   margin-bottom: -1.5em;
 }

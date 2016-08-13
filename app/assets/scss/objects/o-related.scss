@@ -1,5 +1,7 @@
 .o-related__list {
   @include clearfix;
+
+  margin-bottom: -1.5em;
 }
 
 .o-related__item {

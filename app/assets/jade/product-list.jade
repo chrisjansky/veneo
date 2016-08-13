@@ -21,13 +21,14 @@ block template-content
       .o-featured__list.l-wrap
         each instance in [1, 2, 3, 4, 5, 6]
           +productThumb(instance, "o-featured__item")
-    .o-demoted
-      .o-demoted__list.l-wrap
+    .o-demoted.l-wrap
+      .o-demoted__list
         each instance in [1, 2, 3, 4, 5, 6, 1, 2]
           +productThumb(instance, "o-demoted__item")
-    a(href="#").o-fullbutton
-        span.o-fullbutton__text Zobrazit další
-        span.o-fullbutton__icon: include ../svg/icon_plus.svg
+      .o-cta
+        a(href="#").o-cta__button
+          span.o-cta__text Zobrazit další
+          span.o-cta__icon: include ../svg/icon_plus.svg
 
   section.o-blurb.o-section
     article.o-blurb__content.l-wrap

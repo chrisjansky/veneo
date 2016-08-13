@@ -1,0 +1,38 @@
+.o-cta {
+  text-align: center;
+
+  clear: both;
+
+  margin-top: 2.25em;
+}
+.o-cta__button {
+  display: inline-block;
+
+  border: $stroke--b solid $grey--800;
+  border-radius: $radius--b;
+
+  font-weight: $font__sans--medium;
+  text-transform: uppercase;
+  letter-spacing: em(1);
+  line-height: 1.5;
+
+  @include padding(1em 1.625em);
+
+  &:hover {
+    border-color: $color1--700;
+  }
+
+  @include media($tablet-up) {
+    min-width: 33.333%;
+  }
+}
+
+.o-cta__icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+
+  margin-left: .75em;
+
+  stroke: currentColor;
+}

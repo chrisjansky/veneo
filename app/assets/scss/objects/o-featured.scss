@@ -1,4 +1,6 @@
 .o-featured__list {
+  @include clearfix;
+
   margin-bottom: -1.5em;
 }
 
