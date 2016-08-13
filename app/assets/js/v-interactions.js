@@ -14,11 +14,15 @@ $catLink.on("click", function(event) {
 })
 
 $("[data-mats-item]").on("click", function(event) {
+  event.preventDefault();
+
   $(this).siblings().removeClass(matActiveClass);
   $(this).addClass(matActiveClass);
 })
 
 $("[data-vars-item]").on("click", function(event) {
+  event.preventDefault();
+
   $(this).siblings().removeClass(varActiveClass);
   $(this).addClass(varActiveClass);
 })
