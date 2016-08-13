@@ -43,6 +43,8 @@ mixin header(type, activeItem)
 
     form.o-spotlight
       input.o-spotlight__input(type="search", placeholder="Napiště hledaný výraz")
-      button.o-spotlight__submit(type="submit"): include ../../svg/arrow_right.svg
+      button.o-spotlight__submit(type="submit")
+        span.o-spotlight__caption Hledat
+        span.o-spotlight__icon: include ../../svg/arrow_right.svg
 
   button.o-dim(type="button", data-close)
