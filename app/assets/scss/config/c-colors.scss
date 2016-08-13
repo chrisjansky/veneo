@@ -1,4 +1,4 @@
-$color1--300: hsb(235, 040, 080);
+$color1--300: hsb(235, 080, 070);
 $color1--400: hsb(235, 060, 080);
 $color1--500: hsb(235, 070, 085);
 $color1--600: hsb(235, 050, 090);
@@ -43,7 +43,7 @@ $color--gold-fade: $color2--500;
 $c-link:         $color1--500;
 $c-visited:      $c-link;
 
-$c-hover:        $color1--600;
+$c-hover:        $color1--300;
 $c-active:       $c-hover;
 
 $c-select__bg:   black;
