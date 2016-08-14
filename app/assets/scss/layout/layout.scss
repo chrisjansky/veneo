@@ -17,8 +17,11 @@
     @include media($tablet) {
       @include padding(2.25em null);
     }
-    @include media($laptop-up) {
+    @include media($laptop) {
       @include padding(3em null);
+    }
+    @include media($large) {
+      @include padding(3.5em null);
     }
   } @else if ($direction == square) {
     padding: 1.75rem 1.25rem;
@@ -42,7 +45,7 @@
       padding: 3em;
     }
     @include media($large) {
-      padding: 3em 4em;
+      padding: 3.5em 4em;
     }
   }
 }
