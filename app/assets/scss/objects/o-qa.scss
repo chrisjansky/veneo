@@ -78,6 +78,7 @@
 }
 
 .o-qa__description {
+  @include collapse-children;
   @include margin(null 0);
 
   @include padding(1.25em null);
@@ -85,6 +86,10 @@
   border-bottom: $stroke--b solid $grey--900;
   
   color: $grey--400;
+
+  img {
+    max-width: 100%;
+  }
 
   &:last-child {
     padding-bottom: 0;
