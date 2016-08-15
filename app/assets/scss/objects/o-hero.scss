@@ -84,12 +84,7 @@
 }
 
 .o-hero__link {
-  &:link, &:visited {
-    color: inherit;
-  }
-  &:hover, &:active {
-    color: $grey--800;
-  }  
+  @include link--white;
 
-  border-bottom: $stroke--s solid rgba(white, .25);
+  border-bottom: $stroke--s solid;
 }

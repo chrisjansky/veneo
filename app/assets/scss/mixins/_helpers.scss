@@ -31,6 +31,14 @@
 }
 
 // Links
+@mixin link--primary {
+  &:link, &:visited {
+    border-bottom-color: rgba($color1--700, .75);
+  }
+  &:hover, &:active {
+    border-bottom-color: rgba($color1--500, .5);
+  }
+}
 @mixin link--white {
   &:link, &:visited {
     color: white;

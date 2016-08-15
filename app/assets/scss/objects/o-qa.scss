@@ -71,6 +71,11 @@
   }
 }
 
+.o-qa__link {
+  border-bottom: $stroke--s solid;
+  @include link--primary;
+}
+
 .o-qa__term {
   @include margin(0 null);
 
@@ -89,6 +94,12 @@
 
   img {
     max-width: 100%;
+  }
+
+  a {
+    @include link--medium;
+
+    border-bottom: $stroke--s solid;
   }
 
   &:last-child {
