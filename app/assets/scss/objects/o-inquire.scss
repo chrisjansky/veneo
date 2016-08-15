@@ -30,14 +30,24 @@
 .o-inquire__textarea {
 }
 
+.o-inquire__note {
+  display: block;
+
+  max-width: 40em;
+
+  @include margin(2em auto null);
+
+  color: $grey--500;
+  text-align: center;
+
+  a {
+    @include link--light;
+    border-bottom: $stroke--s solid;
+  }
+}
+
 .o-inquire__submit {
   display: block;
 
   @include margin(1.375em auto null);
-
-  @include media($laptop-up) {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
 }
