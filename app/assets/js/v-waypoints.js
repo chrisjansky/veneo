@@ -27,13 +27,15 @@ function panelRestick($element, container) {
   }
 }
 
+var headerObj = document.getElementById("js-header");
+
 // Header background-color waypoint
-var headerFade = $header.waypoint({
+var headerFade = $body.waypoint({
   handler: function(direction) {
     $header.toggleClass("header--not-top", direction == "down");
   },
   offset: function() {
     // Triger once scrolled past its height
-    return -this.element.clientHeight
+    return -headerObj.clientHeight
   }
 })
