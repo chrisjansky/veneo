@@ -1,7 +1,7 @@
 extends templates/_site
 
 block template-content
-  +header("stay", null)
+  +header("stay", "Kontakty")
 
   section.o-top
     article.o-generic__article.l-wrap
@@ -22,21 +22,31 @@ block template-content
             h3.t-head--five Jak se k nám dostanete
             p Naši kamennou prodejnu se zlatnickou dílnou můžete navštívit na adrese Plumlovská 49, Prostějov. Najdete nás necelých 400 m od centra města.
           .o-blox__outro
-            p Otevřeno máme v úterý a čtvrtek 10&ndash;12 a 14&ndash;16.
-            p Objednejte se však prosím dopředu, ať máte jistotu, že budeme mít otevřeno.
+            h4.t-head--two Otevírací doba
+            ul.o-blox__list--normal
+              li.o-blox__item--inline
+                strong.o-blox__strong Úterý 
+                | 10&ndash;12&emsp;14&ndash;16
+              li.o-blox__item--inline
+                strong.o-blox__strong Čtvrtek 
+                | 10&ndash;12&emsp;14&ndash;16
+            p Objednejte se prosím dopředu, ať máte jistotu, že budeme mít otevřeno.
 
     article.o-blox
       .o-blox__content--white
         .o-blox__flex
           .o-blox__intro
-            h3.t-head--five Provozovatel
-            p Lubomír Krčmář &mdash; zlatník a hodinář
+            p Po domluvě vás obsloužíme i&nbsp;mimo otevírací dobu, parkovat je možné přímo před prodejnou.
+            p Na adrese naší kamenné prodejny si také můžete vyzvednout objednávky z&nbsp;internetu a&nbsp;nabízíme zde výkup zlata a&nbsp;stříbra &mdash; těšíme se na Vás!
           .o-blox__outro
-            ul.o-list
-              li.o-list__item Plumlovská 49, 760 01 Prostějov
-              li.o-list__item IČ: 12307521
-              li.o-list__item DIČ: CZ6405090142
-            p.t-tiny Registr: Okresní živnostenský úřad Okresního úřadu Prostějov č.j.: ŽÚ/2630/2000/Hoch ev.č. 370900-31176-02, vznik práva provozovat živnost: 4. 11. 1992 (více zápis v živnostenském rejstříku).
+            h4.t-head--four Provozovatel
+            ul.o-blox__list--padded
+              li.o-blox__item--inline
+                img.o-blox__portrait(src="assets/images/portrait_small_1.jpg", alt="Lubomír Krčmář")
+                strong.o-blox__strong Lubomír Krčmář 
+                | Plumlovská 49, <br>760 01 Prostějov
+              li.o-blox__item--inline #[span.o-blox__abbr IČ] 12307521 #[br]#[span.o-blox__abbr DIČ] CZ6405090142
+            p.t-tiny Registr: Okresní živnostenský úřad Okresního úřadu Prostějov č.j.: ŽÚ/2630/2000/Hoch ev.č. 370900-31176-02, vznik práva provozovat živnost: 4.&nbsp;11.&nbsp;1992 (více zápis v živnostenském rejstříku).
           
       .o-blox__image(style="background-image: url('assets/images/photo_4.jpg')")
 
