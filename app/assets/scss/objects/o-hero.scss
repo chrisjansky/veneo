@@ -83,12 +83,6 @@
   }
 }
 
-.o-hero__button {
-  @include media($small) {
-    display: none;
-  }
-}
-
 .o-hero__link {
   &:link, &:visited {
     color: inherit;
