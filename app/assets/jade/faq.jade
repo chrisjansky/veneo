@@ -52,8 +52,10 @@ block template-content
               if item == 2
                 img(src="http://unsplash.it/1440/900/?image=#{instance * 20 + 100}", alt="unsplash.it")
               while paragraphCount < randomNumber
-                p: +dummy(item * (paragraphCount + 1) * 15)
-                | 
+                p
+                  +dummy(item * (paragraphCount + 1) * 15)
+                  | 
+                  a(href="#"): +dummy(5)
                 - paragraphCount++
 
   include partials/_stats
