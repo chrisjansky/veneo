@@ -6,7 +6,8 @@ function veneoMap() {
     var mapOptions = {
       center: {lat: 49.4722996, lng: 17.1002256},
       zoom: 15,
-      scrollwheel: false
+      scrollwheel: false,
+      draggable: currentDevice == "desktop"
     }
 
     var 
