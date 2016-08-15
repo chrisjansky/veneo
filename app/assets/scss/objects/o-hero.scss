@@ -61,7 +61,7 @@
   @include collapse-children;
 
   @include media($small) {
-    color: $grey--600;
+    color: $grey--700;
 
     @include margin(null auto);
   }
@@ -84,7 +84,11 @@
 }
 
 .o-hero__link {
-  @include link--white;
+  @include link--lighter;
+
+  @include media($tablet-up) {
+    @include link--white;
+  }
 
   border-bottom: $stroke--s solid;
 }

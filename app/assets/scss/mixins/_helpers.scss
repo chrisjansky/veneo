@@ -49,6 +49,16 @@
     border-bottom-color: rgba(white, .375);
   }
 }
+@mixin link--lighter {
+  &:link, &:visited {
+    color: $grey--700;
+    border-bottom-color: rgba($grey--700, .5);
+  }
+  &:hover, &:active {
+    color: white;
+    border-bottom-color: rgba(white, .5);
+  }
+}
 @mixin link--light {
   &:link, &:visited {
     color: $grey--500;
