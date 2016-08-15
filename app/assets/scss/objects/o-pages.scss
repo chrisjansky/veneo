@@ -20,8 +20,11 @@
     }
   }
 
-  @include media($tablet) {
-    line-height: 2;
+  @include media($phone-pt) {
+    line-height: 1.75;
+  }
+  @include media($handheld-pt) {
+    line-height: 2.5;
   }
 
   @include media($laptop-up) {

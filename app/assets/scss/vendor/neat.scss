@@ -33,8 +33,10 @@ $handheld:   new-breakpoint(min-width em($device__phablet) max-width em($device_
 $computer:   new-breakpoint(min-width em($device__laptop) max-width em($device__tv - 1));
 
 // Custom
-$small-ls: new-breakpoint(max-width em($device__tablet - 1) orientation landscape);
-$tablet-ls: new-breakpoint(min-width em($device__tablet) max-width em($device__laptop - 1) orientation landscape);
-$tablet-pt: new-breakpoint(min-width em($device__tablet) max-width em($device__laptop - 1) orientation portrait);
-$mobile-pt: new-breakpoint(max-width em($device__laptop - 1) orientation portrait);
-$mobile-ls: new-breakpoint(max-width em($device__laptop - 1) orientation landscape);
+$phone-pt:    new-breakpoint(max-width em($device__phablet - 1) orientation portrait);
+// $small-ls: new-breakpoint(max-width em($device__tablet - 1) orientation landscape);
+// $tablet-ls: new-breakpoint(min-width em($device__tablet) max-width em($device__laptop - 1) orientation landscape);
+// $tablet-pt: new-breakpoint(min-width em($device__tablet) max-width em($device__laptop - 1) orientation portrait);
+$handheld-pt: new-breakpoint(min-width em($device__phablet) max-width em($device__laptop - 1) orientation portrait);
+// $mobile-pt: new-breakpoint(max-width em($device__laptop - 1) orientation portrait);
+// $mobile-ls: new-breakpoint(max-width em($device__laptop - 1) orientation landscape);
