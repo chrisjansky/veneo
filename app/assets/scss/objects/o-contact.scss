@@ -10,11 +10,21 @@
 }
 
 .o-contact__item {
-  @include padding(.25em 1.5em);
+  @include padding(null 1.5em);
+  
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
 }
 
 .o-contact__link {
   flex: 1 1 auto;
 
   @include link--tan;
+}
+
+.o-contact__caption {
+  display: block;
+
+  color: $grey--700;
 }

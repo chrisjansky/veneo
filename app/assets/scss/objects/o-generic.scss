@@ -1,27 +1,15 @@
-.o-generic__top {
+.o-generic__article {
   text-align: center;
-}
 
-.o-generic__text {
-  max-width: 30em;
+  max-width: 65em;
 
-  color: $grey--400;
+  p {
+    color: $grey--400;
+  }
 
-  @include margin(null auto);
-  @include collapse-children;
-
-  a {
+  p a {
     @include link--medium;
 
     border-bottom: $stroke--s solid;
   }
-}
-
-.o-generic__subhead {
-  background-color: $grey--900;
-
-  @include margin(0 null);
-  @include padding(1.25em 1em);
-
-  text-align: center;
 }

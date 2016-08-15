@@ -3,18 +3,15 @@ extends templates/_site
 block template-content
   +header("stay", null)
 
-  section.o-top.o-generic
-    .o-generic__top.l-wrap
-      h1.o-generic__head.t-head--one: +dummy(5, "words")
-      .o-generic__text.t-medium
-        p
-          +dummy(15)
-          | 
-          a(href="#"): +dummy(5)
-          | 
-          +dummy(10)
-
-    h2.o-generic__subhead.t-head--five: +dummy(7, "words")
+  section.o-top
+    article.o-generic__article.l-wrap
+      h1.t-head--one Nadpis první úrovně
+      p.t-medium
+        +dummy(30)
+      p.t-medium
+        +dummy(15)
+        | 
+        a(href="#"): +dummy(5)
 
     article.o-blox
       .o-blox__image(style="background-image: url('assets/images/photo_2.jpg')")
@@ -48,6 +45,18 @@ block template-content
               | 
               +dummy(5)
       .o-blox__image(style="background-image: url('assets/images/photo_3.jpg')")
+
+    article.o-generic__article.l-wrap
+      h1.t-head--one Nadpis první úrovně
+      p.t-medium
+        +dummy(35)
+      h2.t-head--two Nadpis druhé úrovně
+      p.t-medium
+        +dummy(10)
+        | 
+        a(href="#"): +dummy(5)
+        | 
+        +dummy(10)
 
   section.o-section--light.l-wrap
     h1.o-section__head--center.t-head--one Mohlo by Vás zajímat

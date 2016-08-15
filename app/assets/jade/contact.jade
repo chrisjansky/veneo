@@ -3,15 +3,15 @@ extends templates/_site
 block template-content
   +header("stay", null)
 
-  section.o-top.o-generic
-    .o-generic__top.l-wrap
-      h1.o-generic__head.t-head--one Kontakt
-      .o-generic__text.t-medium
-        p Máte připomínku nebo dotaz, na který jste nenašli odpověď v&nbsp;#[a(href="faq.html") Častých otázkách]? Chcete si nechat vyrobit #[a(href="generic-page.html") šperk na zakázku] a&nbsp;potřebujete kalkulaci? Nebo poptáváte výrobu exkluzivního produktu a&nbsp;chcete si domluvit osobní schůzku s&nbsp;Lubomírem Krčmářem?<br>Spojte se s&nbsp;námi.
+  section.o-top
+    article.o-generic__article.l-wrap
+      h1.t-head--one Kontakt
+      p.t-medium Máte připomínku nebo dotaz, na který jste nenašli odpověď v&nbsp;#[a(href="faq.html") Častých otázkách]? Chcete si nechat vyrobit #[a(href="generic-page.html") šperk na zakázku] a&nbsp;potřebujete kalkulaci? Nebo poptáváte výrobu exkluzivního produktu a&nbsp;chcete si domluvit osobní schůzku s&nbsp;Lubomírem Krčmářem?<br>Spojte se s&nbsp;námi.
       ul.o-contact
-        each instance in ["zlatnictvi@veneo.cz", "+420 582 337 520", "+420 776 336 196"]
+        each caption, instance in {"zlatnictvi@veneo.cz": "preferujeme", "+420 582 337 520": "9:00&ndash;16:00", "+420 776 336 196": "9:00&ndash;16:00"}
           li.o-contact__item
             a.o-contact__link.t-medium(href="#")= instance
+            small.o-contact__caption.t-small!= caption
 
     article.o-blox
       .o-blox__image
