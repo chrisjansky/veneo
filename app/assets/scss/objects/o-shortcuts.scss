@@ -100,6 +100,8 @@
   border-radius: 0;
   background-color: transparent;
 
+  line-height: 1; // Inherited line-height causes cropping
+
   padding-right: .75em;
 
   color: currentColor;
