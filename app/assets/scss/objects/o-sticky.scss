@@ -125,11 +125,19 @@
 }
 
 .o-sticky__button {
+  border: 0;
+  cursor: pointer;
+
+  @include media($phone) {
+    width: 100%;
+
+    text-align: center;
+  }
+
   @include media($small) {
     display: block;
-    text-align: center;
 
-    margin-top: .75em;
+    @include margin(.75em auto null);
   }
 
   @include media($tablet) {

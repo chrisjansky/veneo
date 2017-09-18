@@ -22,7 +22,7 @@
 }
 
 .o-button--primary {
-  &:link, &:visited {
+  &, &:link, &:visited {
     color: white;
     background-color: $positive--500;
   }
