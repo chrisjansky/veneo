@@ -11,12 +11,18 @@ block template-content
       h1.o-section__head--center.t-head--one Dámské zlaté a stříbrné prsteny s kameny
     .o-filters
       each instance in ["Všechny druhy", "Všechny kameny", "Od nejprodávanějších"]
-        .o-filters__item
-          select.o-filters__select
-            option(selected)= instance
-            option Další volba
-            option Poslední volba
-          span.o-filters__icon: include ../svg/arrow_down.svg
+        .o-filters__group(data-parent)
+          mark.o-filters__active(data-dropdown)= instance
+          ul.o-filters__list
+            li.o-filters__item
+              mark.o-filters__link--active= instance
+            each item in ["Volba", "Aktivní", "Další volba", "Poslední volba"]
+              li.o-filters__item
+                a.o-filters__link(href="javascript:")= item
+          span.o-filters__icon
+            span.o-filters__arrow: include ../svg/arrow_down.svg
+            span.o-filters__close: include ../svg/icon_close_large.svg
+
     .o-featured.l-wrap
       .o-featured__list
         each instance in [1, 2, 3, 4, 5, 6]

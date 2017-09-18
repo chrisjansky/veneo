@@ -6,18 +6,12 @@
 
   @include padding(null 1.25em);
 
-  @include media($tablet) {
-    @include padding(null 2.25em);
-  }
-  @include media($laptop) {
-    @include padding(null 3em);
-  }
-  @include media($large) {
-    @include padding(null 4em);
-  }
+  @include media($tablet) { @include padding(null 2.25em); }
+  @include media($laptop) { @include padding(null 3em); }
+  @include media($large)  { @include padding(null 4em); }
 }
 
-.o-filters__item {
+.o-filters__group {
   position: relative;
 
   border: $stroke--b solid $grey--900;
@@ -30,9 +24,8 @@
   }
 
   @include media($tablet-up) {
-    float: left;
-
     width: 33.333%;
+    float: left;
 
     &:first-child,
     &:last-child {
@@ -42,57 +35,103 @@
       border: none;
     }
   }
+
+  @include media($laptop-up) {
+    text-transform: uppercase;
+    letter-spacing: em(1);
+  }
 }
 
-.o-filters__select {
-  @include appearance(none);
-  @include padding(null 1em);
-  border: none;
-  border-radius: 0;
+.o-filters__active {
+  display: block;
+
+  line-height: 3.5;
+  padding-left: 1em;
+
+  color: $c-link;
   background-color: transparent;
 
-  width: 100%;
-
-  height: 3.5em; // Using line-height messes up appearance
-
-  color: $grey--500;
+  cursor: pointer;
+  user-select: none;
 
   &:hover {
-    cursor: pointer;
-
     color: $c-hover;
   }
 
-  &:focus {
-    color: $grey--000;
-
-    outline: none;
+  .dropdown--is-active & {
+    background-color: $grey--900;
   }
 
   @include media($laptop-up) {
-    @include padding(null 1.625em);
+    padding-left: 1.625em;
+  }
+}
 
-    text-transform: uppercase;
-    letter-spacing: em(1);
+.o-filters__list {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  list-style-type: none;
+  padding: 1em 1.625em;
+  margin-top: 0;
+
+  color: $grey--500;
+  background-color: white;
+  line-height: 2.5;
+
+  border-bottom-right-radius: $radius--b;
+  border-bottom-left-radius: $radius--b;
+  box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+
+  animation: $duration--s $ease-out-back forwards pop;
+
+  .dropdown--is-active & {
+    display: block;
+  }
+}
+
+.o-filters__link {
+  display: block;
+
+  &--active {
+    color: $grey--000;
+    background-color: transparent;
   }
 }
 
 .o-filters__icon {
   position: absolute;
   right: 1em;
-  top: 0;
+  top: 50%;
 
-  stroke: $grey--800;
+  transform: translateY(-50%);
 
   pointer-events: none;
 
-  height: 3.5em;
+  line-height: 0;
+}
 
-  &:before {
-    @include pseudo-center;
+.o-filters__arrow {
+  stroke: $grey--800;
+
+  .dropdown--is-active & {
+    display: none;
   }
+}
 
-  svg {
-    vertical-align: middle;
+.o-filters__close {
+  stroke: $grey--700;
+
+  display: none;
+
+  margin-right: 1px; // Align with arrow_down
+
+  .dropdown--is-active & {
+    display: block;
   }
 }

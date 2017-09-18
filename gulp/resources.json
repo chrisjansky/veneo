@@ -18,6 +18,7 @@
       "bower_components/waypoints/lib/jquery.waypoints.js",
       "app/assets/js/app.js",
       "app/assets/js/v-detect.js",
+      "app/assets/js/v-dropdown.js",
       "app/assets/js/v-device.js",
       "app/assets/js/v-map.js",
       "app/assets/js/v-toggle.js",
