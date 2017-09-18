@@ -45,9 +45,13 @@ block template-content
                           strong.o-cart__note Upravit na míru
 
               .o-cart__aside
-                .o-cart__count
-                  input.o-input.o-cart__stepper(type="number", value="1", min="1")
-                  span.o-cart__suffix ks
+                .o-cart__specify
+                  button.o-cart__calc--minus(type="button"): include ../svg/icon_minus.svg
+                  span.o-cart__count
+                    mark.o-cart__number 1
+                    | 
+                    span.o-cart__suffix ks
+                  button.o-cart__calc--plus(type="button"): include ../svg/icon_plus.svg
                 strong.o-cart__price.t-price 4 189 Kč
 
           footer.o-cart__footer
