@@ -4,7 +4,7 @@
     <title>Path 21 Copy 4</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="icons" stroke-width="2.5" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <path d="M1,7 L6.68421053,13 L19,1" id="Path-21-Copy-4" sketch:type="MSShapeGroup"></path>
+    <g stroke-width="2.5" fill="none">
+        <path d="M1,7 L7,13 L19,1"></path>
     </g>
 </svg>

@@ -1,0 +1,9 @@
+//- neutral:  notification_neutral.svg
+//- positive: notification_positive.svg
+//- negative: notification_negative.svg
+section.o-notification--neutral
+  .o-notification__wrap
+    .o-notification__content
+      span.o-notification__icon: include ../../svg/notification_neutral.svg
+      strong.o-notification__text Prosím zvolte materiál a velikost prstenu.
+    button.o-notification__close(onclick="notify(true)"): include ../../svg/icon_close.svg

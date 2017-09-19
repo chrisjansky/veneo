@@ -116,7 +116,7 @@ block template-content
       .o-sticky__text.o-sticky__price
         strong.o-sticky__figure.t-head--two 2 099 Kč<br>
         span.t-text--light vč. DPH
-      button(type="button").o-sticky__button.o-button--primary
+      button(type="button", onclick="notify(false)").o-sticky__button.o-button--primary
         span.o-button__icon: include ../svg/icon_cart.svg
         | Do košíku
 
@@ -207,3 +207,5 @@ block template-content
   include partials/_stats
 
   include partials/_footer
+
+  include partials/_notification

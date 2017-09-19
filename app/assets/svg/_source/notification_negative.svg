@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="21px" viewBox="0 0 26 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g transform="translate(2.000000, 2.000000)">
+        <polygon class="svg-stroke" points="11 0 22 18 0 18"></polygon>
+        <path class="svg-stroke" d="M11,7 L11,12"></path>
+        <circle class="svg-fill" cx="11" cy="14" r="1"></circle>
+    </g>
+</svg>
