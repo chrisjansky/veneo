@@ -6,38 +6,45 @@ var
 
 var $catLink = $("[data-cat-link]");
 
-$catLink.on("click", function(event) {
-  event.preventDefault();
+function veneoInteractions() {
+  var
+    $pagesToggle = $("[data-pages]"),
+    $searchToggle = $("[data-search]"),
+    $toggle = $("[data-toggle]");
 
-  $catLink.removeClass(catActiveClass);
-  $(this).addClass(catActiveClass);
-})
+  $catLink.on("click", function(event) {
+    event.preventDefault();
 
-$("[data-mats-item]").on("click", function(event) {
-  event.preventDefault();
+    $catLink.removeClass(catActiveClass);
+    $(this).addClass(catActiveClass);
+  })
 
-  $(this).siblings().removeClass(matActiveClass);
-  $(this).addClass(matActiveClass);
-})
+  $("[data-mats-item]").on("click", function(event) {
+    event.preventDefault();
 
-$("[data-vars-item]").on("click", function(event) {
-  event.preventDefault();
+    $(this).siblings().removeClass(matActiveClass);
+    $(this).addClass(matActiveClass);
+  })
 
-  $(this).siblings().removeClass(varActiveClass);
-  $(this).addClass(varActiveClass);
-})
+  $("[data-vars-item]").on("click", function(event) {
+    event.preventDefault();
 
-$("[data-close]").on("click", function(event) {
-  $html.removeClass("search--is-active");
-  $toggle.removeClass(toggleActiveClass);
-})
+    $(this).siblings().removeClass(varActiveClass);
+    $(this).addClass(varActiveClass);
+  })
 
-$pagesToggle.on("click", function(event) {
-  $html.removeClass("search--is-active");
-  $searchToggle.removeClass(toggleActiveClass);
-})
+  $("[data-close]").on("click", function(event) {
+    $html.removeClass("search--is-active");
+    $toggle.removeClass(toggleActiveClass);
+  })
 
-$searchToggle.on("click", function(event) {
-  $html.removeClass("pages--is-active");
-  $pagesToggle.removeClass(toggleActiveClass);
-})
+  $pagesToggle.on("click", function(event) {
+    $html.removeClass("search--is-active");
+    $searchToggle.removeClass(toggleActiveClass);
+  })
+
+  $searchToggle.on("click", function(event) {
+    $html.removeClass("pages--is-active");
+    $pagesToggle.removeClass(toggleActiveClass);
+  })  
+}

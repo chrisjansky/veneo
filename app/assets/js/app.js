@@ -1,13 +1,6 @@
-var
-  viewWidth = document.documentElement.clientWidth,
-  viewHeight = document.documentElement.clientHeight;
+var $html, $body;
 
-var
-  $html = $("html"),
-  $body = $("body"),
-  $header = $("[data-header]"),
-  $toggle = $("[data-toggle]"),
-  $pagesToggle = $("[data-pages]"),
-  $searchToggle = $("[data-search]");
-
-$header.scrollupbar();
+function veneoInit() {
+  $html = $("html");
+  $body = $("body");
+}

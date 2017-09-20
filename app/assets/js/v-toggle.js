@@ -1,12 +1,14 @@
-$("[data-toggle]").on("click", function(event) {
-  event.preventDefault();
-  
-  var
-    $thisEl = $(this);
+function veneoToggle() {
+  $("[data-toggle]").on("click", function(event) {
+    event.preventDefault();
+    
+    var
+      $thisEl = $(this);
 
-  $html
-    .toggleClass($thisEl.attr("data-toggle"));
+    $html
+      .toggleClass($thisEl.attr("data-toggle"));
 
-  $thisEl
-    .toggleClass("toggle--is-active");
-});
+    $thisEl
+      .toggleClass("toggle--is-active");
+  }); 
+}

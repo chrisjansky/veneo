@@ -11,7 +11,8 @@ gulp.task("server:html", ["styles", "templates"], function() {
     server: {
       baseDir: config.dev.root,
       routes: {
-        "/bower_components": "./bower_components"
+        "/bower_components": "./bower_components",
+        '/node_modules': './node_modules'
       },
       middleware: plugins.hygienistMiddleware(config.dev.root)
     },
