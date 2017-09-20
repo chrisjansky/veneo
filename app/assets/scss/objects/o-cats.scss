@@ -124,7 +124,6 @@
   .o-cats--dark & {
     @include link--medium;
   }
-  // transition: color $duration--b;
 
   // Chevron
   &:before, &:after {
