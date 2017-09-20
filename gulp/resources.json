@@ -17,6 +17,8 @@
       "bower_components/waypoints/lib/jquery.waypoints.js",
       "node_modules/barba.js/dist/barba.js",
       "app/assets/js/app.js",
+      "app/assets/js/v-detect.js",
+      "app/assets/js/v-device.js",
       "app/assets/js/v-dropdown.js",
       "app/assets/js/v-map.js",
       "app/assets/js/v-notify.js",
@@ -26,9 +28,7 @@
       "app/assets/js/v-flickity.js",
       "app/assets/js/v-waypoints.js",
       "app/assets/js/v-scrollto.js",
-      "app/assets/js/v-barba.js",
-      "app/assets/js/v-detect.js",
-      "app/assets/js/v-device.js"
+      "app/assets/js/v-barba.js"
     ]
   },
   "injectDist": {
