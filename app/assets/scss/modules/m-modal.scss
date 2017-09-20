@@ -1,0 +1,107 @@
+.m-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: auto;
+
+  background-color: rgba(black, .9);
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  &__form {
+    position: relative;
+
+    background-color: white;
+
+    max-width: 55em;
+
+    padding: .25em;
+
+    @include media($tablet-up) {
+      padding: 1.5em;
+    }
+  }
+
+  &__close {
+    stroke: currentColor;
+
+    position: absolute;
+    top: 1.5em;
+    right: 1.25em;
+
+    @include media($tablet-up) {
+      top: 2.75em;
+      right: 2.5em;
+    }
+  }
+
+  &__set {
+    border: 0;
+    margin: 0;
+    padding: 1em;
+  }
+
+  &__top {
+    margin-bottom: 1.5em;
+  }
+
+  &__row {
+    margin-top: 1.25em;
+  }
+
+  &__row--flex {
+    @include media($tablet-up) {
+      display: flex;
+    }
+
+    margin: -.5em;
+  }
+
+  &__item {
+    flex-grow: 1;
+    flex-basis: 5em;
+
+    .m-modal__row--flex & {
+      padding: .5em;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: .5em;
+  }
+
+  &__hint {
+    display: block;
+
+    font-size: .875em;
+    color: $grey--400;
+
+    margin-top: 1em;
+  }
+}
+
+#modal:target {
+  display: block;
+
+  @include media($tablet-up) {
+    display: flex;
+  }
+}
