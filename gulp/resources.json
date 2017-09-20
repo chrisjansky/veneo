@@ -9,7 +9,6 @@
     "site": [
       "bower_components/normalize-css/normalize.css",
       "bower_components/flickity/dist/flickity.css",
-      "app/assets/css/MyFontsWebfontsKit.css",
       "app/assets/css/style.css",
 
       "bower_components/flickity/dist/flickity.pkgd.js",
