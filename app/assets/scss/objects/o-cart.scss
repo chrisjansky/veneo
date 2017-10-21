@@ -220,6 +220,7 @@
 
 .o-cart__count {
   @include margin(null .5em);
+  vertical-align: middle;
 
   font-family: $font__serif;
   font-size: 1.25em;
@@ -238,21 +239,20 @@
 
 [class^="o-cart__calc--"],
 [class*=" o-cart__calc--"] {
-  appearance: none;
-
-  background-color: white;
-  border: 0;
   padding: .5em;
 
   stroke: $grey--700;
   stroke-width: 2;
 
-  cursor: pointer;
   line-height: 0;
 
   box-shadow: $shadow--1;
 
   transition: stroke $duration--s, box-shadow $duration--s;
+
+  svg {
+    vertical-align: middle;
+  }
 
   &:hover {
     stroke: $grey--400;
@@ -261,10 +261,6 @@
 
   &:active {
     stroke: $grey--000;
-  }
-
-  &:focus {
-    outline: 0;
   }
 }
 

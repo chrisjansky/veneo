@@ -46,12 +46,12 @@ block template-content
 
               .o-cart__aside
                 .o-cart__specify
-                  button.o-cart__calc--minus(type="button"): include ../svg/icon_minus.svg
+                  a(href="javascript:").o-cart__calc--minus: include ../svg/icon_minus.svg
                   span.o-cart__count
                     mark.o-cart__number 1
                     | 
                     span.o-cart__suffix ks
-                  button.o-cart__calc--plus(type="button"): include ../svg/icon_plus.svg
+                  a(href="javascript:").o-cart__calc--plus: include ../svg/icon_plus.svg
                 strong.o-cart__price.t-price 4 189 Kč
 
           footer.o-cart__footer
