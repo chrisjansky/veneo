@@ -10,7 +10,7 @@ block template-content
     .l-wrap
       h1.o-section__head--center.t-head--one Dámské zlaté a stříbrné prsteny s kameny
     .o-filters
-      each instance in ["Všechny druhy", "Všechny kameny", "Od nejprodávanějších"]
+      each instance in ["Všechny druhy"]
         .o-filters__group(data-parent)
           mark.o-filters__active(data-dropdown)= instance
           ul.o-filters__list
@@ -22,6 +22,14 @@ block template-content
           span.o-filters__icon
             span.o-filters__arrow: include ../svg/arrow_down.svg
             span.o-filters__close: include ../svg/icon_close_large.svg
+
+      each instance in ["Všechny kameny", "Od nejprodávanějších"]
+        .o-filters__group
+          select.o-filters__select
+            option(selected)= instance
+            option Další volba
+            option Poslední volba
+          span.o-filters__icon: include ../svg/arrow_down.svg
 
     .o-featured.l-wrap
       .o-featured__list
