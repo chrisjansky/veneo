@@ -98,7 +98,7 @@
   }
 }
 
-#modal:target {
+.modal--is-open #modal {
   display: block;
 
   @include media($tablet-up) {
