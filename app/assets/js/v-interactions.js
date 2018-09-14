@@ -4,19 +4,18 @@ var
   varActiveClass = "variant--is-active",
   catActiveClass = "category--is-active";
 
-var $catLink = $("[data-cat-link]");
-
 function veneoInteractions() {
   var
+    $catLink = $("[data-cat-link]"),
     $pagesToggle = $("[data-pages]"),
     $searchToggle = $("[data-search]"),
     $toggle = $("[data-toggle]");
 
   $catLink.on("click", function(event) {
-    event.preventDefault();
-
     $catLink.removeClass(catActiveClass);
     $(this).addClass(catActiveClass);
+
+    return false;
   })
 
   $("[data-mats-item]").on("click", function(event) {
@@ -34,7 +33,7 @@ function veneoInteractions() {
   })
 
   $("[data-close]").on("click", function(event) {
-    $html.removeClass("search--is-active");
+    $html.removeClass("search--is-active pages--is-active");
     $toggle.removeClass(toggleActiveClass);
   })
 
@@ -46,5 +45,5 @@ function veneoInteractions() {
   $searchToggle.on("click", function(event) {
     $html.removeClass("pages--is-active");
     $pagesToggle.removeClass(toggleActiveClass);
-  })  
+  })
 }

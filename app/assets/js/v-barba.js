@@ -14,9 +14,16 @@ veneoWaypoints();
 Barba.Pjax.init();
 Barba.Prefetch.init();
 
+var barbaClicked = false;
+
 /* On AJAX-enabled link click */
-Barba.Dispatcher.on('linkClicked', function() {
+Barba.Dispatcher.on('linkClicked', function(element, event) {
+  barbaClicked = true;
   $.scrollupbar.destroy();
+});
+
+addEventListener('popstate', function (event) {
+  barbaClicked = false;
 });
 
 /* Event based here */
@@ -35,4 +42,12 @@ Barba.Dispatcher.on('transitionCompleted', function() {
   veneoTabs();
   veneoMap();
   veneoWaypoints();
+
+  /* Don't change scroll position if back button pressed */
+  if (barbaClicked) {
+    window.scroll({
+      top: 0,
+      behaviour: "smooth"
+    });
+  }
 });
