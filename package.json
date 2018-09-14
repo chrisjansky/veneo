@@ -38,6 +38,7 @@
     "node-neat": "^1.7.2"
   },
   "dependencies": {
-    "barba.js": "^1.0.0"
+    "barba.js": "^1.0.0",
+    "bower": "^1.8.4"
   }
 }
